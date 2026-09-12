@@ -1,0 +1,26 @@
+# ── Quantum stack ──────────────────────────────────────────────
+qiskit>=1.2.0
+qiskit-aer>=0.14.0
+qiskit-machine-learning>=0.7.2
+qiskit-algorithms>=0.3.0
+
+# ── Classical ML ───────────────────────────────────────────────
+scikit-learn>=1.4.0
+numpy>=1.26.0
+pandas>=2.1.0
+
+# ── Deep learning (optional hybrid layer) ──────────────────────
+torch>=2.2.0
+
+# ── Explainability ─────────────────────────────────────────────
+shap>=0.45.0
+
+# ── Visualisation ──────────────────────────────────────────────
+matplotlib>=3.8.0
+seaborn>=0.13.0
+plotly>=5.18.0
+pylatexenc>=2.10          # needed for qiskit circuit drawing
+
+# ── Notebooks ──────────────────────────────────────────────────
+jupyterlab>=4.0.0
+ipywidgets>=8.0.0
