@@ -34,8 +34,7 @@ env/
 *.onnx
 
 # Data & Large Files
-data/raw/UCI/
-data/raw/golub/
+# (Raw datasets included in repo: WDBC, UCI Heart, Golub Leukemia)
 
 # Byte-compiled / IDE / OS
 .vscode/
