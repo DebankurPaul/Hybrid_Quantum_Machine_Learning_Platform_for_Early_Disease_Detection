@@ -169,18 +169,6 @@ def predict_patient(patient_data: dict, model_name: str, threshold: float) -> Di
     except Exception as e:
         return create_response("error", message=str(e))
 
-def get_optimal_threshold() -> float:
-    """Return the optimal threshold (best_tau) for the Quantum model if available, else 0.5."""
-    metrics_path = os.path.join(BEST_MODEL_DIR, "best_model_metrics.json")
-    if os.path.exists(metrics_path):
-        try:
-            with open(metrics_path, "r") as f:
-                data = json.load(f)
-            return float(data.get("best_tau", 0.5))
-        except Exception:
-            return 0.5
-    return 0.5
-
 def get_quantum_model_info(model_name: str) -> Dict[str, Any]:
     if "Quantum" not in model_name:
         return create_response("not_available", message="Not a quantum model.")
