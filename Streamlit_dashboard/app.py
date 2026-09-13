@@ -11,13 +11,12 @@ st.set_page_config(
 )
 
 def render_sidebar():
-    st.sidebar.title("HYBRID-QML")
-    st.sidebar.caption("Quantum-Classical Intelligence for Early Disease Detection")
+    st.sidebar.title("Hybrid Quantum–Classical Disease Detection")
+    st.sidebar.caption("A research platform for evaluating classical and quantum machine learning approaches to disease detection.")
     st.sidebar.divider()
     
     st.sidebar.markdown("**DATASET**\n\nWDBC")
     st.sidebar.markdown("**TASK**\n\nDisease Detection")
-    st.sidebar.markdown("**QUANTUM BACKEND**\n\nQiskit Aer (Planned)")
     
     st.sidebar.divider()
     
@@ -25,32 +24,29 @@ def render_sidebar():
     models = backend.get_available_models()
     if models["status"] == "available":
         available_models = models["data"]["available"]
-        planned_quantum = models["data"]["planned_quantum"]
-        planned_classical = models["data"]["planned_classical"]
         
         st.sidebar.markdown("**MODEL**")
         if available_models:
-            selected_model = st.sidebar.selectbox("Select Model", available_models, label_visibility="collapsed")
+            # Set default index to Quantum if available
+            default_idx = 0
+            if "Quantum VQC (8-qubit)" in available_models:
+                default_idx = available_models.index("Quantum VQC (8-qubit)")
+                
+            selected_model = st.sidebar.selectbox("Select Model", available_models, index=default_idx, label_visibility="collapsed")
             threshold_disabled = False
         else:
             selected_model = None
             st.sidebar.selectbox("Select Model", ["No models currently available"], disabled=True, label_visibility="collapsed")
             threshold_disabled = True
-        
-        with st.sidebar.expander("Planned Capabilities", expanded=(not available_models)):
-            st.markdown("**Quantum**")
-            for mq in planned_quantum:
-                st.markdown(f"- {mq} `[Unavailable]`")
-            st.markdown("**Classical**")
-            for mc in planned_classical:
-                st.markdown(f"- {mc} `[Unavailable]`")
     else:
         selected_model = None
         threshold_disabled = True
     
+    default_tau = backend.get_optimal_threshold()
+    
     threshold = st.sidebar.slider(
         "DECISION THRESHOLD (τ)", 
-        min_value=0.10, max_value=0.90, value=0.65, step=0.01, 
+        min_value=0.10, max_value=0.90, value=default_tau, step=0.01, 
         disabled=threshold_disabled,
         help="Active when a model is loaded." if threshold_disabled else None
     )

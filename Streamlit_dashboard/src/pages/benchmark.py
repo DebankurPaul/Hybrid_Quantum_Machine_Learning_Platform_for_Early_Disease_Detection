@@ -17,24 +17,18 @@ def render_benchmark_table(benchmark):
 def render_performance_chart(benchmark):
     st.markdown("### Performance Overview")
     if benchmark["status"] == "available":
-        # Expecting a dataframe or dict with model performance metrics for bar chart
-        st.bar_chart(benchmark["data"], y=["Accuracy", "F1 Score"])
+        st.bar_chart(benchmark["data"], x="Model", y=["Accuracy", "F1 Score"])
     else:
         render_unavailable_state("Chart Not Available", "Awaiting evaluation results for plotting.")
 
 def render_roc_comparison(benchmark):
     st.markdown("### ROC Comparison")
-    if benchmark["status"] == "available":
-        # Expecting a dataframe or dict structured for multi-line plotting
-        st.line_chart(benchmark["data"])
-    else:
-        render_unavailable_state("Chart Not Available", "Awaiting evaluation results for plotting.")
+    render_unavailable_state("Chart Not Available", "ROC curves are generated directly from predicted probabilities which are not all saved in the static CSV.")
 
 def render_inference_time_chart(benchmark):
     st.markdown("### Inference Time Comparison")
-    if benchmark["status"] == "available":
-        # Expecting a dataframe or dict with inference times per model
-        st.bar_chart(benchmark["data"], y=["Inference Time"])
+    if benchmark["status"] == "available" and "Training Time (sec)" in benchmark["data"].columns:
+        st.bar_chart(benchmark["data"], x="Model", y=["Training Time (sec)"])
     else:
         render_unavailable_state("Timing Not Available", "Awaiting evaluation results for plotting.")
 

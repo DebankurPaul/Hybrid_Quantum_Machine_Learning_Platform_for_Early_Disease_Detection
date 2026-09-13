@@ -12,19 +12,17 @@ def render():
         
     st.subheader(f"Current Model: {selected_model}")
     
-    # 1. Pipeline Diagram
+    # 1. Pipeline Specification
     st.markdown("### Pipeline Specification")
-    st.markdown("This represents the intended architecture mapping classical data to quantum states.")
+    st.markdown("This represents the architecture mapping classical data to quantum states.")
     st.markdown(
         """
-        1. **StandardScaler** (Classical)
-        2. **PCA** (Classical Dimensionality Reduction)
-        3. **4 / 8 Components** 
-        4. **MinMaxScaler [0, π]** (Quantum Scaling)
-        5. **ZZFeatureMap** (Quantum State Preparation)
-        6. **RealAmplitudes** (Variational Ansatz)
-        7. **Measurement** (Qiskit Aer Simulator)
-        8. **Prediction** (Probability Output)
+        1. **StandardScaler** (Classical Preprocessing)
+        2. **PCA (8 Components)** (Dimensionality Reduction)
+        3. **tanh(x) * π** (Angle Encoding Normalization)
+        4. **ZZFeatureMap** (Quantum State Preparation)
+        5. **RealAmplitudes** (Variational Ansatz)
+        6. **Measurement** (Qiskit VQC backend)
         """
     )
     st.divider()

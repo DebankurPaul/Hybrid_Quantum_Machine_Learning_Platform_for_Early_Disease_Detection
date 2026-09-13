@@ -8,14 +8,14 @@ def render_metrics(selected_model, threshold):
     if metrics["status"] == "available":
         data = metrics["data"]
         col1, col2, col3 = st.columns(3)
-        col1.metric("Accuracy", data.get("accuracy", "—"))
-        col2.metric("Precision", data.get("precision", "—"))
-        col3.metric("Sensitivity", data.get("sensitivity", "—"))
+        col1.metric("Accuracy", f"{data.get('accuracy', 0):.4f}")
+        col2.metric("Precision", f"{data.get('precision', 0):.4f}")
+        col3.metric("Sensitivity", f"{data.get('sensitivity', 0):.4f}")
         
         col4, col5, col6 = st.columns(3)
-        col4.metric("Specificity", data.get("specificity", "—"))
-        col5.metric("F1 Score", data.get("f1", "—"))
-        col6.metric("ROC-AUC", data.get("roc_auc", "—"))
+        col4.metric("Specificity", f"{data.get('specificity', 0):.4f}")
+        col5.metric("F1 Score", f"{data.get('f1', 0):.4f}")
+        col6.metric("ROC-AUC", f"{data.get('roc_auc', 0):.4f}")
     else:
         render_unavailable_state("Metrics Not Available", metrics.get("message", "Evaluation metrics require loaded evaluation artifacts."))
 
@@ -23,7 +23,14 @@ def render_confusion_matrix(selected_model, threshold):
     st.markdown("### Confusion Matrix")
     cm = backend.get_confusion_matrix(selected_model, threshold)
     if cm["status"] == "available":
-        st.dataframe(cm["data"]) 
+        d = cm["data"]
+        # Format as markdown table
+        st.markdown(f"""
+|                | Predicted Benign | Predicted Malignant |
+|----------------|------------------|---------------------|
+| **True Benign**    | {d.get('TN', 0)}               | {d.get('FP', 0)}                  |
+| **True Malignant** | {d.get('FN', 0)}               | {d.get('TP', 0)}                  |
+""")
     else:
         render_unavailable_state("Matrix Not Available", cm.get("message", "Awaiting evaluation results."))
 

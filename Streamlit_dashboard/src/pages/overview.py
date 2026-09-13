@@ -3,8 +3,8 @@ import src.backend_adapter as backend
 from src.ui_components import render_unavailable_state
 
 def render():
-    st.title("HYBRID-QML")
-    st.subheader("Quantum-Classical Intelligence for Early Disease Detection")
+    st.title("Hybrid Quantum–Classical Disease Detection")
+    st.subheader("A research platform for evaluating classical and quantum machine learning approaches")
     st.markdown("WDBC · Breast Cancer Wisconsin (Diagnostic)")
     
     st.divider()
@@ -28,23 +28,22 @@ def render():
         
     st.divider()
     
-    st.markdown("### Pipeline Design (Target Architecture)")
-    st.markdown("Compare classical and quantum approaches using the same evaluation framework.")
+    st.markdown("### Pipeline Architecture")
+    st.markdown("Compare classical baselines with a Variational Quantum Classifier (VQC).")
     
     st.markdown(
         """
-        **30 Original Features**  
+        **30 Original Features (WDBC)**  
         &nbsp;&nbsp;&nbsp;&nbsp;↓  
-        **StandardScaler** *(Classical Preprocessing)*  
-        &nbsp;&nbsp;&nbsp;&nbsp;↓  
-        **PCA** *(Dimensionality Reduction)*  
-        &nbsp;&nbsp;&nbsp;&nbsp;↓  
-        **4 / 8 Components**  
-        &nbsp;&nbsp;&nbsp;&nbsp;↓  
-        **MinMaxScaler [0, π]** *(Quantum Encoding)*  
-        &nbsp;&nbsp;&nbsp;&nbsp;↓  
-        **VQC / QSVC** *(Quantum Classifier)*  
-        &nbsp;&nbsp;&nbsp;&nbsp;↓  
-        **Prediction**
+        **StandardScaler**  
+        &nbsp;&nbsp;&nbsp;&nbsp;↙&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↘  
+        **(Classical Branch)**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**(Quantum Branch)**  
+        *All 30 Features*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*PCA (8 Components)*  
+        &nbsp;&nbsp;&nbsp;&nbsp;↓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓  
+        *Logistic, SVM, RF, XGB*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*tanh(x) × π Normalization*  
+        &nbsp;&nbsp;&nbsp;&nbsp;↓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓  
+        **Prediction**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Qiskit VQC (8-qubit)*  
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓  
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Prediction**
         """
     )

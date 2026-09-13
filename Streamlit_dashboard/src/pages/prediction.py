@@ -18,7 +18,7 @@ FEATURE_GROUPS = {
     ]
 }
 
-def render_result(result, threshold):
+def render_result(result, threshold, patient_data):
     if result["status"] == "available":
         st.success("Prediction complete")
         st.markdown("### MODEL PREDICTION")
@@ -27,6 +27,16 @@ def render_result(result, threshold):
         st.metric("Estimated Model Probability", f"{data.get('probability', 0.0):.4f}" if "probability" in data else "—")
         st.metric("Decision Threshold", f"τ = {threshold:.3f}")
         st.caption("Research prototype: This result is a machine-learning prediction for demonstration/research purposes and is not a medical diagnosis or medical advice.")
+        
+        agreement = backend.evaluate_patient_agreement(patient_data, threshold)
+        if agreement["status"] == "available":
+            st.divider()
+            st.markdown("### Model Agreement Analysis")
+            agr = agreement["data"]
+            if agr["concordant"]:
+                st.success(f"**Concordant**: Both {agr['classical_model']} and Quantum VQC predicted **{agr['quantum_pred']}**.")
+            else:
+                st.warning(f"**Discordant**: Models produced different predictions. (Classical: {agr['classical_pred']}, Quantum: {agr['quantum_pred']}). This case may warrant further investigation of model behavior.")
     else:
         render_unavailable_state("Prediction unavailable", result.get("message", "The trained model artifacts required for inference are not currently connected."))
 
@@ -67,7 +77,7 @@ def render():
                         # Submit the validated patient record through the backend adapter.
                         result = backend.predict_patient(patient_data, selected_model, threshold)
                     st.divider()
-                    render_result(result, threshold)
+                    render_result(result, threshold, patient_data)
                 
     with tab2:
         st.markdown("Upload a CSV containing exactly one patient row for inference.")
@@ -90,10 +100,10 @@ def render():
                 else:
                     if st.button("Run Prediction"):
                         with st.spinner("Calculating predictions..."):
-                            # Submit the validated patient record through the backend adapter.
-                            result = backend.predict_patient(df.iloc[0].to_dict(), selected_model, threshold)
+                            pat_data = df.iloc[0].to_dict()
+                            result = backend.predict_patient(pat_data, selected_model, threshold)
                         st.divider()
-                        render_result(result, threshold)
+                        render_result(result, threshold, pat_data)
                         
             except Exception as e:
                 render_error_state(f"Failed to parse CSV: {str(e)}")
