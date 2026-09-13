@@ -1,13 +1,29 @@
+# ── Dashboard UI ───────────────────────────────────────────────
 streamlit==1.40.1
-pandas==2.2.2
-numpy==2.1.2
-plotly==5.24.1
+
+# ── Quantum stack ──────────────────────────────────────────────
 qiskit==2.5.2
 qiskit-aer==0.17.2
 qiskit-machine-learning==0.9.1
 qiskit-algorithms==0.4.0
+
+# ── Classical ML ───────────────────────────────────────────────
 scikit-learn==1.9.1
+numpy==2.1.2
+pandas==2.2.2
+
+# ── Deep learning (optional hybrid layer) ──────────────────────
+torch>=2.2.0
+
+# ── Explainability ─────────────────────────────────────────────
 shap==0.52.0
+
+# ── Visualisation ──────────────────────────────────────────────
 matplotlib==3.11.2
 seaborn==0.13.2
-pylatexenc==2.11
+plotly==5.24.1
+pylatexenc==2.11          # needed for qiskit circuit drawing
+
+# ── Notebooks ──────────────────────────────────────────────────
+jupyterlab>=4.0.0
+ipywidgets>=8.0.0
