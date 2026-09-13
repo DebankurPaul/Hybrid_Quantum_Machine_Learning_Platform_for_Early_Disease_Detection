@@ -45,7 +45,7 @@ def render():
     st.markdown("Enter 30 original biomedical measurements to generate a model prediction.")
     
     selected_model = st.session_state.get("selected_model")
-    threshold = st.session_state.get("threshold", 0.65)
+    threshold = st.session_state.get("threshold", backend.get_default_threshold())
     
     if selected_model is None:
         st.info("No trained model artifacts are currently available to perform predictions.")

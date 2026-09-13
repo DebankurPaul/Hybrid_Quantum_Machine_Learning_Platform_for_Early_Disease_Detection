@@ -42,9 +42,10 @@ def render_sidebar():
         selected_model = None
         threshold_disabled = True
     
+    default_tau = backend.get_default_threshold()
     threshold = st.sidebar.slider(
         "DECISION THRESHOLD (τ)", 
-        min_value=0.10, max_value=0.90, value=0.65, step=0.01, 
+        min_value=0.10, max_value=0.90, value=default_tau, step=0.01, 
         disabled=threshold_disabled,
         help="Active when a model is loaded." if threshold_disabled else None
     )

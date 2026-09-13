@@ -102,6 +102,18 @@ def get_system_status() -> Dict[str, Any]:
         "model_artifacts": os.path.exists(MODELS_DIR)
     })
 
+def get_default_threshold() -> float:
+    """Dynamically pull the optimal decision threshold from the saved quantum model artifacts."""
+    metrics_path = os.path.join(BEST_MODEL_DIR, "best_model_metrics.json")
+    if os.path.exists(metrics_path):
+        try:
+            with open(metrics_path, "r") as f:
+                data = json.load(f)
+            return float(data.get("best_tau", 0.5))
+        except Exception:
+            return 0.5
+    return 0.5
+
 def get_dataset_metadata() -> Dict[str, Any]:
     return create_response("available", {
         "name": "Breast Cancer Wisconsin (Diagnostic) - WDBC",
