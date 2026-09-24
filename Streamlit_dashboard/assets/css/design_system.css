@@ -1,0 +1,383 @@
+/*
+    Phase 5: Global Design System Tokens & Base Styles
+    Scientific Research Workstation Aesthetic
+*/
+
+:root {
+    /* Color System */
+    --canvas-bg: #F8FAFC;
+    --surface: #FFFFFF;
+    --surface-subtle: #F1F5F9;
+    --border: #E2E8F0;
+    --border-subtle: #CBD5E1;
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --text-muted: #64748B;
+    --accent: #0D9488;
+    --accent-dark: #0F766E;
+    --accent-soft: #F0FDFA;
+    --quantum: #7C3AED;
+    --quantum-dark: #6D28D9;
+    --quantum-soft: #F5F3FF;
+    --success: #059669;
+    --success-soft: #ECFDF5;
+    --warning: #D97706;
+    --warning-soft: #FFFBEB;
+    --error: #DC2626;
+    --error-soft: #FEF2F2;
+
+    /* Typography */
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+
+    /* Radius */
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
+
+    /* Motion */
+    --transition-fast: 0.15s ease-out;
+}
+
+/* Global App Background & Typography */
+.stApp {
+    background-color: var(--canvas-bg);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary) !important;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+/* Sidebar styling */
+[data-testid="stSidebar"] {
+    background-color: var(--surface) !important;
+    border-right: 1px solid var(--border) !important;
+    padding-top: 1rem !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stVerticalBlock"] {
+    gap: 0.75rem;
+}
+
+/* Hide Streamlit default hamburger menu and top padding header */
+header[data-testid="stHeader"] {
+    visibility: hidden;
+    height: 0;
+}
+footer {
+    visibility: hidden;
+    height: 0;
+}
+
+/* Main Content constraints */
+.block-container {
+    padding-top: 1.5rem !important;
+    padding-bottom: 2rem !important;
+    max-width: 1400px;
+}
+
+/* Custom Navigation Radio Buttons */
+[data-testid="stSidebar"] div[role="radiogroup"] > label {
+    padding: 8px 12px;
+    border-radius: var(--radius-md);
+    margin-bottom: 2px;
+    font-weight: 500;
+    font-size: 14px;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+[data-testid="stSidebar"] div[role="radiogroup"] > label:hover {
+    background-color: var(--surface-subtle);
+}
+
+/* Hide the native radio circle for a tab look */
+[data-testid="stSidebar"] div[role="radiogroup"] > label[data-baseweb="radio"] > div:first-child {
+    display: none;
+}
+[data-testid="stSidebar"] div[role="radiogroup"] > label[aria-checked="true"] {
+    background-color: var(--surface-subtle);
+    color: var(--accent-dark);
+    font-weight: 600;
+}
+
+/* Top Context Bar Styling */
+/* The top-context-wrapper div acts as a marker. We style the adjacent Streamlit vertical block border wrapper. */
+.top-context-wrapper {
+    display: none;
+}
+
+/* Fallback for native nesting if Streamlit DOM structure changes */
+.top-context-wrapper [data-testid="stVerticalBlockBorderWrapper"],
+/* Target the border wrapper that is placed in the same main block as our marker */
+div[data-testid="stVerticalBlock"]:has(> div > div > .top-context-wrapper) > div:nth-child(2) [data-testid="stVerticalBlockBorderWrapper"],
+div[data-testid="stVerticalBlock"]:has(.top-context-wrapper) [data-testid="stVerticalBlockBorderWrapper"] {
+    background-color: var(--surface);
+    background-image: var(--context-bg-image);
+    background-size: cover;
+    background-position: right;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    box-shadow: none;
+}
+
+/* Ensure the inner Streamlit container doesn't add extra margins */
+div[data-testid="stVerticalBlock"]:has(.top-context-wrapper) [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stVerticalBlock"] {
+    gap: 0;
+}
+
+/* Reusable Components */
+
+/* Page Header */
+.page-header h2 {
+    margin-bottom: 4px;
+    padding-top: 0;
+}
+.page-header-desc {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.45;
+    padding-bottom: 2px;
+    overflow-wrap: anywhere;
+}
+.page-header-status {
+    text-align: right;
+}
+
+/* Section Header */
+.section-header h4 {
+    margin-bottom: 4px;
+    padding-top: 16px;
+}
+.section-header-desc {
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.45;
+    margin-bottom: 0;
+}
+.section-header hr {
+    margin-top: 8px;
+    margin-bottom: 16px;
+    border: 0;
+    border-top: 1px solid var(--border);
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 48px 24px;
+    background-color: var(--canvas-bg);
+    border: 1px dashed var(--border-subtle);
+    border-radius: var(--radius-lg);
+}
+.empty-state h4 {
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+.empty-state p {
+    color: var(--text-muted);
+    font-size: 14px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Loading State */
+.loading-state {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background-color: var(--canvas-bg);
+    border-radius: var(--radius-md);
+}
+.loading-state span {
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.loading-state .status-loading {
+    animation: loading-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes loading-pulse {
+    0%, 100% { opacity: 0.45; }
+    50% { opacity: 1; }
+}
+
+/* Metric Display Component */
+.metric-box {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 14px 18px;
+    /* Removed shadow as requested */
+}
+
+.metric-label {
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+}
+
+.metric-value {
+    color: var(--text-primary);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.25;
+    font-family: var(--font-mono);
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+/* Form styling */
+div[data-testid="stForm"] {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background-color: var(--surface);
+    padding: 20px;
+}
+
+/* Dataframe table */
+[data-testid="stDataFrame"] {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background-color: var(--surface);
+}
+
+/* Streamlit multiselect model-chip display
+   Keep backend-provided labels intact while allowing selected-model
+   chips to use the available horizontal space without clipping. */
+[data-testid="stMultiSelect"] [data-baseweb="tag"] {
+    max-width: none;
+}
+
+[data-testid="stMultiSelect"] [data-baseweb="tag"] span {
+    max-width: none;
+    overflow: visible;
+    text-overflow: clip;
+    white-space: nowrap;
+}
+
+/* Buttons */
+.stButton button {
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    font-size: 13px;
+    padding: 6px 14px;
+    transition: all var(--transition-fast);
+}
+
+.stButton button[kind="primary"] {
+    background-color: var(--accent-dark);
+    border-color: var(--accent-dark);
+    color: white;
+}
+
+.stButton button[kind="primary"]:hover {
+    background-color: #115E59;
+    border-color: #115E59;
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 3px 10px;
+    border-radius: var(--radius-md);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.status-available { background-color: var(--success-soft); color: var(--success); border: 1px solid #A7F3D0; }
+.status-unavailable { background-color: var(--surface-subtle); color: var(--text-muted); border: 1px solid var(--border-subtle); }
+.status-unverified { background-color: var(--warning-soft); color: var(--warning); border: 1px solid #FDE68A; }
+.status-loading { background-color: var(--quantum-soft); color: var(--quantum-dark); border: 1px solid #DDD6FE; }
+.status-error { background-color: var(--error-soft); color: var(--error); border: 1px solid #FECACA; }
+.status-not-applicable { background-color: var(--surface-subtle); color: var(--text-muted); border: 1px solid var(--border-subtle); }
+
+/* Existing specialized badges to preserve compatibility */
+.badge-classical {
+    background-color: var(--accent-soft); color: var(--accent-dark); border: 1px solid #CCFBF1;
+    padding: 3px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; display: inline-block;
+}
+.badge-quantum {
+    background-color: var(--quantum-soft); color: var(--quantum-dark); border: 1px solid #DDD6FE;
+    padding: 3px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; display: inline-block;
+}
+
+/* Capability UI */
+.capability-alert {
+    padding: 12px 16px;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-md);
+    border-left: 4px solid transparent;
+}
+.capability-alert.unverified {
+    background-color: var(--warning-soft);
+    border-left-color: var(--warning);
+    color: var(--text-primary);
+}
+.capability-alert.unverified strong {
+    color: var(--warning);
+}
+.capability-row {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+}
+.capability-row-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+.capability-row-header .label {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+.capability-row-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+/* Info Row */
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+}
+.info-row:last-child {
+    border-bottom: none;
+}
+.info-label {
+    color: var(--text-muted);
+    font-weight: 500;
+}
+.info-value {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-family: var(--font-mono);
+}
