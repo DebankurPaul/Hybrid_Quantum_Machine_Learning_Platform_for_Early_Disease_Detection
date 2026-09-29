@@ -15,6 +15,14 @@ from sklearn.datasets import load_breast_cancer
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
+AVAILABLE_DATASETS = {
+    "wdbc": "Solid Oncology - WDBC Breast Cancer Cytology",
+    "heart": "Cardiology - UCI Ischemic Heart EHR Telemetry",
+    "leukemia": "Hematologic Oncology - Golub Leukemia Microarray Genomics",
+    "cardio": "Cardiology - Cardiovascular Disease Dataset",
+    "thyroid": "Endocrinology - Thyroid Disease Dataset"
+}
+
 if hasattr(sys.stdout, 'reconfigure'):
     sys.stdout.reconfigure(encoding='utf-8')
 warnings.filterwarnings("ignore")
@@ -80,13 +88,13 @@ def load_clinical_data(dataset_key="wdbc", data_dir="data/", test_size=0.25, see
         X = raw.data
         y = 1 - raw.target  # 1 = Malignant, 0 = Benign
         feature_names = list(raw.feature_names)
-        target_labels = ["Benign (Routine)", "Malignant (High-Risk Oncology)"]
+        target_labels = ["Benign", "Malignant"]
         
     elif dataset_key in ["heart", "cardiology"]:
         cols = ["age", "sex", "cp", "trestbps", "chol", "fbs", "restecg", 
                 "thalach", "exang", "oldpeak", "slope", "ca", "thal"]
         feature_names = cols
-        target_labels = ["Normal / Low Risk", "Early Ischemic Risk Flagged"]
+        target_labels = ["Normal", "Ischemic"]
         url = "https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.cleveland.data"
         
         try:
@@ -99,7 +107,7 @@ def load_clinical_data(dataset_key="wdbc", data_dir="data/", test_size=0.25, see
             X, y = _generate_synthetic_heart(seed=seed)
 
     elif dataset_key in ["leukemia", "genomics", "golub"]:
-        target_labels = ["Acute Lymphoblastic Leukemia (ALL)", "Acute Myeloid Leukemia (AML)"]
+        target_labels = ["ALL", "AML"]
         train_path = os.path.join(data_dir, "data_set_ALL_AML_train.csv")
         actual_path = os.path.join(data_dir, "actual.csv")
         
@@ -132,8 +140,43 @@ def load_clinical_data(dataset_key="wdbc", data_dir="data/", test_size=0.25, see
             X, y = _generate_synthetic_leukemia(seed=seed)
             feature_names = [f"Gene_{i+1}" for i in range(7129)]
             
+    elif dataset_key in ["cardio"]:
+        target_labels = ["No CVD", "CVD"]
+        path = os.path.join(data_dir, "raw", "Cardio", "cardio_train.csv")
+        try:
+            df = pd.read_csv(path, sep=";")
+            y = df["cardio"].values
+            X_df = df.drop(columns=["id", "cardio"])
+            feature_names = X_df.columns.tolist()
+            X = X_df.values
+            print(f"[DataLoader] Successfully loaded Cardio dataset ({len(X)} samples).")
+        except Exception as e:
+            print(f"[DataLoader] Failed to load Cardio dataset ({e}).")
+            raise
+
+    elif dataset_key in ["thyroid"]:
+        target_labels = ["No Recurrence", "Recurrence"]
+        path = os.path.join(data_dir, "raw", "Thyroid", "Thyroid_Diff.csv")
+        try:
+            df = pd.read_csv(path)
+            # Encode categorical features
+            from sklearn.preprocessing import LabelEncoder
+            for col in df.columns:
+                if df[col].dtype == 'object':
+                    le = LabelEncoder()
+                    df[col] = le.fit_transform(df[col].astype(str))
+            
+            y = df["Recurred"].values
+            X_df = df.drop(columns=["Recurred"])
+            feature_names = X_df.columns.tolist()
+            X = X_df.values
+            print(f"[DataLoader] Successfully loaded Thyroid dataset ({len(X)} samples).")
+        except Exception as e:
+            print(f"[DataLoader] Failed to load Thyroid dataset ({e}).")
+            raise
+
     else:
-        raise ValueError(f"Unknown clinical dataset_key: '{dataset_key}'. Must be 'wdbc', 'heart', or 'leukemia'.")
+        raise ValueError(f"Unknown clinical dataset_key: '{dataset_key}'. Must be 'wdbc', 'heart', 'leukemia', 'cardio', or 'thyroid'.")
 
     # Stratified Train/Test Split
     X_train, X_test, y_train, y_test = train_test_split(

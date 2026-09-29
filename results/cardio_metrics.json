@@ -1,0 +1,66 @@
+{
+    "dataset": "Cardio",
+    "benchmark_artifacts": {
+        "radar": "results/figures/cardio_clinical_radar.png",
+        "delta": "results/figures/quantum_vs_classical_delta.png"
+    },
+    "evaluation_protocol": "Stratified Test Set (Subsampled)",
+    "models": {
+        "classical_baseline": {
+            "name": "Logistic Regression",
+            "metrics": {
+                "accuracy": 0.61,
+                "precision": 0.7105263157894737,
+                "sensitivity": 0.4909090909090909,
+                "specificity": 0.7555555555555555,
+                "f1": 0.5806451612903226,
+                "roc_auc": 0.7418181818181818,
+                "confusion_matrix": {
+                    "matrix": [
+                        [
+                            34,
+                            11
+                        ],
+                        [
+                            28,
+                            27
+                        ]
+                    ],
+                    "labels": [
+                        "No CVD",
+                        "CVD"
+                    ]
+                },
+                "mcc": 0.2526123565712085
+            }
+        },
+        "hybrid_quantum": {
+            "name": "Quantum QSVC (8-qubit)",
+            "metrics": {
+                "accuracy": 0.52,
+                "precision": 0.5813953488372093,
+                "sensitivity": 0.45454545454545453,
+                "specificity": 0.6,
+                "f1": 0.5102040816326531,
+                "roc_auc": null,
+                "confusion_matrix": {
+                    "matrix": [
+                        [
+                            27,
+                            18
+                        ],
+                        [
+                            30,
+                            25
+                        ]
+                    ],
+                    "labels": [
+                        "No CVD",
+                        "CVD"
+                    ]
+                },
+                "mcc": 0.05481185639664855
+            }
+        }
+    }
+}

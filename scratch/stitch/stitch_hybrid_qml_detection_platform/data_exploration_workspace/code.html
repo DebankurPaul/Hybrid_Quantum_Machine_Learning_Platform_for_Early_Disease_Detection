@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface": "#f6f9ff", "quantum-soft-bg": "#F0EEFC", "on-tertiary": "#ffffff", "secondary": "#5b4dbd", "surface-container-lowest": "#ffffff", "tertiary": "#6d4100", "border-divider": "#DCE2E7", "secondary-fixed": "#e4dfff", "primary-fixed": "#bde9ff", "on-error": "#ffffff", "primary-fixed-dim": "#8ad0ef", "status-warning": "#9A6A16", "surface-bright": "#f6f9ff", "inverse-on-surface": "#e6f2ff", "text-charcoal": "#17212B", "background": "#f6f9ff", "tertiary-fixed-dim": "#faba71", "on-surface": "#111d26", "canvas-bg": "#F6F8FA", "on-secondary-container": "#2e1990", "surface-container-high": "#ddeaf7", "text-secondary": "#5F6B76", "on-error-container": "#93000a", "on-background": "#111d26", "surface-container-low": "#ebf5ff", "secondary-fixed-dim": "#c7bfff", "inverse-surface": "#26323b", "status-error": "#B74343", "error-container": "#ffdad6", "on-secondary": "#ffffff", "inverse-primary": "#8ad0ef", "tertiary-fixed": "#ffddbb", "surface-dim": "#cfdbe8", "on-secondary-fixed": "#170065", "tertiary-container": "#895818", "on-primary": "#ffffff", "surface-white": "#FFFFFF", "on-primary-fixed": "#001f2a", "primary-container": "#176b87", "on-surface-variant": "#3f484d", "surface-container": "#e3effc", "outline-variant": "#bfc8cd", "on-secondary-fixed-variant": "#4333a4", "secondary-container": "#998cff", "primary": "#00526a", "on-tertiary-container": "#ffd9b2", "status-success": "#237A57", "on-tertiary-fixed-variant": "#673d00", "surface-tint": "#0d6682", "surface-container-highest": "#d8e4f1", "on-primary-fixed-variant": "#004d64", "accent-soft-bg": "#E7F3F6", "error": "#ba1a1a", "on-tertiary-fixed": "#2b1700", "text-metadata": "#87929C", "surface-variant": "#d8e4f1", "on-primary-container": "#b6e7ff", "surface-subtle": "#F1F4F6", "outline": "#70787d" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-lg": "1rem", "space-3xl": "2.5rem", "margin": "2rem", "space-xl": "1.5rem", "gutter": "1.5rem", "space-md": "0.75rem", "space-sm": "0.5rem", "margin-mobile": "1rem", "space-2xl": "2rem", "gutter-mobile": "1rem", "space-xs": "0.25rem" }, "fontFamily": { "headline-xl-mobile": ["Inter"], "body-md": ["Inter"], "headline-md": ["Inter"], "label-sm": ["Inter"], "headline-lg": ["Inter"], "body-sm": ["Inter"], "label-md": ["Inter"], "headline-sm": ["Inter"], "body-lg": ["Inter"], "headline-xl": ["Inter"], "label-lg": ["Inter"] }, "fontSize": { "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }], "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "500" }] } } } }</script></head><body class="bg-canvas-bg font-body-md text-text-charcoal"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-white border-r border-border-divider z-50 flex flex-col justify-between overflow-y-auto"><div class="flex flex-col"><div class="p-space-lg border-b border-border-divider"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-xl bg-primary flex items-center justify-center text-on-primary"><span class="material-symbols-outlined text-[20px]">hub</span></div><span class="font-headline-sm text-headline-sm text-text-charcoal tracking-tight">Hybrid-QML</span></div><p class="mt-space-xs font-body-sm text-body-sm text-text-secondary leading-snug">Research platform for evaluating classical and quantum machine learning approaches</p></div><div class="p-space-md border-b border-border-divider bg-surface-subtle/50 flex flex-col gap-space-xs"><span class="font-label-sm text-label-sm text-text-metadata uppercase tracking-wider">Active Context</span><div class="flex items-center justify-between bg-surface-white border border-border-divider rounded-lg px-space-sm py-space-xs hover:border-outline transition-colors cursor-pointer"><div class="flex items-center gap-space-xs overflow-hidden"><span class="font-label-sm text-label-sm text-text-metadata">DATASET</span><span class="font-label-md text-label-md text-text-charcoal truncate font-medium">WDBC Breast Cancer</span></div><span class="material-symbols-outlined text-text-secondary text-[16px]">expand_more</span></div><div class="flex items-center justify-between bg-quantum-soft-bg border border-secondary/20 rounded-lg px-space-sm py-space-xs"><div class="flex items-center gap-space-xs"><span class="font-label-sm text-label-sm text-secondary font-medium">MODEL</span><span class="font-label-md text-label-md text-secondary truncate font-semibold">Quantum VQC · 8 qubits</span></div><span class="w-2 h-2 rounded-full bg-secondary"></span></div></div><div class="px-space-md py-space-lg"><span class="px-space-sm font-label-sm text-label-sm text-text-metadata uppercase tracking-wider block mb-space-xs">Navigation</span><nav class="flex flex-col gap-space-xs" data-active-classes="bg-accent-soft-bg text-primary font-semibold border-l-2 border-primary"><a class="flex items-center gap-space-md px-space-sm py-space-xs rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-charcoal transition-colors font-label-lg text-label-lg" data-path="overview" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span>Overview</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-sm py-space-xs rounded-lg transition-colors bg-accent-soft-bg text-primary font-semibold border-l-2 border-primary" data-path="data" href="#"><span class="material-symbols-outlined text-[20px]">database</span><span>Data</span></a><a class="flex items-center gap-space-md px-space-sm py-space-xs rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-charcoal transition-colors font-label-lg text-label-lg" data-path="models" href="#"><span class="material-symbols-outlined text-[20px]">memory</span><span>Models</span></a><a class="flex items-center gap-space-md px-space-sm py-space-xs rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-charcoal transition-colors font-label-lg text-label-lg" data-path="prediction" href="#"><span class="material-symbols-outlined text-[20px]">batch_prediction</span><span>Prediction</span></a><a class="flex items-center gap-space-md px-space-sm py-space-xs rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-charcoal transition-colors font-label-lg text-label-lg" data-path="evaluation" href="#"><span class="material-symbols-outlined text-[20px]">insights</span><span>Evaluation</span></a><a class="flex items-center gap-space-md px-space-sm py-space-xs rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-charcoal transition-colors font-label-lg text-label-lg" data-path="explainability" href="#"><span class="material-symbols-outlined text-[20px]">bubble_chart</span><span>Explainability</span></a></nav></div></div><div class="p-space-md border-t border-border-divider bg-surface-subtle/30"><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm text-label-sm text-text-metadata uppercase tracking-wider">System Status</span><span class="font-label-sm text-label-sm text-status-success font-medium">Operational</span></div><div class="flex flex-col gap-space-xs bg-surface-white border border-border-divider rounded-lg p-space-sm font-label-sm text-label-sm"><div class="flex items-center justify-between"><span class="text-text-secondary">Data</span><div class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-status-success"></span><span class="text-text-charcoal font-medium">Ready</span></div></div><div class="flex items-center justify-between"><span class="text-text-secondary">Preprocessing</span><div class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-status-success"></span><span class="text-text-charcoal font-medium truncate max-w-[110px]">Std + PCA</span></div></div><div class="flex items-center justify-between"><span class="text-text-secondary">Model Artifacts</span><div class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-status-success"></span><span class="text-text-charcoal font-medium">5 Trained</span></div></div><div class="flex items-center justify-between"><span class="text-text-secondary">Quantum Backend</span><div class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span class="text-text-charcoal font-medium truncate max-w-[110px]">Aer Sim · 8Q</span></div></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-white border-b border-border-divider z-40 flex items-center justify-between px-space-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm border-r border-border-divider pr-space-lg hidden lg:flex"><div class="flex items-center gap-space-xs bg-surface-subtle border border-border-divider px-space-sm py-1 rounded-lg"><span class="material-symbols-outlined text-text-secondary text-[16px]">folder</span><span class="font-label-sm text-label-sm text-text-charcoal font-medium">WDBC Breast Cancer</span></div><div class="flex items-center gap-space-xs bg-quantum-soft-bg border border-secondary/20 px-space-sm py-1 rounded-lg"><span class="material-symbols-outlined text-secondary text-[16px]">blur_on</span><span class="font-label-sm text-label-sm text-secondary font-semibold">Quantum VQC</span></div></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-xs bg-surface-white border border-border-divider hover:bg-surface-subtle text-text-charcoal px-space-md py-1.5 rounded-lg font-label-md text-label-md transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">dataset</span><span>Dataset Selector</span></button><button class="flex items-center gap-space-xs bg-primary hover:bg-[#13576E] text-on-primary px-space-md py-1.5 rounded-lg font-label-md text-label-md transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-[18px]">download</span><span>Export Artifacts</span></button><div class="h-6 w-px bg-border-divider"></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="w-full pt-16 bg-canvas-bg min-h-screen px-space-xl py-space-xl"><div class="flex flex-col w-full">
+<!-- Top Workspace Context Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md mb-space-2xl">
+<div>
+<div class="flex items-center gap-space-sm mb-space-xs">
+<h1 class="font-headline-xl text-headline-xl text-text-charcoal tracking-tight">Data</h1>
+<span class="inline-flex items-center px-space-sm py-0.5 rounded-full text-label-sm font-label-sm bg-accent-soft-bg text-primary font-medium">
+          Workspace Module
+        </span>
+</div>
+<p class="font-body-md text-body-md text-text-secondary max-w-3xl">
+        Inspect dataset structure, class distribution, feature space, and preprocessing.
+      </p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="inline-flex items-center gap-space-xs px-space-md py-1.5 rounded-full bg-surface-white shadow-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">biotech</span>
+<span class="font-label-md text-label-md text-text-charcoal font-medium">WDBC · Breast Cancer Wisconsin (Diagnostic)</span>
+</div>
+<div class="inline-flex items-center gap-space-xs px-space-md py-1.5 rounded-full bg-accent-soft-bg shadow-sm">
+<span class="w-2 h-2 rounded-full bg-status-success animate-pulse"></span>
+<span class="font-label-md text-label-md text-primary font-semibold">Inference-ready · 569 Records · 30 Features</span>
+</div>
+</div>
+</div>
+<!-- KPI Statistical Strip -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-lg mb-space-2xl">
+<div class="bg-surface-white rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-text-secondary mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-metadata">Total Samples</span>
+<span class="material-symbols-outlined text-[20px] text-primary">groups</span>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-text-charcoal tracking-tight font-semibold">569</span>
+<span class="font-label-sm text-label-sm text-status-success font-medium">100% Verified</span>
+</div>
+<div class="mt-space-sm pt-space-xs text-text-secondary font-label-sm text-label-sm flex items-center justify-between">
+<span>Training: <strong>455</strong></span>
+<span class="text-text-metadata">/</span>
+<span>Test: <strong>114</strong></span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-text-secondary mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-metadata">Input Features</span>
+<span class="material-symbols-outlined text-[20px] text-primary">view_column</span>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-text-charcoal tracking-tight font-semibold">30</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">8 Quantum</span>
+</div>
+<div class="mt-space-sm pt-space-xs text-text-secondary font-label-sm text-label-sm truncate">
+        Continuous numerical attributes
+      </div>
+</div>
+<div class="bg-surface-white rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-text-secondary mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-metadata">Target Classes</span>
+<span class="material-symbols-outlined text-[20px] text-primary">category</span>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-text-charcoal tracking-tight font-semibold">2</span>
+<span class="font-label-sm text-label-sm text-text-secondary font-medium">Binary</span>
+</div>
+<div class="mt-space-sm pt-space-xs text-text-secondary font-label-sm text-label-sm flex items-center gap-space-xs">
+<span class="inline-block w-2 h-2 rounded-full bg-status-success"></span>
+<span>Benign 'B'</span>
+<span class="inline-block w-2 h-2 rounded-full bg-status-error ml-space-xs"></span>
+<span>Malignant 'M'</span>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-text-secondary mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-metadata">Missing Values</span>
+<span class="material-symbols-outlined text-[20px] text-status-success">check_circle</span>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-status-success tracking-tight font-semibold">0</span>
+<span class="font-label-sm text-label-sm text-status-success font-medium">0.00%</span>
+</div>
+<div class="mt-space-sm pt-space-xs text-text-secondary font-label-sm text-label-sm truncate">
+        Complete dataset verified
+      </div>
+</div>
+<div class="bg-surface-white rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-text-secondary mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-metadata">Evaluation Status</span>
+<span class="material-symbols-outlined text-[20px] text-secondary">tune</span>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-md text-headline-md text-text-charcoal tracking-tight font-semibold">Stratified 80/20</span>
+</div>
+<div class="mt-space-sm pt-space-xs text-text-secondary font-label-sm text-label-sm flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[14px] text-text-metadata">lock</span>
+<span>Deterministic Seed 42</span>
+</div>
+</div>
+</div>
+<!-- Analytical Grid: Class Distribution & Dataset Profile -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl mb-space-2xl">
+<!-- Class Distribution Panel -->
+<div class="lg:col-span-6 bg-surface-white rounded-xl p-space-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-md mb-space-lg">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-metadata block">Target Pathology</span>
+<h2 class="font-headline-md text-headline-md text-text-charcoal">Class Distribution</h2>
+</div>
+<span class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-full text-label-sm font-label-sm bg-surface-subtle text-text-secondary">
+<span class="material-symbols-outlined text-[14px]">balance</span>
+            Ratio 1.68:1
+          </span>
+</div>
+<!-- Proportion Graphic Representation -->
+<div class="space-y-space-md mb-space-xl">
+<div class="flex items-center justify-between text-label-md font-label-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-full bg-status-success"></span>
+<span class="font-medium text-text-charcoal">Benign (B)</span>
+<span class="text-text-metadata">Non-carcinogenic mass</span>
+</div>
+<span class="font-semibold text-text-charcoal">357 records (62.7%)</span>
+</div>
+<div class="w-full bg-surface-subtle h-3 rounded-full overflow-hidden flex">
+<div class="bg-status-success h-full transition-all duration-500" style="width: 62.74%"></div>
+<div class="bg-status-error h-full transition-all duration-500" style="width: 37.26%"></div>
+</div>
+<div class="flex items-center justify-between text-label-md font-label-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-full bg-status-error"></span>
+<span class="font-medium text-text-charcoal">Malignant (M)</span>
+<span class="text-text-metadata">Invasive carcinoma</span>
+</div>
+<span class="font-semibold text-text-charcoal">212 records (37.3%)</span>
+</div>
+</div>
+<!-- Metric Cards -->
+<div class="grid grid-cols-2 gap-space-md mb-space-lg">
+<div class="bg-surface-subtle/70 rounded-lg p-space-md">
+<span class="font-label-sm text-label-sm text-text-metadata block mb-1">Train Cohort (80%)</span>
+<div class="flex items-baseline justify-between mb-1">
+<span class="font-headline-sm text-headline-sm text-text-charcoal">455 total</span>
+<span class="font-label-sm text-label-sm text-text-secondary">N=455</span>
+</div>
+<div class="flex items-center gap-space-md text-label-sm font-label-sm text-text-secondary">
+<span class="text-status-success font-medium">285 Benign</span>
+<span>•</span>
+<span class="text-status-error font-medium">170 Malignant</span>
+</div>
+</div>
+<div class="bg-surface-subtle/70 rounded-lg p-space-md">
+<span class="font-label-sm text-label-sm text-text-metadata block mb-1">Held-out Test Cohort (20%)</span>
+<div class="flex items-baseline justify-between mb-1">
+<span class="font-headline-sm text-headline-sm text-text-charcoal">114 total</span>
+<span class="font-label-sm text-label-sm text-text-secondary">N=114</span>
+</div>
+<div class="flex items-center gap-space-md text-label-sm font-label-sm text-text-secondary">
+<span class="text-status-success font-medium">72 Benign</span>
+<span>•</span>
+<span class="text-status-error font-medium">42 Malignant</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between text-label-sm font-label-sm text-text-secondary pt-space-md bg-surface-subtle/30 px-space-md py-space-xs rounded-lg">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-primary">pie_chart</span>
+<span>Class balance maintained identically across train/test splits.</span>
+</div>
+<span class="font-medium text-text-charcoal">Δ < 0.04% bias</span>
+</div>
+</div>
+<!-- Dataset Profile & Provenance Metadata -->
+<div class="lg:col-span-6 bg-surface-white rounded-xl p-space-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-md mb-space-lg">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-metadata block">Diagnostic Integrity</span>
+<h2 class="font-headline-md text-headline-md text-text-charcoal">Dataset Profile & Provenance</h2>
+</div>
+<span class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-full text-label-sm font-label-sm bg-quantum-soft-bg text-secondary font-medium">
+<span class="material-symbols-outlined text-[14px]">format_image_left</span>
+            Cleaned & Audited
+          </span>
+</div>
+<div class="space-y-space-md">
+<div class="flex items-start justify-between py-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-text-secondary text-[20px]">database</span>
+<div>
+<div class="font-label-md text-label-md font-semibold text-text-charcoal">Dataset Name</div>
+<div class="font-body-sm text-body-sm text-text-secondary">Breast Cancer Wisconsin (Diagnostic)</div>
+</div>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-subtle px-space-sm py-0.5 rounded text-text-secondary">ID: wdbc_1995</span>
+</div>
+<div class="flex items-start justify-between py-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-text-secondary text-[20px]">hub</span>
+<div>
+<div class="font-label-md text-label-md font-semibold text-text-charcoal">Origin & Biopsy Modality</div>
+<div class="font-body-sm text-body-sm text-text-secondary">UCI Machine Learning Repository / Clinical FNA Biopsy</div>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-medium">Dr. W.H. Wolberg</span>
+</div>
+<div class="flex items-start justify-between py-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-text-secondary text-[20px]">tune</span>
+<div>
+<div class="font-label-md text-label-md font-semibold text-text-charcoal">Preprocessing State</div>
+<div class="font-body-sm text-body-sm text-text-secondary">Standardized (Z-Score: Mean=0.00, Variance=1.00)</div>
+</div>
+</div>
+<span class="inline-flex items-center px-space-sm py-0.5 rounded text-label-sm font-label-sm bg-accent-soft-bg text-primary font-medium">StandardScaler</span>
+</div>
+<div class="flex items-start justify-between py-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">blur_on</span>
+<div>
+<div class="font-label-md text-label-md font-semibold text-text-charcoal">Quantum Feature Space</div>
+<div class="font-body-sm text-body-sm text-text-secondary">PCA-reduced to 8 principal components (74.2% variance)</div>
+</div>
+</div>
+<span class="inline-flex items-center px-space-sm py-0.5 rounded text-label-sm font-label-sm bg-quantum-soft-bg text-secondary font-medium">8 Qubits ZZ-Map</span>
+</div>
+<div class="flex items-start justify-between py-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-status-success text-[20px]">verified</span>
+<div>
+<div class="font-label-md text-label-md font-semibold text-text-charcoal">Data Quality & Leakage Guard</div>
+<div class="font-body-sm text-body-sm text-text-secondary">Zero null values, no duplicates. Strict training-only transform fit.</div>
+</div>
+</div>
+<span class="inline-flex items-center px-space-sm py-0.5 rounded text-label-sm font-label-sm bg-surface-subtle text-status-success font-medium">No Leakage</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between text-label-sm font-label-sm text-text-secondary pt-space-md mt-space-md">
+<span>Artifact Fingerprint:</span>
+<code class="text-text-charcoal bg-surface-subtle px-2 py-0.5 rounded font-mono text-[11px]">sha256:4a8b79f...31c0</code>
+</div>
+</div>
+</div>
+<!-- Preprocessing Pipeline Flow (Horizontal Card Chain) -->
+<div class="bg-surface-white rounded-xl p-space-xl shadow-sm mb-space-2xl">
+<div class="flex items-center justify-between mb-space-lg">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-metadata block">Deterministic Pipeline</span>
+<h2 class="font-headline-md text-headline-md text-text-charcoal">Preprocessing & Dimensionality Chain</h2>
+</div>
+<div class="flex items-center gap-space-sm text-label-sm font-label-sm text-text-secondary">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-status-success"></span> Fit on Train Only</span>
+<span class="flex items-center gap-1 ml-space-md"><span class="w-2 h-2 rounded-full bg-secondary"></span> Quantum Ready</span>
+</div>
+</div>
+<!-- Pipeline Step Grid -->
+<div class="grid grid-cols-1 md:grid-cols-5 gap-space-md relative">
+<!-- Step 1 -->
+<div class="bg-surface-subtle/60 rounded-xl p-space-md flex flex-col justify-between hover:bg-surface-subtle transition-colors relative">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary text-label-sm font-label-sm flex items-center justify-center font-bold">1</span>
+<span class="font-label-sm text-label-sm text-text-metadata">RAW INGEST</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-charcoal mb-1">Raw Dataset</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mb-space-sm">UCI Diagnostic biopsy mass metrics</p>
+<div class="space-y-1 text-label-sm font-label-sm bg-surface-white p-space-sm rounded-lg shadow-sm">
+<div class="flex justify-between text-text-secondary"><span>Dimension:</span><span class="text-text-charcoal font-semibold">569 × 30</span></div>
+<div class="flex justify-between text-text-secondary"><span>Format:</span><span class="text-text-charcoal">float64</span></div>
+<div class="flex justify-between text-text-secondary"><span>Missing:</span><span class="text-status-success font-medium">0 cells</span></div>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs font-label-sm text-label-sm text-text-metadata flex items-center justify-between">
+<span>Source: UCI WDBC</span>
+<span class="material-symbols-outlined text-[16px] text-primary">arrow_forward</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface-subtle/60 rounded-xl p-space-md flex flex-col justify-between hover:bg-surface-subtle transition-colors relative">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary text-label-sm font-label-sm flex items-center justify-center font-bold">2</span>
+<span class="font-label-sm text-label-sm text-text-metadata">PARTITION</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-charcoal mb-1">Train/Test Split</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mb-space-sm">Stratified by pathology label (Seed 42)</p>
+<div class="space-y-1 text-label-sm font-label-sm bg-surface-white p-space-sm rounded-lg shadow-sm">
+<div class="flex justify-between text-text-secondary"><span>Split Ratio:</span><span class="text-text-charcoal font-semibold">80% / 20%</span></div>
+<div class="flex justify-between text-text-secondary"><span>Train Cohort:</span><span class="text-text-charcoal">455 rows</span></div>
+<div class="flex justify-between text-text-secondary"><span>Test Cohort:</span><span class="text-text-charcoal">114 rows</span></div>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs font-label-sm text-label-sm text-text-metadata flex items-center justify-between">
+<span>Stratified: Verified</span>
+<span class="material-symbols-outlined text-[16px] text-primary">arrow_forward</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface-subtle/60 rounded-xl p-space-md flex flex-col justify-between hover:bg-surface-subtle transition-colors relative">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary text-label-sm font-label-sm flex items-center justify-center font-bold">3</span>
+<span class="font-label-sm text-label-sm text-text-metadata">NORMALIZATION</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-charcoal mb-1">StandardScaler</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mb-space-sm">Z-score normalization fit on Train only</p>
+<div class="space-y-1 text-label-sm font-label-sm bg-surface-white p-space-sm rounded-lg shadow-sm">
+<div class="flex justify-between text-text-secondary"><span>Target Mean:</span><span class="text-text-charcoal font-semibold">μ = 0.0</span></div>
+<div class="flex justify-between text-text-secondary"><span>Target Std:</span><span class="text-text-charcoal">σ = 1.0</span></div>
+<div class="flex justify-between text-text-secondary"><span>Leak Guard:</span><span class="text-status-success font-medium">Fit on Train</span></div>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs font-label-sm text-label-sm text-text-metadata flex items-center justify-between">
+<span>Sklearn 1.3+</span>
+<span class="material-symbols-outlined text-[16px] text-primary">arrow_forward</span>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="bg-surface-subtle/60 rounded-xl p-space-md flex flex-col justify-between hover:bg-surface-subtle transition-colors relative">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="w-6 h-6 rounded-full bg-secondary text-on-secondary text-label-sm font-label-sm flex items-center justify-center font-bold">4</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">REDUCTION</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-charcoal mb-1">PCA Projection</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mb-space-sm">Orthogonal feature compression (30 → 8)</p>
+<div class="space-y-1 text-label-sm font-label-sm bg-surface-white p-space-sm rounded-lg shadow-sm">
+<div class="flex justify-between text-text-secondary"><span>Components:</span><span class="text-secondary font-semibold">8 Principal</span></div>
+<div class="flex justify-between text-text-secondary"><span>Variance Retained:</span><span class="text-text-charcoal font-semibold">74.2%</span></div>
+<div class="flex justify-between text-text-secondary"><span>Orthogonality:</span><span class="text-status-success font-medium">Verified</span></div>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs font-label-sm text-label-sm text-text-metadata flex items-center justify-between">
+<span>Qiskit Feature Space</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">arrow_forward</span>
+</div>
+</div>
+<!-- Step 5 -->
+<div class="bg-quantum-soft-bg rounded-xl p-space-md flex flex-col justify-between hover:bg-quantum-soft-bg/80 transition-colors">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="w-6 h-6 rounded-full bg-secondary text-on-secondary text-label-sm font-label-sm flex items-center justify-center font-bold">5</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">ENCODING READY</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-secondary mb-1">Dual Target Space</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mb-space-sm">Classical & Quantum pipeline ready</p>
+<div class="space-y-1 text-label-sm font-label-sm bg-surface-white p-space-sm rounded-lg shadow-sm">
+<div class="flex justify-between text-text-secondary"><span>Classical:</span><span class="text-text-charcoal font-semibold">30D Full / 8D</span></div>
+<div class="flex justify-between text-text-secondary"><span>Quantum:</span><span class="text-secondary font-semibold">8D ZZ-Map</span></div>
+<div class="flex justify-between text-text-secondary"><span>Qubit Count:</span><span class="text-secondary font-semibold">8 Entangled</span></div>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs font-label-sm text-label-sm text-secondary font-semibold flex items-center justify-between">
+<span>Ready for Models</span>
+<span class="material-symbols-outlined text-[16px]">task_alt</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Feature Explorer Workspace Table -->
+<div class="bg-surface-white rounded-xl shadow-sm overflow-hidden mb-space-2xl">
+<!-- Table Toolbar Header -->
+<div class="p-space-lg flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-space-sm">
+<h2 class="font-headline-md text-headline-md text-text-charcoal">Feature Explorer</h2>
+<span class="px-space-sm py-0.5 rounded text-label-sm font-label-sm bg-accent-soft-bg text-primary font-medium">30 Features</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5">Explore mean, standard error, worst distribution characteristics and 8-qubit PCA projections.</p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Search -->
+<div class="relative min-w-[240px]">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-text-metadata text-[18px]">search</span>
+<input class="w-full bg-surface-subtle text-text-charcoal placeholder-text-metadata font-body-sm text-body-sm pl-9 pr-space-md py-2 rounded-lg focus:outline-none focus:bg-surface-white focus:shadow-inner transition-all" id="featureSearchInput" placeholder="Filter feature by name..." type="text"/>
+</div>
+<!-- Filter Tabs -->
+<div class="inline-flex bg-surface-subtle rounded-lg p-1" id="groupFilterButtons">
+<button class="filter-btn px-space-md py-1 rounded text-label-sm font-label-sm font-semibold bg-surface-white text-text-charcoal shadow-sm transition-all" data-filter="all" type="button">All (30)</button>
+<button class="filter-btn px-space-md py-1 rounded text-label-sm font-label-sm text-text-secondary hover:text-text-charcoal transition-all" data-filter="Mean" type="button">Mean (10)</button>
+<button class="filter-btn px-space-md py-1 rounded text-label-sm font-label-sm text-text-secondary hover:text-text-charcoal transition-all" data-filter="SE" type="button">SE (10)</button>
+<button class="filter-btn px-space-md py-1 rounded text-label-sm font-label-sm text-text-secondary hover:text-text-charcoal transition-all" data-filter="Worst" type="button">Worst (10)</button>
+</div>
+<!-- Download CSV Snapshot -->
+<button class="flex items-center gap-space-xs bg-surface-subtle hover:bg-surface-container text-text-charcoal px-space-md py-2 rounded-lg font-label-sm text-label-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Schema</span>
+</button>
+</div>
+</div>
+<!-- Analytical Data Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-sm text-body-sm" id="featuresTable">
+<thead class="bg-surface-subtle text-text-secondary font-label-md text-label-md uppercase tracking-wider select-none">
+<tr>
+<th class="py-space-md px-space-lg">Feature Name</th>
+<th class="py-space-md px-space-md">Group</th>
+<th class="py-space-md px-space-md">Data Type</th>
+<th class="py-space-md px-space-md">Value Range [Min – Max]</th>
+<th class="py-space-md px-space-md text-center">Missing</th>
+<th class="py-space-md px-space-md">8-Qubit Space & PCA Loading</th>
+<th class="py-space-md px-space-lg">Pipeline Stage</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-divider/60">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-subtle/50 transition-colors feature-row" data-group="Mean">
+<td class="py-space-md px-space-lg font-medium text-text-charcoal">
+<div class="flex items-center gap-space-xs">
+<span class="font-mono text-primary font-semibold">radius_mean</span>
+<span class="material-symbols-outlined text-text-metadata text-[14px]" title="Mean of distances from center to points on the perimeter">info</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-accent-soft-bg text-primary">Mean</span>
+</td>
+<td class="py-space-md px-space-md font-mono text-text-secondary text-label-sm">float64</td>
+<td class="py-space-md px-space-md font-mono text-text-charcoal">6.981 – 28.110</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center text-status-success font-label-sm font-semibold">0% (0)</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-quantum-soft-bg text-secondary font-semibold">Yes · PC1</span>
+<span class="text-label-sm text-text-metadata font-mono">+0.218</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="text-label-sm font-label-sm text-text-secondary">StandardScaler → PCA-8</span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-subtle/50 transition-colors feature-row" data-group="Mean">
+<td class="py-space-md px-space-lg font-medium text-text-charcoal">
+<div class="flex items-center gap-space-xs">
+<span class="font-mono text-primary font-semibold">texture_mean</span>
+<span class="material-symbols-outlined text-text-metadata text-[14px]" title="Standard deviation of gray-scale values">info</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-accent-soft-bg text-primary">Mean</span>
+</td>
+<td class="py-space-md px-space-md font-mono text-text-secondary text-label-sm">float64</td>
+<td class="py-space-md px-space-md font-mono text-text-charcoal">9.710 – 39.280</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center text-status-success font-label-sm font-semibold">0% (0)</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-quantum-soft-bg text-secondary font-semibold">Yes · PC2</span>
+<span class="text-label-sm text-text-metadata font-mono">+0.233</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="text-label-sm font-label-sm text-text-secondary">StandardScaler → PCA-8</span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-subtle/50 transition-colors feature-row" data-group="Mean">
+<td class="py-space-md px-space-lg font-medium text-text-charcoal">
+<div class="flex items-center gap-space-xs">
+<span class="font-mono text-primary font-semibold">perimeter_mean</span>
+<span class="material-symbols-outlined text-text-metadata text-[14px]">info</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-accent-soft-bg text-primary">Mean</span>
+</td>
+<td class="py-space-md px-space-md font-mono text-text-secondary text-label-sm">float64</td>
+<td class="py-space-md px-space-md font-mono text-text-charcoal">43.790 – 188.500</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center text-status-success font-label-sm font-semibold">0% (0)</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-quantum-soft-bg text-secondary font-semibold">Yes · PC1</span>
+<span class="text-label-sm text-text-metadata font-mono">+0.227</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="text-label-sm font-label-sm text-text-secondary">StandardScaler → PCA-8</span>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-subtle/50 transition-colors feature-row" data-group="Mean">
+<td class="py-space-md px-space-lg font-medium text-text-charcoal">
+<div class="flex items-center gap-space-xs">
+<span class="font-mono text-primary font-semibold">area_mean</span>
+<span class="material-symbols-outlined text-text-metadata text-[14px]">info</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-accent-soft-bg text-primary">Mean</span>
+</td>
+<td class="py-space-md px-space-md font-mono text-text-secondary text-label-sm">float64</td>
+<td class="py-space-md px-space-md font-mono text-text-charcoal">143.500 – 2501.000</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center text-status-success font-label-sm font-semibold">0% (0)</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-quantum-soft-bg text-secondary font-semibold">Yes · PC1</span>
+<span class="text-label-sm text-text-metadata font-mono">+0.220</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="text-label-sm font-label-sm text-text-secondary">StandardScaler → PCA-8</span>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-subtle/50 transition-colors feature-row" data-group="Mean">
+<td class="py-space-md px-space-lg font-medium text-text-charcoal">
+<div class="flex items-center gap-space-xs">
+<span class="font-mono text-primary font-semibold">smoothness_mean</span>
+<span class="material-symbols-outlined text-text-metadata text-[14px]">info</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-accent-soft-bg text-primary">Mean</span>
+</td>
+<td class="py-space-md px-space-md font-mono text-text-secondary text-label-sm">float64</td>
+<td class="py-space-md px-space-md font-mono text-text-charcoal">0.053 – 0.163</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center text-status-success font-label-sm font-semibold">0% (0)</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-quantum-soft-bg text-secondary font-semibold">Yes · PC3</span>
+<span class="text-label-sm text-text-metadata font-mono">-0.142</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="text-label-sm font-label-sm text-text-secondary">StandardScaler → PCA-8</span>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="hover:bg-surface-subtle/50 transition-colors feature-row" data-group="Mean">
+<td class="py-space-md px-space-lg font-medium text-text-charcoal">
+<div class="flex items-center gap-space-xs">
+<span class="font-mono text-primary font-semibold">compactness_mean</span>
+<span class="material-symbols-outlined text-text-metadata text-[14px]">info</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-accent-soft-bg text-primary">Mean</span>
+</td>
+<td class="py-space-md px-space-md font-mono text-text-secondary text-label-sm">float64</td>
+<td class="py-space-md px-space-md font-mono text-text-charcoal">0.019 – 0.345</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center text-status-success font-label-sm font-semibold">0% (0)</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-quantum-soft-bg text-secondary font-semibold">Yes · PC1</span>
+<span class="text-label-sm text-text-metadata font-mono">+0.239</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="text-label-sm font-label-sm text-text-secondary">StandardScaler → PCA-8</span>
+</td>
+</tr>
+<!-- Row 7 -->
+<tr class="hover:bg-surface-subtle/50 transition-colors feature-row" data-group="Mean">
+<td class="py-space-md px-space-lg font-medium text-text-charcoal">
+<div class="flex items-center gap-space-xs">
+<span class="font-mono text-primary font-semibold">concavity_mean</span>
+<span class="material-symbols-outlined text-text-metadata text-[14px]">info</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-accent-soft-bg text-primary">Mean</span>
+</td>
+<td class="py-space-md px-space-md font-mono text-text-secondary text-label-sm">float64</td>
+<td class="py-space-md px-space-md font-mono text-text-charcoal">0.000 – 0.427</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center text-status-success font-label-sm font-semibold">0% (0)</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-quantum-soft-bg text-secondary font-semibold">Yes · PC1</span>
+<span class="text-label-sm text-text-metadata font-mono">+0.258</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="text-label-sm font-label-sm text-text-secondary">StandardScaler → PCA-8</span>
+</td>
+</tr>
+<!-- Row 8 -->
+<tr class="hover:bg-surface-subtle/50 transition-colors feature-row" data-group="Mean">
+<td class="py-space-md px-space-lg font-medium text-text-charcoal">
+<div class="flex items-center gap-space-xs">
+<span class="font-mono text-primary font-semibold">concave_points_mean</span>
+<span class="material-symbols-outlined text-text-metadata text-[14px]">info</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-accent-soft-bg text-primary">Mean</span>
+</td>
+<td class="py-space-md px-space-md font-mono text-text-secondary text-label-sm">float64</td>
+<td class="py-space-md px-space-md font-mono text-text-charcoal">0.000 – 0.201</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center text-status-success font-label-sm font-semibold">0% (0)</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-quantum-soft-bg text-secondary font-semibold">Yes · PC1</span>
+<span class="text-label-sm text-text-metadata font-mono">+0.260</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="text-label-sm font-label-sm text-text-secondary">StandardScaler → PCA-8</span>
+</td>
+</tr>
+<!-- Row 9 (SE Group Example) -->
+<tr class="hover:bg-surface-subtle/50 transition-colors feature-row" data-group="SE">
+<td class="py-space-md px-space-lg font-medium text-text-charcoal">
+<div class="flex items-center gap-space-xs">
+<span class="font-mono text-primary font-semibold">radius_se</span>
+<span class="material-symbols-outlined text-text-metadata text-[14px]">info</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-surface-subtle text-text-secondary">SE</span>
+</td>
+<td class="py-space-md px-space-md font-mono text-text-secondary text-label-sm">float64</td>
+<td class="py-space-md px-space-md font-mono text-text-charcoal">0.111 – 2.873</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center text-status-success font-label-sm font-semibold">0% (0)</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-surface-subtle text-text-metadata">No (Classical 30D)</span>
+<span class="text-label-sm text-text-metadata font-mono">0.041</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="text-label-sm font-label-sm text-text-secondary">StandardScaler (Train Fit)</span>
+</td>
+</tr>
+<!-- Row 10 (Worst Group Example) -->
+<tr class="hover:bg-surface-subtle/50 transition-colors feature-row" data-group="Worst">
+<td class="py-space-md px-space-lg font-medium text-text-charcoal">
+<div class="flex items-center gap-space-xs">
+<span class="font-mono text-primary font-semibold">perimeter_worst</span>
+<span class="material-symbols-outlined text-text-metadata text-[14px]">info</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-quantum-soft-bg text-secondary">Worst</span>
+</td>
+<td class="py-space-md px-space-md font-mono text-text-secondary text-label-sm">float64</td>
+<td class="py-space-md px-space-md font-mono text-text-charcoal">50.410 – 251.200</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center text-status-success font-label-sm font-semibold">0% (0)</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-quantum-soft-bg text-secondary font-semibold">Yes · PC1</span>
+<span class="text-label-sm text-text-metadata font-mono">+0.236</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="text-label-sm font-label-sm text-text-secondary">StandardScaler → PCA-8</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination Notice -->
+<div class="p-space-md bg-surface-subtle/40 flex flex-col sm:flex-row items-center justify-between gap-space-sm text-label-sm font-label-sm text-text-secondary">
+<div class="flex items-center gap-space-sm">
+<span>Displaying primary feature subset (10 of 30 items)</span>
+<span>•</span>
+<span class="text-text-charcoal font-medium">All 30 continuous features verified non-null</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1 rounded bg-surface-white border border-border-divider/50 text-text-charcoal hover:bg-surface-subtle">Previous</button>
+<span class="px-space-sm py-1 font-semibold text-text-charcoal">1 / 3</span>
+<button class="px-space-sm py-1 rounded bg-surface-white border border-border-divider/50 text-text-charcoal hover:bg-surface-subtle">Next</button>
+</div>
+</div>
+</div>
+<!-- Bottom Analytical Disclaimer Card -->
+<div class="bg-surface-white rounded-xl p-space-lg shadow-sm flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-subtle flex items-center justify-center text-status-warning flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-text-charcoal">Research Validation Protocol</h4>
+<p class="font-body-sm text-body-sm text-text-secondary">
+          Research prototype. Dataset characteristics reflect benchmark research data and must not be used for unassisted patient triage.
+        </p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm flex-shrink-0">
+<span class="font-mono text-label-sm text-text-metadata">HIPAA De-identified</span>
+<span class="w-2 h-2 rounded-full bg-status-success"></span>
+</div>
+</div>
+<!-- Client-Side Micro-interactions for Search & Tab Filters -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('featureSearchInput');
+      const tableRows = document.querySelectorAll('.feature-row');
+      const filterButtons = document.querySelectorAll('#groupFilterButtons .filter-btn');
+
+      let currentGroup = 'all';
+
+      function applyFilters() {
+        const query = (searchInput.value || '').toLowerCase().trim();
+
+        tableRows.forEach(row => {
+          const rowGroup = row.getAttribute('data-group');
+          const rowText = row.textContent.toLowerCase();
+
+          const matchesQuery = query === '' || rowText.includes(query);
+          const matchesGroup = currentGroup === 'all' || rowGroup === currentGroup;
+
+          if (matchesQuery && matchesGroup) {
+            row.style.display = '';
+          } else {
+            row.style.display = 'none';
+          }
+        });
+      }
+
+      searchInput.addEventListener('input', applyFilters);
+
+      filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterButtons.forEach(b => {
+            b.classList.remove('bg-surface-white', 'text-text-charcoal', 'shadow-sm', 'font-semibold');
+            b.classList.add('text-text-secondary');
+          });
+          btn.classList.add('bg-surface-white', 'text-text-charcoal', 'shadow-sm', 'font-semibold');
+          btn.classList.remove('text-text-secondary');
+
+          currentGroup = btn.getAttribute('data-filter');
+          applyFilters();
+        });
+      });
+    });
+  </script>
+</div></main></div></body></html>

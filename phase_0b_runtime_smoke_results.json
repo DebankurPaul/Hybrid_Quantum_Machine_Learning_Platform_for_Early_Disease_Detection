@@ -1,0 +1,51 @@
+[
+  {
+    "artifact": "models\\classical_scaler.joblib",
+    "loadable": true,
+    "predict_executed": false,
+    "error": null,
+    "model_class": "StandardScaler",
+    "predict_test": "not_applicable",
+    "artifact_type": "preprocessing_transformer"
+  },
+  {
+    "artifact": "models\\logistic_regression.joblib",
+    "loadable": true,
+    "predict_executed": true,
+    "error": null,
+    "model_class": "LogisticRegression",
+    "prediction_shape": [
+      1
+    ]
+  },
+  {
+    "artifact": "models\\random_forest.joblib",
+    "loadable": true,
+    "predict_executed": true,
+    "error": null,
+    "model_class": "RandomForestClassifier",
+    "prediction_shape": [
+      1
+    ]
+  },
+  {
+    "artifact": "models\\svm.joblib",
+    "loadable": true,
+    "predict_executed": true,
+    "error": null,
+    "model_class": "SVC",
+    "prediction_shape": [
+      1
+    ]
+  },
+  {
+    "artifact": "models\\xgboost.joblib",
+    "loadable": true,
+    "predict_executed": true,
+    "error": null,
+    "model_class": "XGBClassifier",
+    "prediction_shape": [
+      1
+    ]
+  }
+]

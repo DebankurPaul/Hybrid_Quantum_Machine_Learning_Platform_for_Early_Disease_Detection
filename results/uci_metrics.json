@@ -1,0 +1,142 @@
+{
+    "dataset": "UCI Heart Disease",
+    "benchmark_artifacts": {
+        "radar": "results/figures/uci_clinical_radar.png",
+        "delta": "results/figures/quantum_vs_classical_delta.png"
+    },
+    "evaluation_protocol": "Stratified Test Set",
+    "test_is_independent_cohort": false,
+    "train_samples": 222,
+    "test_samples": 75,
+    "original_features": 13,
+    "selected_features": 13,
+    "autoencoder_bottleneck": 8,
+    "validation": {
+        "train_test_duplicate_vectors": 0,
+        "feature_selection_train_only": true,
+        "scaler_train_only": true,
+        "autoencoder_train_only": true,
+        "independent_test_cohort_preserved": false
+    },
+    "models": {
+        "classical_baseline": {
+            "name": "Logistic Regression",
+            "preprocessing": {
+                "display": "StandardScaler",
+                "steps": [
+                    {
+                        "type": "StandardScaler"
+                    }
+                ]
+            },
+            "model_type": "logistic_regression",
+            "protocol": {
+                "test_size": 75,
+                "split_strategy": "stratified",
+                "seed": 42
+            },
+            "artifacts": {
+                "weights": null,
+                "preprocessing": "results/artifacts/uci_logistic_regression_preprocessing.joblib",
+                "explainability": null
+            },
+            "capabilities": {
+                "prediction": false,
+                "interactive_inference_supported": false
+            },
+            "metrics": {
+                "accuracy": 0.8533333333333334,
+                "precision": 0.8529411764705882,
+                "sensitivity": 0.8285714285714286,
+                "specificity": 0.875,
+                "f1": 0.8405797101449275,
+                "roc_auc": 0.9471428571428572,
+                "confusion_matrix": {
+                    "matrix": [
+                        [
+                            35,
+                            5
+                        ],
+                        [
+                            6,
+                            29
+                        ]
+                    ],
+                    "labels": [
+                        "Absence",
+                        "Presence"
+                    ]
+                },
+                "mcc": 0.7050839450327451
+            }
+        },
+        "hybrid_quantum": {
+            "name": "Quantum QSVC (8-qubit)",
+            "preprocessing": {
+                "display": "StandardScaler -> Autoencoder (8)",
+                "steps": [
+                    {
+                        "type": "StandardScaler"
+                    },
+                    {
+                        "type": "Autoencoder",
+                        "parameters": {
+                            "bottleneck_dim": 8
+                        }
+                    }
+                ]
+            },
+            "quantum_config": {
+                "qubits": 8,
+                "feature_map": {
+                    "name": "ZZFeatureMap",
+                    "reps": 1,
+                    "entanglement": "full"
+                },
+                "kernel": "QuantumKernelClassifier",
+                "C": 10.0,
+                "scale_factor": 0.05
+            },
+            "model_type": "qsvc",
+            "protocol": {
+                "test_size": 75,
+                "split_strategy": "stratified",
+                "seed": 42
+            },
+            "artifacts": {
+                "weights": null,
+                "preprocessing": "results/artifacts/uci_qsvc_preprocessing.pt",
+                "explainability": null
+            },
+            "capabilities": {
+                "prediction": false,
+                "interactive_inference_supported": false
+            },
+            "metrics": {
+                "accuracy": 0.8133333333333334,
+                "precision": 0.8,
+                "sensitivity": 0.8,
+                "specificity": 0.825,
+                "f1": 0.8,
+                "roc_auc": null,
+                "confusion_matrix": {
+                    "matrix": [
+                        [
+                            33,
+                            7
+                        ],
+                        [
+                            7,
+                            28
+                        ]
+                    ],
+                    "labels": [
+                        "Absence",
+                        "Presence"
+                    ]
+                },
+                "mcc": 0.625
+            }
+        }
+    }
+}
