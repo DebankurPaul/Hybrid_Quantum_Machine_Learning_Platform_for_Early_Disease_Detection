@@ -1,0 +1,66 @@
+{
+  "timestamp": "20260910T085206Z",
+  "config": {
+    "n_qubits": 8,
+    "fm_reps": 1,
+    "ans_reps": 2,
+    "max_iter": 300,
+    "n_restarts": 1,
+    "optimizer": "spsa",
+    "pca_variance": 0.9275645980335749
+  },
+  "training_sec": 2716.1,
+  "vqc_default": {
+    "acc": 0.666667,
+    "sensitivity": 0.880952,
+    "specificity": 0.541667,
+    "auc": 0.799934,
+    "tn": 39,
+    "fp": 33,
+    "fn": 5,
+    "tp": 37
+  },
+  "vqc_tuned": {
+    "tau": 0.55,
+    "acc": 0.701754,
+    "sensitivity": 0.857143,
+    "specificity": 0.611111,
+    "auc": 0.799934,
+    "tn": 44,
+    "fp": 28,
+    "fn": 6,
+    "tp": 36
+  },
+  "baselines": {
+    "Logistic Regression": {
+      "acc": 0.982456,
+      "sensitivity": 0.97619,
+      "specificity": 0.986111,
+      "auc": 0.997685,
+      "tn": 71,
+      "fp": 1,
+      "fn": 1,
+      "tp": 41
+    },
+    "SVM (RBF kernel)": {
+      "acc": 0.95614,
+      "sensitivity": 0.904762,
+      "specificity": 0.986111,
+      "auc": 0.99504,
+      "tn": 71,
+      "fp": 1,
+      "fn": 4,
+      "tp": 38
+    },
+    "Random Forest": {
+      "acc": 0.947368,
+      "sensitivity": 0.904762,
+      "specificity": 0.972222,
+      "auc": 0.99256,
+      "tn": 70,
+      "fp": 2,
+      "fn": 4,
+      "tp": 38
+    }
+  }
+}

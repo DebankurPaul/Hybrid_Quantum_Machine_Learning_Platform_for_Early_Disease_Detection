@@ -1,0 +1,18 @@
+Best VQC Model Card
+==================================================
+Saved      : 20260910T085435Z
+Config     : 8 qubits | SPSA | 150 iters | ANS_REPS=2
+PCA        : 8 components
+
+Best Threshold : tau = 0.65
+  Accuracy     : 0.7368  (73.7%)
+  Sensitivity  : 0.7619  — caught 32/42 cancers (missed: 10)
+  Specificity  : 0.7222  — avoided 52/72 false alarms
+  ROC-AUC      : 0.7801
+
+Confusion Matrix (tau = 0.65):
+                Pred Benign  Pred Malignant
+  True Benign        52           20   <- false alarms
+  True Malignant     10           32   <- missed cancers
+
+Weights file : best_vqc_weights_8q.npy

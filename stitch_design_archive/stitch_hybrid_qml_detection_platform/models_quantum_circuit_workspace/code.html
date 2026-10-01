@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface": "#f6f9ff", "quantum-soft-bg": "#F0EEFC", "on-tertiary": "#ffffff", "secondary": "#5b4dbd", "surface-container-lowest": "#ffffff", "tertiary": "#6d4100", "border-divider": "#DCE2E7", "secondary-fixed": "#e4dfff", "primary-fixed": "#bde9ff", "on-error": "#ffffff", "primary-fixed-dim": "#8ad0ef", "status-warning": "#9A6A16", "surface-bright": "#f6f9ff", "inverse-on-surface": "#e6f2ff", "text-charcoal": "#17212B", "background": "#f6f9ff", "tertiary-fixed-dim": "#faba71", "on-surface": "#111d26", "canvas-bg": "#F6F8FA", "on-secondary-container": "#2e1990", "surface-container-high": "#ddeaf7", "text-secondary": "#5F6B76", "on-error-container": "#93000a", "on-background": "#111d26", "surface-container-low": "#ebf5ff", "secondary-fixed-dim": "#c7bfff", "inverse-surface": "#26323b", "status-error": "#B74343", "error-container": "#ffdad6", "on-secondary": "#ffffff", "inverse-primary": "#8ad0ef", "tertiary-fixed": "#ffddbb", "surface-dim": "#cfdbe8", "on-secondary-fixed": "#170065", "tertiary-container": "#895818", "on-primary": "#ffffff", "surface-white": "#FFFFFF", "on-primary-fixed": "#001f2a", "primary-container": "#176b87", "on-surface-variant": "#3f484d", "surface-container": "#e3effc", "outline-variant": "#bfc8cd", "on-secondary-fixed-variant": "#4333a4", "secondary-container": "#998cff", "primary": "#00526a", "on-tertiary-container": "#ffd9b2", "status-success": "#237A57", "on-tertiary-fixed-variant": "#673d00", "surface-tint": "#0d6682", "surface-container-highest": "#d8e4f1", "on-primary-fixed-variant": "#004d64", "accent-soft-bg": "#E7F3F6", "error": "#ba1a1a", "on-tertiary-fixed": "#2b1700", "text-metadata": "#87929C", "surface-variant": "#d8e4f1", "on-primary-container": "#b6e7ff", "surface-subtle": "#F1F4F6", "outline": "#70787d" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-lg": "1rem", "space-3xl": "2.5rem", "margin": "2rem", "space-xl": "1.5rem", "gutter": "1.5rem", "space-md": "0.75rem", "space-sm": "0.5rem", "margin-mobile": "1rem", "space-2xl": "2rem", "gutter-mobile": "1rem", "space-xs": "0.25rem" }, "fontFamily": { "headline-xl-mobile": ["Inter"], "body-md": ["Inter"], "headline-md": ["Inter"], "label-sm": ["Inter"], "headline-lg": ["Inter"], "body-sm": ["Inter"], "label-md": ["Inter"], "headline-sm": ["Inter"], "body-lg": ["Inter"], "headline-xl": ["Inter"], "label-lg": ["Inter"] }, "fontSize": { "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }], "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "500" }] } } } }</script></head><body class="bg-canvas-bg font-body-md text-text-charcoal"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-white border-r border-border-divider z-50 flex flex-col justify-between overflow-y-auto"><div class="flex flex-col"><div class="p-space-lg border-b border-border-divider"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-xl bg-primary flex items-center justify-center text-on-primary"><span class="material-symbols-outlined text-[20px]">hub</span></div><span class="font-headline-sm text-headline-sm text-text-charcoal tracking-tight">Hybrid-QML</span></div><p class="mt-space-xs font-body-sm text-body-sm text-text-secondary leading-snug">Research platform for evaluating classical and quantum machine learning approaches</p></div><div class="p-space-md border-b border-border-divider bg-surface-subtle/50 flex flex-col gap-space-xs"><span class="font-label-sm text-label-sm text-text-metadata uppercase tracking-wider">Active Context</span><div class="flex items-center justify-between bg-surface-white border border-border-divider rounded-lg px-space-sm py-space-xs hover:border-outline transition-colors cursor-pointer"><div class="flex items-center gap-space-xs overflow-hidden"><span class="font-label-sm text-label-sm text-text-metadata">DATASET</span><span class="font-label-md text-label-md text-text-charcoal truncate font-medium">WDBC Breast Cancer</span></div><span class="material-symbols-outlined text-text-secondary text-[16px]">expand_more</span></div><div class="flex items-center justify-between bg-quantum-soft-bg border border-secondary/20 rounded-lg px-space-sm py-space-xs"><div class="flex items-center gap-space-xs"><span class="font-label-sm text-label-sm text-secondary font-medium">MODEL</span><span class="font-label-md text-label-md text-secondary truncate font-semibold">Quantum VQC · 8 qubits</span></div><span class="w-2 h-2 rounded-full bg-secondary"></span></div></div><div class="px-space-md py-space-lg"><span class="px-space-sm font-label-sm text-label-sm text-text-metadata uppercase tracking-wider block mb-space-xs">Navigation</span><nav class="flex flex-col gap-space-xs" data-active-classes="bg-accent-soft-bg text-primary font-semibold border-l-2 border-primary"><a class="flex items-center gap-space-md px-space-sm py-space-xs rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-charcoal transition-colors font-label-lg text-label-lg" data-path="overview" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span>Overview</span></a><a class="flex items-center gap-space-md px-space-sm py-space-xs rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-charcoal transition-colors font-label-lg text-label-lg" data-path="data" href="#"><span class="material-symbols-outlined text-[20px]">database</span><span>Data</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-sm py-space-xs rounded-lg transition-colors bg-accent-soft-bg text-primary font-semibold border-l-2 border-primary" data-path="models" href="#"><span class="material-symbols-outlined text-[20px]">memory</span><span>Models</span></a><a class="flex items-center gap-space-md px-space-sm py-space-xs rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-charcoal transition-colors font-label-lg text-label-lg" data-path="prediction" href="#"><span class="material-symbols-outlined text-[20px]">batch_prediction</span><span>Prediction</span></a><a class="flex items-center gap-space-md px-space-sm py-space-xs rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-charcoal transition-colors font-label-lg text-label-lg" data-path="evaluation" href="#"><span class="material-symbols-outlined text-[20px]">insights</span><span>Evaluation</span></a><a class="flex items-center gap-space-md px-space-sm py-space-xs rounded-lg text-text-secondary hover:bg-surface-subtle hover:text-text-charcoal transition-colors font-label-lg text-label-lg" data-path="explainability" href="#"><span class="material-symbols-outlined text-[20px]">bubble_chart</span><span>Explainability</span></a></nav></div></div><div class="p-space-md border-t border-border-divider bg-surface-subtle/30"><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm text-label-sm text-text-metadata uppercase tracking-wider">System Status</span><span class="font-label-sm text-label-sm text-status-success font-medium">Operational</span></div><div class="flex flex-col gap-space-xs bg-surface-white border border-border-divider rounded-lg p-space-sm font-label-sm text-label-sm"><div class="flex items-center justify-between"><span class="text-text-secondary">Data</span><div class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-status-success"></span><span class="text-text-charcoal font-medium">Ready</span></div></div><div class="flex items-center justify-between"><span class="text-text-secondary">Preprocessing</span><div class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-status-success"></span><span class="text-text-charcoal font-medium truncate max-w-[110px]">Std + PCA</span></div></div><div class="flex items-center justify-between"><span class="text-text-secondary">Model Artifacts</span><div class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-status-success"></span><span class="text-text-charcoal font-medium">5 Trained</span></div></div><div class="flex items-center justify-between"><span class="text-text-secondary">Quantum Backend</span><div class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span class="text-text-charcoal font-medium truncate max-w-[110px]">Aer Sim · 8Q</span></div></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-white border-b border-border-divider z-40 flex items-center justify-between px-space-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm border-r border-border-divider pr-space-lg hidden lg:flex"><div class="flex items-center gap-space-xs bg-surface-subtle border border-border-divider px-space-sm py-1 rounded-lg"><span class="material-symbols-outlined text-text-secondary text-[16px]">folder</span><span class="font-label-sm text-label-sm text-text-charcoal font-medium">WDBC Breast Cancer</span></div><div class="flex items-center gap-space-xs bg-quantum-soft-bg border border-secondary/20 px-space-sm py-1 rounded-lg"><span class="material-symbols-outlined text-secondary text-[16px]">blur_on</span><span class="font-label-sm text-label-sm text-secondary font-semibold">Quantum VQC</span></div></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-xs bg-surface-white border border-border-divider hover:bg-surface-subtle text-text-charcoal px-space-md py-1.5 rounded-lg font-label-md text-label-md transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">dataset</span><span>Dataset Selector</span></button><button class="flex items-center gap-space-xs bg-primary hover:bg-[#13576E] text-on-primary px-space-md py-1.5 rounded-lg font-label-md text-label-md transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-[18px]">download</span><span>Export Artifacts</span></button><div class="h-6 w-px bg-border-divider"></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="w-full pt-16 bg-canvas-bg min-h-screen px-space-xl py-space-xl"><div class="flex flex-col w-full gap-space-xl">
+<!-- Workspace Header & Meta Sub-bar -->
+<div class="flex flex-col md:flex-row md:items-end justify-between pb-space-lg gap-space-md border-b border-border-divider">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-xl text-headline-xl text-text-charcoal tracking-tight">Models Workspace</span>
+<span class="bg-quantum-soft-bg text-secondary px-2.5 py-0.5 rounded text-label-sm font-semibold tracking-wide uppercase">QML Core</span>
+</div>
+<p class="font-body-md text-body-md text-text-secondary max-w-3xl">
+        Explore dynamically registered classical and quantum model architectures, variational circuits, transpilation artifacts, and operational hyperparameters.
+      </p>
+</div>
+<!-- Active Execution Context Summary -->
+<div class="flex items-center gap-space-sm bg-surface-white px-space-md py-space-sm rounded-lg shadow-sm border border-border-divider self-start md:self-auto">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-metadata uppercase tracking-wider">Benchmark Corpus</span>
+<span class="font-label-md text-label-md text-text-charcoal font-semibold">WDBC Breast Cancer (8-PCA)</span>
+</div>
+<div class="h-7 w-px bg-border-divider mx-space-xs"></div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-md text-label-md text-secondary font-medium">Aer Statevector</span>
+</div>
+</div>
+</div>
+<!-- Top Strip: Model Registry Selection Strip -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-text-metadata uppercase tracking-wider">Registered Model Ensemble (5 Architectures)</span>
+<span class="font-label-sm text-label-sm text-text-secondary">Click model to inspect blueprint</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-md" id="model-selector-container">
+<!-- Card 1: Quantum VQC (Active) -->
+<div class="bg-surface-white rounded-lg p-space-md shadow-sm border-2 border-secondary relative cursor-pointer transition-all hover:shadow-md group">
+<div class="absolute -top-2.5 right-3 bg-secondary text-surface-white text-[10px] font-bold px-2 py-0.5 rounded tracking-wide uppercase shadow-xs">Active</div>
+<div class="flex items-center gap-1.5 mb-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">Quantum Family</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-text-charcoal group-hover:text-secondary transition-colors">Quantum VQC</div>
+<div class="font-body-sm text-body-sm text-text-secondary mt-0.5">8 Qubits · Variational</div>
+<div class="mt-space-md pt-space-xs border-t border-border-divider flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-status-success font-medium">Ready</span>
+<span class="font-headline-sm text-headline-sm text-text-charcoal font-semibold">92.1% <span class="font-label-sm text-label-sm text-text-metadata font-normal">acc</span></span>
+</div>
+</div>
+<!-- Card 2: Quantum QSVC -->
+<div class="bg-surface-white rounded-lg p-space-md shadow-sm border border-border-divider hover:border-secondary/50 cursor-pointer transition-all hover:shadow-md group">
+<div class="flex items-center gap-1.5 mb-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider">Quantum Family</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-text-charcoal group-hover:text-secondary transition-colors">Quantum QSVC</div>
+<div class="font-body-sm text-body-sm text-text-secondary mt-0.5">8 Qubits · ZZ Kernel</div>
+<div class="mt-space-md pt-space-xs border-t border-border-divider flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-status-success font-medium">Ready</span>
+<span class="font-headline-sm text-headline-sm text-text-charcoal font-semibold">93.0% <span class="font-label-sm text-label-sm text-text-metadata font-normal">acc</span></span>
+</div>
+</div>
+<!-- Card 3: Support Vector Machine (RBF) -->
+<div class="bg-surface-white rounded-lg p-space-md shadow-sm border border-border-divider hover:border-primary/50 cursor-pointer transition-all hover:shadow-md group">
+<div class="flex items-center gap-1.5 mb-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-primary font-semibold uppercase tracking-wider">Classical Family</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-text-charcoal group-hover:text-primary transition-colors">SVM (RBF)</div>
+<div class="font-body-sm text-body-sm text-text-secondary mt-0.5">30 Features · C=1.0</div>
+<div class="mt-space-md pt-space-xs border-t border-border-divider flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-status-success font-medium">Ready</span>
+<span class="font-headline-sm text-headline-sm text-text-charcoal font-semibold">94.7% <span class="font-label-sm text-label-sm text-text-metadata font-normal">acc</span></span>
+</div>
+</div>
+<!-- Card 4: Random Forest -->
+<div class="bg-surface-white rounded-lg p-space-md shadow-sm border border-border-divider hover:border-primary/50 cursor-pointer transition-all hover:shadow-md group">
+<div class="flex items-center gap-1.5 mb-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-primary font-semibold uppercase tracking-wider">Classical Family</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-text-charcoal group-hover:text-primary transition-colors">Random Forest</div>
+<div class="font-body-sm text-body-sm text-text-secondary mt-0.5">100 Trees · Gini Split</div>
+<div class="mt-space-md pt-space-xs border-t border-border-divider flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-status-success font-medium">Ready</span>
+<span class="font-headline-sm text-headline-sm text-text-charcoal font-semibold">95.6% <span class="font-label-sm text-label-sm text-text-metadata font-normal">acc</span></span>
+</div>
+</div>
+<!-- Card 5: Logistic Regression -->
+<div class="bg-surface-white rounded-lg p-space-md shadow-sm border border-border-divider hover:border-primary/50 cursor-pointer transition-all hover:shadow-md group">
+<div class="flex items-center gap-1.5 mb-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-primary font-semibold uppercase tracking-wider">Classical Family</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-text-charcoal group-hover:text-primary transition-colors">Logistic Regression</div>
+<div class="font-body-sm text-body-sm text-text-secondary mt-0.5">L2 Penalty · Liblinear</div>
+<div class="mt-space-md pt-space-xs border-t border-border-divider flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-status-success font-medium">Ready</span>
+<span class="font-headline-sm text-headline-sm text-text-charcoal font-semibold">93.9% <span class="font-label-sm text-label-sm text-text-metadata font-normal">acc</span></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Active Model Context Banner -->
+<div class="bg-surface-white rounded-lg p-space-lg shadow-sm border border-border-divider flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-quantum-soft-bg flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[28px]">account_tree</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-headline-md text-headline-md text-text-charcoal">Quantum VQC · 8 Qubits</span>
+<span class="bg-quantum-soft-bg text-secondary px-2.5 py-0.5 rounded text-label-sm font-semibold">Quantum Model</span>
+<span class="bg-accent-soft-bg text-primary px-2.5 py-0.5 rounded text-label-sm font-medium">8 Qubits</span>
+<span class="bg-[#E9F5EF] text-status-success px-2.5 py-0.5 rounded text-label-sm font-medium">Inference Available</span>
+<span class="bg-surface-subtle text-text-secondary px-2.5 py-0.5 rounded text-label-sm font-medium">Artifact Validated</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-secondary mt-1">Variational Classifier utilizing ZZFeatureMap rotational encoding and parameterized RealAmplitudes ansatz.</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm self-end md:self-center shrink-0">
+<button class="bg-surface-white border border-border-divider hover:bg-surface-subtle text-text-charcoal px-space-md py-2 rounded font-label-md text-label-md flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+<span>Inspect Statevector</span>
+</button>
+<button class="bg-secondary hover:bg-secondary/90 text-surface-white px-space-md py-2 rounded font-label-md text-label-md flex items-center gap-1.5 transition-colors shadow-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+<span>Run Evaluation</span>
+</button>
+</div>
+</div>
+<!-- Split Grid: Architecture Flow (6-col) vs Configuration Specs (6-col) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
+<!-- Left Column: Architectural Dataflow Module -->
+<div class="lg:col-span-6 bg-surface-white rounded-lg p-space-xl shadow-sm border border-border-divider flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-md border-b border-border-divider mb-space-lg">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">schema</span>
+<span class="font-headline-sm text-headline-sm text-text-charcoal">Model Architecture Flow</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-metadata uppercase tracking-wider">End-to-End Pipeline</span>
+</div>
+<!-- Vertical Flow Diagram -->
+<div class="flex flex-col gap-2 relative">
+<!-- Node 1: Input Vector -->
+<div class="bg-surface-subtle rounded-lg p-space-md border border-border-divider flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-surface-white border border-border-divider flex items-center justify-center text-text-secondary font-mono text-xs font-bold">01</div>
+<div>
+<div class="font-label-lg text-label-lg text-text-charcoal font-semibold">Continuous Input Vector</div>
+<div class="font-body-sm text-body-sm text-text-secondary">Standardized biomedical diagnostic vector x ∈ ℝ⁸ (StandardScaler + PCA)</div>
+</div>
+</div>
+<span class="font-mono text-label-sm text-text-metadata bg-surface-white px-2 py-1 rounded border border-border-divider">dim=8</span>
+</div>
+<!-- Connector -->
+<div class="flex justify-center -my-1 py-1">
+<span class="material-symbols-outlined text-text-metadata text-[18px]">arrow_downward</span>
+</div>
+<!-- Node 2: Quantum Feature Map -->
+<div class="bg-quantum-soft-bg/60 rounded-lg p-space-md border border-secondary/20 flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-surface-white border border-secondary/30 flex items-center justify-center text-secondary font-mono text-xs font-bold">02</div>
+<div>
+<div class="font-label-lg text-label-lg text-text-charcoal font-semibold">Quantum Feature Map (ZZFeatureMap)</div>
+<div class="font-body-sm text-body-sm text-text-secondary">Non-linear transformation to 2⁸ Hilbert space; reps=2, entangling='linear'</div>
+</div>
+</div>
+<span class="font-mono text-label-sm text-secondary bg-surface-white px-2 py-1 rounded border border-secondary/20 font-semibold">U_Φ(x)</span>
+</div>
+<!-- Connector -->
+<div class="flex justify-center -my-1 py-1">
+<span class="material-symbols-outlined text-text-metadata text-[18px]">arrow_downward</span>
+</div>
+<!-- Node 3: Variational Ansatz -->
+<div class="bg-quantum-soft-bg/60 rounded-lg p-space-md border border-secondary/20 flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-surface-white border border-secondary/30 flex items-center justify-center text-secondary font-mono text-xs font-bold">03</div>
+<div>
+<div class="font-label-lg text-label-lg text-text-charcoal font-semibold">Variational Ansatz (RealAmplitudes)</div>
+<div class="font-body-sm text-body-sm text-text-secondary">Parameterized unitary W(θ) with depth=3; 24 trainable rotation parameters θ</div>
+</div>
+</div>
+<span class="font-mono text-label-sm text-secondary bg-surface-white px-2 py-1 rounded border border-secondary/20 font-semibold">W(θ)</span>
+</div>
+<!-- Connector -->
+<div class="flex justify-center -my-1 py-1">
+<span class="material-symbols-outlined text-text-metadata text-[18px]">arrow_downward</span>
+</div>
+<!-- Node 4: Measurement & Observables -->
+<div class="bg-surface-subtle rounded-lg p-space-md border border-border-divider flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-surface-white border border-border-divider flex items-center justify-center text-text-secondary font-mono text-xs font-bold">04</div>
+<div>
+<div class="font-label-lg text-label-lg text-text-charcoal font-semibold">Pauli-Z Expectation Measurement</div>
+<div class="font-body-sm text-body-sm text-text-secondary">Computes analytic expectation values ⟨ψ(θ)|Zᵢ|ψ(θ)⟩ across all 8 readout qubits</div>
+</div>
+</div>
+<span class="font-mono text-label-sm text-text-metadata bg-surface-white px-2 py-1 rounded border border-border-divider">⟨Z_i⟩</span>
+</div>
+<!-- Connector -->
+<div class="flex justify-center -my-1 py-1">
+<span class="material-symbols-outlined text-text-metadata text-[18px]">arrow_downward</span>
+</div>
+<!-- Node 5: Classical Parity & Prediction -->
+<div class="bg-accent-soft-bg rounded-lg p-space-md border border-primary/20 flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-surface-white border border-primary/30 flex items-center justify-center text-primary font-mono text-xs font-bold">05</div>
+<div>
+<div class="font-label-lg text-label-lg text-text-charcoal font-semibold">Parity Mapping & Binary Softmax</div>
+<div class="font-body-sm text-body-sm text-text-secondary">Class probability score P(y=Malignant) calibrated via Sigmoid function</div>
+</div>
+</div>
+<span class="font-mono text-label-sm text-primary bg-surface-white px-2 py-1 rounded border border-primary/20 font-bold">P(y|x)</span>
+</div>
+</div>
+</div>
+<!-- Auxiliary Diagram Footer -->
+<div class="mt-space-lg pt-space-md border-t border-border-divider flex items-center justify-between text-body-sm text-text-secondary">
+<span>State preparation fidelity: <strong class="text-text-charcoal">99.84%</strong></span>
+<span>Hilbert dimension: <strong class="text-text-charcoal">2⁸ = 256 states</strong></span>
+</div>
+</div>
+<!-- Right Column: Structured Key-Value Specifications -->
+<div class="lg:col-span-6 bg-surface-white rounded-lg p-space-xl shadow-sm border border-border-divider flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-md border-b border-border-divider mb-space-lg">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">tune</span>
+<span class="font-headline-sm text-headline-sm text-text-charcoal">Configuration & Hyperparameters</span>
+</div>
+<span class="font-mono text-label-sm text-text-metadata">CONFIG_HASH: 0x9AF2_VQC</span>
+</div>
+<!-- Param Grid Rows -->
+<div class="divide-y divide-border-divider text-body-sm">
+<div class="py-space-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-charcoal font-medium">Qubit Allocation</span>
+<span class="text-text-secondary text-xs">Physical circuit virtual wires</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-mono text-text-charcoal font-semibold">8 Qubits</span>
+<span class="bg-surface-subtle text-text-metadata px-2 py-0.5 rounded text-xs font-mono">q[0..7]</span>
+</div>
+</div>
+<div class="py-space-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-charcoal font-medium">Feature Map Topology</span>
+<span class="text-text-secondary text-xs">Non-linear feature embedding structure</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-mono text-text-charcoal font-medium">ZZFeatureMap (reps=2)</span>
+<span class="bg-quantum-soft-bg text-secondary px-2 py-0.5 rounded text-xs font-mono">linear entangle</span>
+</div>
+</div>
+<div class="py-space-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-charcoal font-medium">Variational Ansatz Form</span>
+<span class="text-text-secondary text-xs">Parameterized trial wave function</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-mono text-text-charcoal font-medium">RealAmplitudes</span>
+<span class="bg-surface-subtle text-text-charcoal px-2 py-0.5 rounded text-xs font-mono">depth=3</span>
+</div>
+</div>
+<div class="py-space-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-charcoal font-medium">Trainable Parameters (θ)</span>
+<span class="text-text-secondary text-xs">Number of learned rotational weights</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-mono text-secondary font-bold">24 Parameters</span>
+<span class="bg-surface-subtle text-text-secondary px-2 py-0.5 rounded text-xs">COBYLA (iter=150)</span>
+</div>
+</div>
+<div class="py-space-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-charcoal font-medium">Quantum Backend / Engine</span>
+<span class="text-text-secondary text-xs">Simulation and execution target</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-mono text-text-charcoal font-medium">Qiskit Aer Statevector</span>
+<span class="bg-[#E9F5EF] text-status-success px-2 py-0.5 rounded text-xs font-medium">Noise-free</span>
+</div>
+</div>
+<div class="py-space-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-charcoal font-medium">Shot Count Execution</span>
+<span class="text-text-secondary text-xs">Statistical sampling or exact state</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-mono text-text-charcoal font-medium">Analytic Exact (shots=None)</span>
+<span class="bg-surface-subtle text-text-metadata px-2 py-0.5 rounded text-xs">Deterministic</span>
+</div>
+</div>
+<div class="py-space-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-charcoal font-medium">Required Preprocessing</span>
+<span class="text-text-secondary text-xs">Deterministic transformation pipeline</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-mono text-text-charcoal font-medium">StandardScaler + 8-PCA</span>
+<span class="bg-surface-subtle text-text-charcoal px-2 py-0.5 rounded text-xs font-mono">#PCA-WDBC-08</span>
+</div>
+</div>
+<div class="py-space-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-charcoal font-medium">Optimization Gradient & Loss</span>
+<span class="text-text-secondary text-xs">Loss function and estimator rule</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-mono text-text-charcoal font-medium">Cross-Entropy Loss</span>
+<span class="bg-quantum-soft-bg text-secondary px-2 py-0.5 rounded text-xs font-mono">Parameter-Shift</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Footer for Hyperparameters -->
+<div class="mt-space-lg pt-space-md border-t border-border-divider flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-text-metadata">Last compiled: 14 minutes ago via Qiskit Terra v0.25.1</span>
+<button class="text-primary hover:text-primary/80 font-label-md text-label-md font-semibold flex items-center gap-1" type="button">
+<span>Export JSON Spec</span>
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Lower Wide Panel: Scientific Multi-Qubit Quantum Circuit Representation -->
+<div class="w-full bg-surface-white rounded-lg p-space-xl shadow-sm border border-border-divider flex flex-col gap-space-lg">
+<!-- Circuit Header & Telemetry -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md pb-space-md border-b border-border-divider">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-quantum-soft-bg flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">memory</span>
+</div>
+<div>
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-md text-headline-md text-text-charcoal">Quantum Circuit Representation</span>
+<span class="bg-surface-subtle text-text-secondary text-label-sm px-2 py-0.5 rounded font-mono">Transpiled Level-2</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-secondary">Parametric representation for 8 physical registers displaying Hadamard, ZZ feature encoding, linear entanglement, and Ry(θ) ansatz.</span>
+</div>
+</div>
+<!-- Quick Metrics Chips -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="bg-surface-subtle px-3 py-1.5 rounded flex items-center gap-2 border border-border-divider">
+<span class="text-text-secondary font-label-sm text-label-sm">Circuit Depth:</span>
+<span class="font-mono text-text-charcoal font-bold text-sm">18 Layers</span>
+</div>
+<div class="bg-surface-subtle px-3 py-1.5 rounded flex items-center gap-2 border border-border-divider">
+<span class="text-text-secondary font-label-sm text-label-sm">Single-Qubit Gates:</span>
+<span class="font-mono text-text-charcoal font-bold text-sm">64</span>
+</div>
+<div class="bg-surface-subtle px-3 py-1.5 rounded flex items-center gap-2 border border-border-divider">
+<span class="text-text-secondary font-label-sm text-label-sm">Entangling CX Gates:</span>
+<span class="font-mono text-secondary font-bold text-sm">28</span>
+</div>
+</div>
+</div>
+<!-- Circuit Stage Legend -->
+<div class="flex items-center justify-between flex-wrap gap-space-sm bg-surface-subtle/50 px-space-md py-space-sm rounded-lg border border-border-divider text-xs">
+<div class="flex items-center gap-4 flex-wrap">
+<span class="font-label-sm text-label-sm text-text-metadata font-semibold uppercase tracking-wider">Circuit Stages:</span>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-xs bg-[#E7F3F6] border border-primary/40"></span>
+<span class="text-text-charcoal font-medium">Stage 1: Superposition [H]</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-xs bg-[#FDF6EA] border border-status-warning/40"></span>
+<span class="text-text-charcoal font-medium">Stage 2: Feature Encoding [Rz(2xᵢ)]</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-xs bg-[#F0EEFC] border border-secondary/40"></span>
+<span class="text-text-charcoal font-medium">Stage 3: Linear Entanglement (CX)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-xs bg-surface-white border border-secondary"></span>
+<span class="text-text-charcoal font-medium">Stage 4: Variational Rotation [Ry(θ)]</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-xs bg-surface-subtle border border-text-charcoal"></span>
+<span class="text-text-charcoal font-medium">Stage 5: Z-Readout Meter</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="text-text-secondary hover:text-text-charcoal p-1 rounded hover:bg-surface-white" title="Reset Zoom" type="button">
+<span class="material-symbols-outlined text-[18px]">fit_screen</span>
+</button>
+<button class="text-text-secondary hover:text-text-charcoal p-1 rounded hover:bg-surface-white" title="Download QASM 2.0" type="button">
+<span class="material-symbols-outlined text-[18px]">code</span>
+</button>
+</div>
+</div>
+<!-- Scalable High-Resolution Vector Circuit Diagram -->
+<div class="w-full overflow-x-auto bg-[#FCFDFE] rounded-lg border border-border-divider p-space-lg shadow-inner">
+<div class="min-w-[960px] select-none">
+<svg class="w-full h-auto text-text-charcoal font-mono" viewbox="0 0 1000 480" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<!-- Gate Shadow Filter -->
+<filter height="130%" id="gateShadow" width="120%" x="-10%" y="-10%">
+<fedropshadow dx="0" dy="1" flood-color="#17212B" flood-opacity="0.08" stddeviation="1"></fedropshadow>
+</filter>
+</defs>
+<!-- Stage Section Background Highlights -->
+<rect fill="#E7F3F6" fill-opacity="0.45" height="460" rx="4" width="80" x="100" y="10"></rect>
+<rect fill="#FDF6EA" fill-opacity="0.4" height="460" rx="4" width="120" x="200" y="10"></rect>
+<rect fill="#F0EEFC" fill-opacity="0.45" height="460" rx="4" width="190" x="340" y="10"></rect>
+<rect fill="#F6F8FA" fill-opacity="0.8" height="460" rx="4" width="280" x="550" y="10"></rect>
+<rect fill="#E9F5EF" fill-opacity="0.35" height="460" rx="4" width="110" x="850" y="10"></rect>
+<!-- Stage Boundary Labels (Top) -->
+<text fill="#00526a" font-size="10" font-weight="600" text-anchor="middle" x="140" y="24">STAGE 1: HADAMARD</text>
+<text fill="#9A6A16" font-size="10" font-weight="600" text-anchor="middle" x="260" y="24">STAGE 2: ZZ ENCODING</text>
+<text fill="#5b4dbd" font-size="10" font-weight="600" text-anchor="middle" x="435" y="24">STAGE 3: LINEAR CNOT LADDER</text>
+<text fill="#17212B" font-size="10" font-weight="600" text-anchor="middle" x="690" y="24">STAGE 4: VARIATIONAL ANSATZ [Ry(θ)]</text>
+<text fill="#237A57" font-size="10" font-weight="600" text-anchor="middle" x="905" y="24">STAGE 5: PAULI-Z READOUT</text>
+<!-- 8 Horizontal Qubit Wire Lines with Quantum State labels -->
+<!-- Wire 0 -->
+<text fill="#17212B" font-size="13" font-weight="bold" x="25" y="55">|q₀⟩</text>
+<line stroke="#DCE2E7" stroke-width="2" x1="60" x2="960" y1="50" y2="50"></line>
+<!-- Wire 1 -->
+<text fill="#17212B" font-size="13" font-weight="bold" x="25" y="105">|q₁⟩</text>
+<line stroke="#DCE2E7" stroke-width="2" x1="60" x2="960" y1="100" y2="100"></line>
+<!-- Wire 2 -->
+<text fill="#17212B" font-size="13" font-weight="bold" x="25" y="155">|q₂⟩</text>
+<line stroke="#DCE2E7" stroke-width="2" x1="60" x2="960" y1="150" y2="150"></line>
+<!-- Wire 3 -->
+<text fill="#17212B" font-size="13" font-weight="bold" x="25" y="205">|q₃⟩</text>
+<line stroke="#DCE2E7" stroke-width="2" x1="60" x2="960" y1="200" y2="200"></line>
+<!-- Wire 4 -->
+<text fill="#17212B" font-size="13" font-weight="bold" x="25" y="255">|q₄⟩</text>
+<line stroke="#DCE2E7" stroke-width="2" x1="60" x2="960" y1="250" y2="250"></line>
+<!-- Wire 5 -->
+<text fill="#17212B" font-size="13" font-weight="bold" x="25" y="305">|q₅⟩</text>
+<line stroke="#DCE2E7" stroke-width="2" x1="60" x2="960" y1="300" y2="300"></line>
+<!-- Wire 6 -->
+<text fill="#17212B" font-size="13" font-weight="bold" x="25" y="355">|q₆⟩</text>
+<line stroke="#DCE2E7" stroke-width="2" x1="60" x2="960" y1="350" y2="350"></line>
+<!-- Wire 7 -->
+<text fill="#17212B" font-size="13" font-weight="bold" x="25" y="405">|q₇⟩</text>
+<line stroke="#DCE2E7" stroke-width="2" x1="60" x2="960" y1="400" y2="400"></line>
+<!-- Readout Classical Bus (Double line at bottom) -->
+<text fill="#5F6B76" font-size="12" font-weight="bold" x="15" y="455">c[8]</text>
+<line stroke="#87929C" stroke-width="1.5" x1="60" x2="960" y1="448" y2="448"></line>
+<line stroke="#87929C" stroke-width="1.5" x1="60" x2="960" y1="452" y2="452"></line>
+<!-- ============================================== -->
+<!-- STAGE 1: HADAMARD GATES ON ALL WIRES [H]       -->
+<!-- ============================================== -->
+<!-- q0 -->
+<rect fill="#FFFFFF" filter="url(#gateShadow)" height="26" rx="3" stroke="#00526a" stroke-width="1.5" width="26" x="125" y="37"></rect>
+<text fill="#00526a" font-size="12" font-weight="bold" text-anchor="middle" x="138" y="55">H</text>
+<!-- q1 -->
+<rect fill="#FFFFFF" filter="url(#gateShadow)" height="26" rx="3" stroke="#00526a" stroke-width="1.5" width="26" x="125" y="87"></rect>
+<text fill="#00526a" font-size="12" font-weight="bold" text-anchor="middle" x="138" y="105">H</text>
+<!-- q2 -->
+<rect fill="#FFFFFF" filter="url(#gateShadow)" height="26" rx="3" stroke="#00526a" stroke-width="1.5" width="26" x="125" y="137"></rect>
+<text fill="#00526a" font-size="12" font-weight="bold" text-anchor="middle" x="138" y="155">H</text>
+<!-- q3 -->
+<rect fill="#FFFFFF" filter="url(#gateShadow)" height="26" rx="3" stroke="#00526a" stroke-width="1.5" width="26" x="125" y="187"></rect>
+<text fill="#00526a" font-size="12" font-weight="bold" text-anchor="middle" x="138" y="205">H</text>
+<!-- q4 -->
+<rect fill="#FFFFFF" filter="url(#gateShadow)" height="26" rx="3" stroke="#00526a" stroke-width="1.5" width="26" x="125" y="237"></rect>
+<text fill="#00526a" font-size="12" font-weight="bold" text-anchor="middle" x="138" y="255">H</text>
+<!-- q5 -->
+<rect fill="#FFFFFF" filter="url(#gateShadow)" height="26" rx="3" stroke="#00526a" stroke-width="1.5" width="26" x="125" y="287"></rect>
+<text fill="#00526a" font-size="12" font-weight="bold" text-anchor="middle" x="138" y="305">H</text>
+<!-- q6 -->
+<rect fill="#FFFFFF" filter="url(#gateShadow)" height="26" rx="3" stroke="#00526a" stroke-width="1.5" width="26" x="125" y="337"></rect>
+<text fill="#00526a" font-size="12" font-weight="bold" text-anchor="middle" x="138" y="355">H</text>
+<!-- q7 -->
+<rect fill="#FFFFFF" filter="url(#gateShadow)" height="26" rx="3" stroke="#00526a" stroke-width="1.5" width="26" x="125" y="387"></rect>
+<text fill="#00526a" font-size="12" font-weight="bold" text-anchor="middle" x="138" y="405">H</text>
+<!-- ============================================== -->
+<!-- STAGE 2: Rz(2x_i) FEATURE ENCODING GATES       -->
+<!-- ============================================== -->
+<!-- q0 -->
+<rect fill="#FFFFFF" filter="url(#gateShadow)" height="30" rx="3" stroke="#9A6A16" stroke-width="1.5" width="76" x="220" y="35"></rect>
+<text fill="#9A6A16" font-size="11" font-weight="bold" text-anchor="middle" x="258" y="54">Rz(2x₀)</text>
+<!-- q1 -->
+<rect fill="#FFFFFF" filter="url(#gateShadow)" height="30" rx="3" stroke="#9A6A16" stroke-width="1.5" width="76" x="220" y="85"></rect>
+<text fill="#9A6A16" font-size="11" font-weight="bold" text-anchor="middle" x="258" y="104">Rz(2x₁)</text>
+<!-- q2 -->
+<rect fill="#FFFFFF" filter="url(#gateShadow)" height="30" rx="3" stroke="#9A6A16" stroke-width="1.5" width="76" x="220" y="135"></rect>
+<text fill="#9A6A16" font-size="11" font-weight="bold" text-anchor="middle" x="258" y="154">Rz(2x₂)</text>
+<!-- q3 -->
+<rect fill="#FFFFFF" filter="url(#gateShadow)" height="30" rx="3" stroke="#9A6A16" stroke-width="1.5" width="76" x="220" y="185"></rect>
+<text fill="#9A6A16" font-size="11" font-weight="bold" text-anchor="middle" x="258" y="204">Rz(2x₃)</text>
+<!-- q4 -->
+<rect fill="#FFFFFF" filter="url(#gateShadow)" height="30" rx="3" stroke="#9A6A16" stroke-width="1.5" width="76" x="220" y="235"></rect>
+<text fill="#9A6A16" font-size="11" font-weight="bold" text-anchor="middle" x="258" y="254">Rz(2x₄)</text>
+<!-- q5 -->
+<rect fill="#FFFFFF" filter="url(#gateShadow)" height="30" rx="3" stroke="#9A6A16" stroke-width="1.5" width="76" x="220" y="285"></rect>
+<text fill="#9A6A16" font-size="11" font-weight="bold" text-anchor="middle" x="258" y="304">Rz(2x₅)</text>
+<!-- q6 -->
+<rect fill="#FFFFFF" filter="url(#gateShadow)" height="30" rx="3" stroke="#9A6A16" stroke-width="1.5" width="76" x="220" y="335"></rect>
+<text fill="#9A6A16" font-size="11" font-weight="bold" text-anchor="middle" x="258" y="354">Rz(2x₆)</text>
+<!-- q7 -->
+<rect fill="#FFFFFF" filter="url(#gateShadow)" height="30" rx="3" stroke="#9A6A16" stroke-width="1.5" width="76" x="220" y="385"></rect>
+<text fill="#9A6A16" font-size="11" font-weight="bold" text-anchor="middle" x="258" y="404">Rz(2x₇)</text>
+<!-- ============================================== -->
+<!-- STAGE 3: LINEAR CNOT / CX LADDER ENTANGLEMENT -->
+<!-- ============================================== -->
+<!-- CX q0 -> q1 -->
+<line stroke="#5b4dbd" stroke-width="2" x1="365" x2="365" y1="50" y2="100"></line>
+<circle cx="365" cy="50" fill="#5b4dbd" r="4.5"></circle>
+<circle cx="365" cy="100" fill="#FFFFFF" r="9" stroke="#5b4dbd" stroke-width="2"></circle>
+<line stroke="#5b4dbd" stroke-width="2" x1="359" x2="371" y1="100" y2="100"></line>
+<line stroke="#5b4dbd" stroke-width="2" x1="365" x2="365" y1="94" y2="106"></line>
+<!-- CX q1 -> q2 -->
+<line stroke="#5b4dbd" stroke-width="2" x1="390" x2="390" y1="100" y2="150"></line>
+<circle cx="390" cy="100" fill="#5b4dbd" r="4.5"></circle>
+<circle cx="390" cy="150" fill="#FFFFFF" r="9" stroke="#5b4dbd" stroke-width="2"></circle>
+<line stroke="#5b4dbd" stroke-width="2" x1="384" x2="396" y1="150" y2="150"></line>
+<line stroke="#5b4dbd" stroke-width="2" x1="390" x2="390" y1="144" y2="156"></line>
+<!-- CX q2 -> q3 -->
+<line stroke="#5b4dbd" stroke-width="2" x1="415" x2="415" y1="150" y2="200"></line>
+<circle cx="415" cy="150" fill="#5b4dbd" r="4.5"></circle>
+<circle cx="415" cy="200" fill="#FFFFFF" r="9" stroke="#5b4dbd" stroke-width="2"></circle>
+<line stroke="#5b4dbd" stroke-width="2" x1="409" x2="421" y1="200" y2="200"></line>
+<line stroke="#5b4dbd" stroke-width="2" x1="415" x2="415" y1="194" y2="206"></line>
+<!-- CX q3 -> q4 -->
+<line stroke="#5b4dbd" stroke-width="2" x1="440" x2="440" y1="200" y2="250"></line>
+<circle cx="440" cy="200" fill="#5b4dbd" r="4.5"></circle>
+<circle cx="440" cy="250" fill="#FFFFFF" r="9" stroke="#5b4dbd" stroke-width="2"></circle>
+<line stroke="#5b4dbd" stroke-width="2" x1="434" x2="446" y1="250" y2="250"></line>
+<line stroke="#5b4dbd" stroke-width="2" x1="440" x2="440" y1="244" y2="256"></line>
+<!-- CX q4 -> q5 -->
+<line stroke="#5b4dbd" stroke-width="2" x1="465" x2="465" y1="250" y2="300"></line>
+<circle cx="465" cy="250" fill="#5b4dbd" r="4.5"></circle>
+<circle cx="465" cy="300" fill="#FFFFFF" r="9" stroke="#5b4dbd" stroke-width="2"></circle>
+<line stroke="#5b4dbd" stroke-width="2" x1="459" x2="471" y1="300" y2="300"></line>
+<line stroke="#5b4dbd" stroke-width="2" x1="465" x2="465" y1="294" y2="306"></line>
+<!-- CX q5 -> q6 -->
+<line stroke="#5b4dbd" stroke-width="2" x1="490" x2="490" y1="300" y2="350"></line>
+<circle cx="490" cy="300" fill="#5b4dbd" r="4.5"></circle>
+<circle cx="490" cy="350" fill="#FFFFFF" r="9" stroke="#5b4dbd" stroke-width="2"></circle>
+<line stroke="#5b4dbd" stroke-width="2" x1="484" x2="496" y1="350" y2="350"></line>
+<line stroke="#5b4dbd" stroke-width="2" x1="490" x2="490" y1="344" y2="356"></line>
+<!-- CX q6 -> q7 -->
+<line stroke="#5b4dbd" stroke-width="2" x1="515" x2="515" y1="350" y2="400"></line>
+<circle cx="515" cy="350" fill="#5b4dbd" r="4.5"></circle>
+<circle cx="515" cy="400" fill="#FFFFFF" r="9" stroke="#5b4dbd" stroke-width="2"></circle>
+<line stroke="#5b4dbd" stroke-width="2" x1="509" x2="521" y1="400" y2="400"></line>
+<line stroke="#5b4dbd" stroke-width="2" x1="515" x2="515" y1="394" y2="406"></line>
+<!-- ============================================== -->
+<!-- STAGE 4: VARIATIONAL ANSATZ LAYERS [Ry(θ)]     -->
+<!-- ============================================== -->
+<!-- Layer 1 of Ansatz (θ_0 .. θ_7) -->
+<g>
+<rect fill="#FFFFFF" filter="url(#gateShadow)" height="28" rx="3" stroke="#5b4dbd" stroke-width="1.5" width="58" x="570" y="36"></rect>
+<text fill="#5b4dbd" font-size="11" font-weight="bold" text-anchor="middle" x="599" y="54">Ry(θ₀)</text>
+<rect fill="#FFFFFF" filter="url(#gateShadow)" height="28" rx="3" stroke="#5b4dbd" stroke-width="1.5" width="58" x="570" y="86"></rect>
+<text fill="#5b4dbd" font-size="11" font-weight="bold" text-anchor="middle" x="599" y="104">Ry(θ₁)</text>
+<rect fill="#FFFFFF" filter="url(#gateShadow)" height="28" rx="3" stroke="#5b4dbd" stroke-width="1.5" width="58" x="570" y="136"></rect>
+<text fill="#5b4dbd" font-size="11" font-weight="bold" text-anchor="middle" x="599" y="154">Ry(θ₂)</text>
+<rect fill="#FFFFFF" filter="url(#gateShadow)" height="28" rx="3" stroke="#5b4dbd" stroke-width="1.5" width="58" x="570" y="186"></rect>
+<text fill="#5b4dbd" font-size="11" font-weight="bold" text-anchor="middle" x="599" y="204">Ry(θ₃)</text>
+<rect fill="#FFFFFF" filter="url(#gateShadow)" height="28" rx="3" stroke="#5b4dbd" stroke-width="1.5" width="58" x="570" y="236"></rect>
+<text fill="#5b4dbd" font-size="11" font-weight="bold" text-anchor="middle" x="599" y="254">Ry(θ₄)</text>
+<rect fill="#FFFFFF" filter="url(#gateShadow)" height="28" rx="3" stroke="#5b4dbd" stroke-width="1.5" width="58" x="570" y="286"></rect>
+<text fill="#5b4dbd" font-size="11" font-weight="bold" text-anchor="middle" x="599" y="304">Ry(θ₅)</text>
+<rect fill="#FFFFFF" filter="url(#gateShadow)" height="28" rx="3" stroke="#5b4dbd" stroke-width="1.5" width="58" x="570" y="336"></rect>
+<text fill="#5b4dbd" font-size="11" font-weight="bold" text-anchor="middle" x="599" y="354">Ry(θ₆)</text>
+<rect fill="#FFFFFF" filter="url(#gateShadow)" height="28" rx="3" stroke="#5b4dbd" stroke-width="1.5" width="58" x="570" y="386"></rect>
+<text fill="#5b4dbd" font-size="11" font-weight="bold" text-anchor="middle" x="599" y="404">Ry(θ₇)</text>
+</g>
+<!-- Inter-layer CX entanglement indicator -->
+<line stroke="#87929C" stroke-dasharray="3,3" stroke-width="1.5" x1="645" x2="645" y1="50" y2="400"></line>
+<!-- Layer 2 & 3 Condensed Variational Block representation -->
+<g>
+<rect fill="#FFFFFF" filter="url(#gateShadow)" height="370" rx="6" stroke="#17212B" stroke-dasharray="4,2" stroke-width="1.5" width="145" x="665" y="35"></rect>
+<text fill="#17212B" font-size="12" font-weight="bold" text-anchor="middle" x="737" y="170">Ansatz Reps 2 & 3</text>
+<text fill="#5F6B76" font-size="11" text-anchor="middle" x="737" y="195">Entangle + Ry(θ₈₋₂₃)</text>
+<text fill="#87929C" font-family="sans-serif" font-size="10" text-anchor="middle" x="737" y="220">16 additional params</text>
+<path d="M 720 235 L 755 235" stroke="#5b4dbd" stroke-linecap="round" stroke-width="2"></path>
+<circle cx="737" cy="235" fill="#5b4dbd" r="4"></circle>
+</g>
+<!-- ============================================== -->
+<!-- STAGE 5: FINAL MEASUREMENT METERS [M]          -->
+<!-- ============================================== -->
+<!-- Measure q0 -->
+<g>
+<rect fill="#FFFFFF" filter="url(#gateShadow)" height="28" rx="3" stroke="#17212B" stroke-width="1.5" width="30" x="875" y="36"></rect>
+<path d="M 881 56 A 9 9 0 0 1 899 56" fill="none" stroke="#17212B" stroke-width="1.2"></path>
+<line stroke="#17212B" stroke-width="1.2" x1="890" x2="897" y1="56" y2="44"></line>
+<!-- Readout drop line to classical bus -->
+<line stroke="#87929C" stroke-dasharray="2,2" stroke-width="1" x1="890" x2="890" y1="64" y2="448"></line>
+</g>
+<!-- Measure q1 -->
+<g>
+<rect fill="#FFFFFF" filter="url(#gateShadow)" height="28" rx="3" stroke="#17212B" stroke-width="1.5" width="30" x="875" y="86"></rect>
+<path d="M 881 106 A 9 9 0 0 1 899 106" fill="none" stroke="#17212B" stroke-width="1.2"></path>
+<line stroke="#17212B" stroke-width="1.2" x1="890" x2="897" y1="106" y2="94"></line>
+</g>
+<!-- Measure q2 -->
+<g>
+<rect fill="#FFFFFF" filter="url(#gateShadow)" height="28" rx="3" stroke="#17212B" stroke-width="1.5" width="30" x="875" y="136"></rect>
+<path d="M 881 156 A 9 9 0 0 1 899 156" fill="none" stroke="#17212B" stroke-width="1.2"></path>
+<line stroke="#17212B" stroke-width="1.2" x1="890" x2="897" y1="156" y2="144"></line>
+</g>
+<!-- Measure q3 -->
+<g>
+<rect fill="#FFFFFF" filter="url(#gateShadow)" height="28" rx="3" stroke="#17212B" stroke-width="1.5" width="30" x="875" y="186"></rect>
+<path d="M 881 206 A 9 9 0 0 1 899 206" fill="none" stroke="#17212B" stroke-width="1.2"></path>
+<line stroke="#17212B" stroke-width="1.2" x1="890" x2="897" y1="206" y2="194"></line>
+</g>
+<!-- Measure q4 -->
+<g>
+<rect fill="#FFFFFF" filter="url(#gateShadow)" height="28" rx="3" stroke="#17212B" stroke-width="1.5" width="30" x="875" y="236"></rect>
+<path d="M 881 256 A 9 9 0 0 1 899 256" fill="none" stroke="#17212B" stroke-width="1.2"></path>
+<line stroke="#17212B" stroke-width="1.2" x1="890" x2="897" y1="256" y2="244"></line>
+</g>
+<!-- Measure q5 -->
+<g>
+<rect fill="#FFFFFF" filter="url(#gateShadow)" height="28" rx="3" stroke="#17212B" stroke-width="1.5" width="30" x="875" y="286"></rect>
+<path d="M 881 306 A 9 9 0 0 1 899 306" fill="none" stroke="#17212B" stroke-width="1.2"></path>
+<line stroke="#17212B" stroke-width="1.2" x1="890" x2="897" y1="306" y2="294"></line>
+</g>
+<!-- Measure q6 -->
+<g>
+<rect fill="#FFFFFF" filter="url(#gateShadow)" height="28" rx="3" stroke="#17212B" stroke-width="1.5" width="30" x="875" y="336"></rect>
+<path d="M 881 356 A 9 9 0 0 1 899 356" fill="none" stroke="#17212B" stroke-width="1.2"></path>
+<line stroke="#17212B" stroke-width="1.2" x1="890" x2="897" y1="356" y2="344"></line>
+</g>
+<!-- Measure q7 -->
+<g>
+<rect fill="#FFFFFF" filter="url(#gateShadow)" height="28" rx="3" stroke="#17212B" stroke-width="1.5" width="30" x="875" y="386"></rect>
+<path d="M 881 406 A 9 9 0 0 1 899 406" fill="none" stroke="#17212B" stroke-width="1.2"></path>
+<line stroke="#17212B" stroke-width="1.2" x1="890" x2="897" y1="406" y2="394"></line>
+</g>
+<!-- Final Bit Arrow Marker on Classical Bus -->
+<polygon fill="#87929C" points="950,446 958,450 950,454"></polygon>
+</svg>
+</div>
+</div>
+<!-- Circuit Footnote & Optimization Metadata -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm pt-space-xs text-xs text-text-secondary">
+<div class="flex items-center gap-space-md flex-wrap">
+<span>Transpiler: <strong class="text-text-charcoal font-medium">Qiskit SabreSwap Pass</strong></span>
+<span>Optimization: <strong class="text-text-charcoal font-medium">Level 2 (Commutation Analysis active)</strong></span>
+<span>Simulated Latency: <strong class="text-text-charcoal font-medium">1.42 ms / call</strong></span>
+</div>
+<div class="flex items-center gap-1 text-primary hover:underline cursor-pointer">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Toggle Full QASM Buffer</span>
+</div>
+</div>
+</div>
+<!-- Bottom Regulatory & Experimental Disclaimer -->
+<div class="rounded-lg p-space-md bg-surface-subtle border border-border-divider flex items-center gap-space-md">
+<span class="material-symbols-outlined text-text-metadata text-[20px] shrink-0">verified_user</span>
+<p class="font-body-sm text-body-sm text-text-secondary">
+<strong>Notice:</strong> Research prototype. Model configurations reflect benchmark specifications and are not clinical diagnostic tools. Parameter optimizations are validated strictly against the Wisconsin Diagnostic Breast Cancer (WDBC) test partition.
+    </p>
+</div>
+<!-- Interactive Model Switcher Script -->
+<script>
+    (function initModelSwitcher() {
+      const cards = document.querySelectorAll('#model-selector-container > div');
+      cards.forEach((card, index) => {
+        card.addEventListener('click', () => {
+          // Remove active styles from all
+          cards.forEach(c => {
+            c.classList.remove('border-2', 'border-secondary', 'border-primary');
+            c.classList.add('border', 'border-border-divider');
+            const badge = c.querySelector('.absolute.-top-2\\.5');
+            if (badge) badge.remove();
+          });
+
+          // Apply active styling
+          const isQuantum = index < 2;
+          const activeColor = isQuantum ? 'secondary' : 'primary';
+          card.classList.remove('border', 'border-border-divider');
+          card.classList.add('border-2', `border-${activeColor}`);
+
+          const activeBadge = document.createElement('div');
+          activeBadge.className = `absolute -top-2.5 right-3 bg-${activeColor} text-surface-white text-[10px] font-bold px-2 py-0.5 rounded tracking-wide uppercase shadow-xs`;
+          activeBadge.innerText = 'Active';
+          card.appendChild(activeBadge);
+        });
+      });
+    })();
+  </script>
+</div></main></div></body></html>

@@ -1,0 +1,598 @@
+{
+  "registry_only_datasets": [],
+  "audit_only_datasets": [],
+  "registry_only_models": [
+    [
+      "wdbc",
+      "random_forest"
+    ],
+    [
+      "wdbc",
+      "svm"
+    ],
+    [
+      "wdbc",
+      "xgboost"
+    ]
+  ],
+  "audit_only_models": [],
+  "registry_claim_with_unverified_independent_association": [],
+  "true_contradictions": [],
+  "registry_coverage_gaps": [
+    {
+      "dataset_key": "golub",
+      "model_key": "logistic_regression",
+      "capability": "implemented",
+      "independent_audit": "VERIFIED_TRUE",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    },
+    {
+      "dataset_key": "golub",
+      "model_key": "logistic_regression",
+      "capability": "trained_artifact_exists",
+      "independent_audit": "UNVERIFIED",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    },
+    {
+      "dataset_key": "golub",
+      "model_key": "logistic_regression",
+      "capability": "preprocessing_artifact_exists",
+      "independent_audit": "VERIFIED_TRUE",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    },
+    {
+      "dataset_key": "golub",
+      "model_key": "logistic_regression",
+      "capability": "runtime_loadable",
+      "independent_audit": "UNVERIFIED",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    },
+    {
+      "dataset_key": "golub",
+      "model_key": "logistic_regression",
+      "capability": "trained_quantum_state_available",
+      "independent_audit": "NOT_APPLICABLE",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    },
+    {
+      "dataset_key": "golub",
+      "model_key": "logistic_regression",
+      "capability": "deployment_status",
+      "independent_audit": "UNVERIFIED",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    },
+    {
+      "dataset_key": "golub",
+      "model_key": "qsvc",
+      "capability": "implemented",
+      "independent_audit": "VERIFIED_TRUE",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    },
+    {
+      "dataset_key": "golub",
+      "model_key": "qsvc",
+      "capability": "trained_artifact_exists",
+      "independent_audit": "VERIFIED_FALSE",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    },
+    {
+      "dataset_key": "golub",
+      "model_key": "qsvc",
+      "capability": "preprocessing_artifact_exists",
+      "independent_audit": "VERIFIED_TRUE",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    },
+    {
+      "dataset_key": "golub",
+      "model_key": "qsvc",
+      "capability": "runtime_loadable",
+      "independent_audit": "VERIFIED_FALSE",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    },
+    {
+      "dataset_key": "golub",
+      "model_key": "qsvc",
+      "capability": "trained_quantum_state_available",
+      "independent_audit": "VERIFIED_FALSE",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    },
+    {
+      "dataset_key": "golub",
+      "model_key": "qsvc",
+      "capability": "deployment_status",
+      "independent_audit": "VERIFIED_FALSE",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    },
+    {
+      "dataset_key": "uci",
+      "model_key": "logistic_regression",
+      "capability": "implemented",
+      "independent_audit": "VERIFIED_TRUE",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    },
+    {
+      "dataset_key": "uci",
+      "model_key": "logistic_regression",
+      "capability": "trained_artifact_exists",
+      "independent_audit": "UNVERIFIED",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    },
+    {
+      "dataset_key": "uci",
+      "model_key": "logistic_regression",
+      "capability": "preprocessing_artifact_exists",
+      "independent_audit": "VERIFIED_TRUE",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    },
+    {
+      "dataset_key": "uci",
+      "model_key": "logistic_regression",
+      "capability": "runtime_loadable",
+      "independent_audit": "UNVERIFIED",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    },
+    {
+      "dataset_key": "uci",
+      "model_key": "logistic_regression",
+      "capability": "trained_quantum_state_available",
+      "independent_audit": "NOT_APPLICABLE",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    },
+    {
+      "dataset_key": "uci",
+      "model_key": "logistic_regression",
+      "capability": "deployment_status",
+      "independent_audit": "UNVERIFIED",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    },
+    {
+      "dataset_key": "uci",
+      "model_key": "qsvc",
+      "capability": "implemented",
+      "independent_audit": "VERIFIED_TRUE",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    },
+    {
+      "dataset_key": "uci",
+      "model_key": "qsvc",
+      "capability": "trained_artifact_exists",
+      "independent_audit": "VERIFIED_FALSE",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    },
+    {
+      "dataset_key": "uci",
+      "model_key": "qsvc",
+      "capability": "preprocessing_artifact_exists",
+      "independent_audit": "VERIFIED_TRUE",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    },
+    {
+      "dataset_key": "uci",
+      "model_key": "qsvc",
+      "capability": "runtime_loadable",
+      "independent_audit": "VERIFIED_FALSE",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    },
+    {
+      "dataset_key": "uci",
+      "model_key": "qsvc",
+      "capability": "trained_quantum_state_available",
+      "independent_audit": "VERIFIED_FALSE",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    },
+    {
+      "dataset_key": "uci",
+      "model_key": "qsvc",
+      "capability": "deployment_status",
+      "independent_audit": "VERIFIED_FALSE",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    },
+    {
+      "dataset_key": "wdbc",
+      "model_key": "logistic_regression",
+      "capability": "implemented",
+      "independent_audit": "VERIFIED_TRUE",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    },
+    {
+      "dataset_key": "wdbc",
+      "model_key": "logistic_regression",
+      "capability": "trained_artifact_exists",
+      "independent_audit": "UNVERIFIED",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    },
+    {
+      "dataset_key": "wdbc",
+      "model_key": "logistic_regression",
+      "capability": "preprocessing_artifact_exists",
+      "independent_audit": "VERIFIED_TRUE",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    },
+    {
+      "dataset_key": "wdbc",
+      "model_key": "logistic_regression",
+      "capability": "runtime_loadable",
+      "independent_audit": "UNVERIFIED",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    },
+    {
+      "dataset_key": "wdbc",
+      "model_key": "logistic_regression",
+      "capability": "trained_quantum_state_available",
+      "independent_audit": "NOT_APPLICABLE",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    },
+    {
+      "dataset_key": "wdbc",
+      "model_key": "logistic_regression",
+      "capability": "deployment_status",
+      "independent_audit": "UNVERIFIED",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    },
+    {
+      "dataset_key": "wdbc",
+      "model_key": "vqc",
+      "capability": "implemented",
+      "independent_audit": "VERIFIED_TRUE",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    },
+    {
+      "dataset_key": "wdbc",
+      "model_key": "vqc",
+      "capability": "trained_artifact_exists",
+      "independent_audit": "VERIFIED_TRUE",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    },
+    {
+      "dataset_key": "wdbc",
+      "model_key": "vqc",
+      "capability": "preprocessing_artifact_exists",
+      "independent_audit": "VERIFIED_TRUE",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    },
+    {
+      "dataset_key": "wdbc",
+      "model_key": "vqc",
+      "capability": "runtime_loadable",
+      "independent_audit": "UNVERIFIED",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    },
+    {
+      "dataset_key": "wdbc",
+      "model_key": "vqc",
+      "capability": "trained_quantum_state_available",
+      "independent_audit": "VERIFIED_TRUE",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    },
+    {
+      "dataset_key": "wdbc",
+      "model_key": "vqc",
+      "capability": "deployment_status",
+      "independent_audit": "UNVERIFIED",
+      "registry": "unavailable",
+      "relationship": "REGISTRY_COVERAGE_GAP"
+    }
+  ],
+  "unverified_registry_claims": [],
+  "unverified_associations": [
+    {
+      "dataset_key": "golub",
+      "model_key": "logistic_regression",
+      "artifact": "models/logistic_regression.joblib",
+      "type": "classical_artifact",
+      "reason": "Artifact matches the model key but lacks explicit dataset provenance."
+    },
+    {
+      "dataset_key": "uci",
+      "model_key": "logistic_regression",
+      "artifact": "models/logistic_regression.joblib",
+      "type": "classical_artifact",
+      "reason": "Artifact matches the model key but lacks explicit dataset provenance."
+    },
+    {
+      "dataset_key": "wdbc",
+      "model_key": "logistic_regression",
+      "artifact": "models/logistic_regression.joblib",
+      "type": "classical_artifact",
+      "reason": "Artifact matches the model key but lacks explicit dataset provenance."
+    },
+    {
+      "dataset_key": "wdbc",
+      "model_key": "vqc",
+      "artifact": "results/vqc_weights_8q_spsa_r1_i150_20260910T054111Z.npy",
+      "type": "quantum_state_candidate",
+      "reason": "Quantum state candidate exists but lacks explicit dataset/model provenance."
+    },
+    {
+      "dataset_key": "wdbc",
+      "model_key": "vqc",
+      "artifact": "results/vqc_weights_8q_spsa_r1_i300_20260910T085206Z.npy",
+      "type": "quantum_state_candidate",
+      "reason": "Quantum state candidate exists but lacks explicit dataset/model provenance."
+    },
+    {
+      "dataset_key": "wdbc",
+      "model_key": "vqc",
+      "artifact": "results/vqc_weights_8q_spsa_r1_i300_20260910T085430Z.npy",
+      "type": "quantum_state_candidate",
+      "reason": "Quantum state candidate exists but lacks explicit dataset/model provenance."
+    }
+  ],
+  "other_findings": [
+    {
+      "dataset_key": "golub",
+      "model_key": "logistic_regression",
+      "capability": "evaluated",
+      "independent_audit": "VERIFIED_TRUE",
+      "registry": "AVAILABLE",
+      "relationship": "OTHER_FINDING"
+    },
+    {
+      "dataset_key": "golub",
+      "model_key": "logistic_regression",
+      "capability": "inference_executable",
+      "independent_audit": "UNVERIFIED",
+      "registry": "UNAVAILABLE",
+      "relationship": "OTHER_FINDING"
+    },
+    {
+      "dataset_key": "golub",
+      "model_key": "logistic_regression",
+      "capability": "circuit_reconstructible",
+      "independent_audit": "NOT_APPLICABLE",
+      "registry": "UNVERIFIED",
+      "relationship": "OTHER_FINDING"
+    },
+    {
+      "dataset_key": "golub",
+      "model_key": "logistic_regression",
+      "capability": "benchmark",
+      "independent_audit": "UNVERIFIED",
+      "registry": "UNAVAILABLE",
+      "relationship": "OTHER_FINDING"
+    },
+    {
+      "dataset_key": "golub",
+      "model_key": "logistic_regression",
+      "capability": "explainability",
+      "independent_audit": "UNVERIFIED",
+      "registry": "UNAVAILABLE",
+      "relationship": "OTHER_FINDING"
+    },
+    {
+      "dataset_key": "golub",
+      "model_key": "qsvc",
+      "capability": "evaluated",
+      "independent_audit": "VERIFIED_TRUE",
+      "registry": "AVAILABLE",
+      "relationship": "OTHER_FINDING"
+    },
+    {
+      "dataset_key": "golub",
+      "model_key": "qsvc",
+      "capability": "inference_executable",
+      "independent_audit": "VERIFIED_FALSE",
+      "registry": "UNAVAILABLE",
+      "relationship": "OTHER_FINDING"
+    },
+    {
+      "dataset_key": "golub",
+      "model_key": "qsvc",
+      "capability": "quantum_configuration",
+      "independent_audit": "VERIFIED_TRUE",
+      "registry": "AVAILABLE",
+      "relationship": "OTHER_FINDING"
+    },
+    {
+      "dataset_key": "golub",
+      "model_key": "qsvc",
+      "capability": "benchmark",
+      "independent_audit": "UNVERIFIED",
+      "registry": "UNAVAILABLE",
+      "relationship": "OTHER_FINDING"
+    },
+    {
+      "dataset_key": "golub",
+      "model_key": "qsvc",
+      "capability": "explainability",
+      "independent_audit": "UNVERIFIED",
+      "registry": "AVAILABLE",
+      "relationship": "OTHER_FINDING"
+    },
+    {
+      "dataset_key": "uci",
+      "model_key": "logistic_regression",
+      "capability": "evaluated",
+      "independent_audit": "VERIFIED_TRUE",
+      "registry": "AVAILABLE",
+      "relationship": "OTHER_FINDING"
+    },
+    {
+      "dataset_key": "uci",
+      "model_key": "logistic_regression",
+      "capability": "inference_executable",
+      "independent_audit": "UNVERIFIED",
+      "registry": "UNAVAILABLE",
+      "relationship": "OTHER_FINDING"
+    },
+    {
+      "dataset_key": "uci",
+      "model_key": "logistic_regression",
+      "capability": "circuit_reconstructible",
+      "independent_audit": "NOT_APPLICABLE",
+      "registry": "UNVERIFIED",
+      "relationship": "OTHER_FINDING"
+    },
+    {
+      "dataset_key": "uci",
+      "model_key": "logistic_regression",
+      "capability": "benchmark",
+      "independent_audit": "UNVERIFIED",
+      "registry": "UNAVAILABLE",
+      "relationship": "OTHER_FINDING"
+    },
+    {
+      "dataset_key": "uci",
+      "model_key": "logistic_regression",
+      "capability": "explainability",
+      "independent_audit": "UNVERIFIED",
+      "registry": "UNAVAILABLE",
+      "relationship": "OTHER_FINDING"
+    },
+    {
+      "dataset_key": "uci",
+      "model_key": "qsvc",
+      "capability": "evaluated",
+      "independent_audit": "VERIFIED_TRUE",
+      "registry": "AVAILABLE",
+      "relationship": "OTHER_FINDING"
+    },
+    {
+      "dataset_key": "uci",
+      "model_key": "qsvc",
+      "capability": "inference_executable",
+      "independent_audit": "VERIFIED_FALSE",
+      "registry": "UNAVAILABLE",
+      "relationship": "OTHER_FINDING"
+    },
+    {
+      "dataset_key": "uci",
+      "model_key": "qsvc",
+      "capability": "quantum_configuration",
+      "independent_audit": "VERIFIED_TRUE",
+      "registry": "AVAILABLE",
+      "relationship": "OTHER_FINDING"
+    },
+    {
+      "dataset_key": "uci",
+      "model_key": "qsvc",
+      "capability": "benchmark",
+      "independent_audit": "UNVERIFIED",
+      "registry": "UNAVAILABLE",
+      "relationship": "OTHER_FINDING"
+    },
+    {
+      "dataset_key": "uci",
+      "model_key": "qsvc",
+      "capability": "explainability",
+      "independent_audit": "UNVERIFIED",
+      "registry": "UNAVAILABLE",
+      "relationship": "OTHER_FINDING"
+    },
+    {
+      "dataset_key": "wdbc",
+      "model_key": "logistic_regression",
+      "capability": "evaluated",
+      "independent_audit": "VERIFIED_TRUE",
+      "registry": "AVAILABLE",
+      "relationship": "OTHER_FINDING"
+    },
+    {
+      "dataset_key": "wdbc",
+      "model_key": "logistic_regression",
+      "capability": "inference_executable",
+      "independent_audit": "UNVERIFIED",
+      "registry": "AVAILABLE",
+      "relationship": "OTHER_FINDING"
+    },
+    {
+      "dataset_key": "wdbc",
+      "model_key": "logistic_regression",
+      "capability": "circuit_reconstructible",
+      "independent_audit": "NOT_APPLICABLE",
+      "registry": "UNVERIFIED",
+      "relationship": "OTHER_FINDING"
+    },
+    {
+      "dataset_key": "wdbc",
+      "model_key": "logistic_regression",
+      "capability": "benchmark",
+      "independent_audit": "UNVERIFIED",
+      "registry": "UNAVAILABLE",
+      "relationship": "OTHER_FINDING"
+    },
+    {
+      "dataset_key": "wdbc",
+      "model_key": "logistic_regression",
+      "capability": "explainability",
+      "independent_audit": "UNVERIFIED",
+      "registry": "UNAVAILABLE",
+      "relationship": "OTHER_FINDING"
+    },
+    {
+      "dataset_key": "wdbc",
+      "model_key": "vqc",
+      "capability": "evaluated",
+      "independent_audit": "VERIFIED_TRUE",
+      "registry": "AVAILABLE",
+      "relationship": "OTHER_FINDING"
+    },
+    {
+      "dataset_key": "wdbc",
+      "model_key": "vqc",
+      "capability": "inference_executable",
+      "independent_audit": "UNVERIFIED",
+      "registry": "AVAILABLE",
+      "relationship": "OTHER_FINDING"
+    },
+    {
+      "dataset_key": "wdbc",
+      "model_key": "vqc",
+      "capability": "quantum_configuration",
+      "independent_audit": "VERIFIED_TRUE",
+      "registry": "AVAILABLE",
+      "relationship": "OTHER_FINDING"
+    },
+    {
+      "dataset_key": "wdbc",
+      "model_key": "vqc",
+      "capability": "benchmark",
+      "independent_audit": "UNVERIFIED",
+      "registry": "UNAVAILABLE",
+      "relationship": "OTHER_FINDING"
+    },
+    {
+      "dataset_key": "wdbc",
+      "model_key": "vqc",
+      "capability": "explainability",
+      "independent_audit": "UNVERIFIED",
+      "registry": "UNAVAILABLE",
+      "relationship": "OTHER_FINDING"
+    }
+  ]
+}

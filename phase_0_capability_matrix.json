@@ -1,0 +1,536 @@
+{
+  "audit_version": "1.0.0",
+  "audit_phase": "Phase 0 - Repository & Backend Baseline Lock",
+  "audit_timestamp": "2026-09-14T20:24:00Z",
+  "datasets": {
+    "wdbc": {
+      "display_name": "Solid Oncology — WDBC Breast Cancer Cytology",
+      "verified": true,
+      "raw_data_file": {
+        "path": "data/raw/wdbc/wdbc.data",
+        "exists": true,
+        "status": "VERIFIED"
+      },
+      "sample_count": {
+        "value": 569,
+        "status": "VERIFIED"
+      },
+      "feature_count": {
+        "value": 30,
+        "status": "VERIFIED"
+      },
+      "class_distribution": {
+        "status": "VERIFIED",
+        "counts": {
+          "Benign": 357,
+          "Malignant": 212
+        },
+        "ratio": "62.7% Benign / 37.3% Malignant"
+      },
+      "feature_schema": {
+        "status": "VERIFIED",
+        "source": "data/raw/wdbc/wdbc.names",
+        "names_count": 30
+      },
+      "models": {
+        "logistic_regression": {
+          "display_name": "Logistic Regression",
+          "type": "classical",
+          "artifact": {
+            "path": "models/logistic_regression.joblib",
+            "exists": true,
+            "loadable": true,
+            "status": "VERIFIED"
+          },
+          "preprocessing": {
+            "path": "models/classical_scaler.joblib",
+            "sequence": "StandardScaler",
+            "status": "VERIFIED"
+          },
+          "evaluation": {
+            "available": true,
+            "source": "results/classical_test_results.csv",
+            "metrics": {
+              "accuracy": 0.9736842105263158,
+              "precision": 0.975609756097561,
+              "sensitivity": 0.9523809523809523,
+              "specificity": 0.9861111111111112,
+              "f1_score": 0.963855421686747,
+              "roc_auc": 0.9953703703703705,
+              "mcc": 0.9419356391499596,
+              "confusion_matrix": {
+                "matrix": [[71, 1], [2, 40]],
+                "labels": ["Benign", "Malignant"]
+              },
+              "n_test": 114
+            }
+          },
+          "inference": {
+            "status": "INFERENCE_READY",
+            "execution_verified": true
+          },
+          "quantum": {
+            "available": false
+          },
+          "explainability": {
+            "status": "UNAVAILABLE"
+          }
+        },
+        "svm": {
+          "display_name": "Support Vector Machine (SVM)",
+          "type": "classical",
+          "artifact": {
+            "path": "models/svm.joblib",
+            "exists": true,
+            "loadable": true,
+            "status": "VERIFIED"
+          },
+          "preprocessing": {
+            "path": "models/classical_scaler.joblib",
+            "sequence": "StandardScaler",
+            "status": "VERIFIED"
+          },
+          "evaluation": {
+            "available": true,
+            "source": "results/classical_test_results.csv",
+            "metrics": {
+              "accuracy": 0.9736842105263158,
+              "precision": 0.975609756097561,
+              "sensitivity": 0.9523809523809523,
+              "specificity": 0.9861111111111112,
+              "f1_score": 0.963855421686747,
+              "roc_auc": 0.994047619047619,
+              "mcc": 0.9419356391499596,
+              "confusion_matrix": {
+                "matrix": [[71, 1], [2, 40]],
+                "labels": ["Benign", "Malignant"]
+              },
+              "n_test": 114
+            }
+          },
+          "inference": {
+            "status": "INFERENCE_READY",
+            "execution_verified": true
+          },
+          "quantum": {
+            "available": false
+          },
+          "explainability": {
+            "status": "UNAVAILABLE"
+          }
+        },
+        "random_forest": {
+          "display_name": "Random Forest",
+          "type": "classical",
+          "artifact": {
+            "path": "models/random_forest.joblib",
+            "exists": true,
+            "loadable": true,
+            "status": "VERIFIED"
+          },
+          "preprocessing": {
+            "path": "models/classical_scaler.joblib",
+            "sequence": "StandardScaler",
+            "status": "VERIFIED"
+          },
+          "evaluation": {
+            "available": true,
+            "source": "results/classical_test_results.csv",
+            "metrics": {
+              "accuracy": 0.956140350877193,
+              "precision": 0.9743589743589743,
+              "sensitivity": 0.9047619047619048,
+              "specificity": 0.9861111111111112,
+              "f1_score": 0.9382716049382716,
+              "roc_auc": 0.9966931216931217,
+              "mcc": 0.9048455589086164,
+              "confusion_matrix": {
+                "matrix": [[71, 1], [4, 38]],
+                "labels": ["Benign", "Malignant"]
+              },
+              "n_test": 114
+            }
+          },
+          "inference": {
+            "status": "INFERENCE_READY",
+            "execution_verified": true
+          },
+          "quantum": {
+            "available": false
+          },
+          "explainability": {
+            "status": "VERIFIED",
+            "type": "FEATURE_ATTRIBUTION_GINI",
+            "artifact": "results/random_forest_feature_importance.csv"
+          }
+        },
+        "xgboost": {
+          "display_name": "XGBoost",
+          "type": "classical",
+          "artifact": {
+            "path": "models/xgboost.joblib",
+            "exists": true,
+            "loadable": false,
+            "load_error": "ModuleNotFoundError: No module named 'xgboost'",
+            "status": "LOAD_ERROR"
+          },
+          "preprocessing": {
+            "path": "models/classical_scaler.joblib",
+            "sequence": "StandardScaler",
+            "status": "VERIFIED"
+          },
+          "evaluation": {
+            "available": true,
+            "source": "results/classical_test_results.csv",
+            "metrics": {
+              "accuracy": 0.9736842105263158,
+              "precision": 1.0,
+              "sensitivity": 0.9285714285714286,
+              "specificity": 1.0,
+              "f1_score": 0.9629629629629629,
+              "roc_auc": 0.9950396825396826,
+              "mcc": 0.9442436814671457,
+              "confusion_matrix": {
+                "matrix": [[72, 0], [3, 39]],
+                "labels": ["Benign", "Malignant"]
+              },
+              "n_test": 114
+            }
+          },
+          "inference": {
+            "status": "LOAD_ERROR",
+            "execution_verified": false
+          },
+          "quantum": {
+            "available": false
+          },
+          "explainability": {
+            "status": "UNAVAILABLE"
+          }
+        },
+        "vqc": {
+          "display_name": "8-Qubit VQC",
+          "type": "quantum",
+          "artifact": {
+            "path": "results/best_model/best_vqc_weights_8q.npy",
+            "exists": true,
+            "loadable": true,
+            "parameter_count": 24,
+            "status": "VERIFIED"
+          },
+          "preprocessing": {
+            "path": "results/artifacts/wdbc_vqc_preprocessing.joblib",
+            "sequence": "StandardScaler -> PCA(8) -> Tanh(X)*pi",
+            "status": "VERIFIED"
+          },
+          "evaluation": {
+            "available": true,
+            "source": "results/wdbc_metrics.json",
+            "metrics": {
+              "accuracy": 0.7368421052631579,
+              "precision": 0.6153846153846154,
+              "sensitivity": 0.7619047619047619,
+              "specificity": 0.7222222222222222,
+              "f1_score": 0.6808510638297872,
+              "roc_auc": 0.7800925925925927,
+              "mcc": 0.4688702384289941,
+              "confusion_matrix": {
+                "matrix": [[52, 20], [10, 32]],
+                "labels": ["Benign", "Malignant"]
+              },
+              "n_test": 114
+            }
+          },
+          "inference": {
+            "status": "INFERENCE_READY",
+            "execution_verified": true,
+            "simulator": "Qiskit Aer Statevector"
+          },
+          "quantum": {
+            "available": true,
+            "qubits": 8,
+            "feature_map": {
+              "name": "ZZFeatureMap",
+              "reps": 1,
+              "entanglement": "linear"
+            },
+            "ansatz": {
+              "name": "RealAmplitudes",
+              "reps": 2,
+              "entanglement": "linear",
+              "parameters": 24
+            },
+            "threshold_tau": 0.65,
+            "circuit_reconstructible": true,
+            "status": "VERIFIED"
+          },
+          "explainability": {
+            "status": "UNAVAILABLE"
+          }
+        }
+      }
+    },
+    "uci": {
+      "display_name": "Cardiology — UCI Ischemic Heart EHR Telemetry",
+      "verified": true,
+      "raw_data_file": {
+        "path": "data/raw/UCI/processed.cleveland.data",
+        "exists": true,
+        "status": "VERIFIED"
+      },
+      "sample_count": {
+        "value": 297,
+        "status": "VERIFIED"
+      },
+      "feature_count": {
+        "value": 13,
+        "status": "VERIFIED"
+      },
+      "class_distribution": {
+        "status": "VERIFIED",
+        "counts": {
+          "Absence": 160,
+          "Presence": 137
+        },
+        "ratio": "53.9% Absence / 46.1% Presence"
+      },
+      "feature_schema": {
+        "status": "VERIFIED",
+        "source": "data/raw/UCI/heart-disease.names",
+        "names_count": 13
+      },
+      "models": {
+        "logistic_regression": {
+          "display_name": "Logistic Regression",
+          "type": "classical",
+          "artifact": {
+            "path": null,
+            "exists": false,
+            "loadable": false,
+            "status": "UNAVAILABLE"
+          },
+          "preprocessing": {
+            "path": "results/artifacts/uci_logistic_regression_preprocessing.joblib",
+            "sequence": "StandardScaler",
+            "status": "VERIFIED"
+          },
+          "evaluation": {
+            "available": true,
+            "source": "results/uci_metrics.json",
+            "metrics": {
+              "accuracy": 0.8533333333333334,
+              "precision": 0.8529411764705882,
+              "sensitivity": 0.8285714285714286,
+              "specificity": 0.875,
+              "f1_score": 0.8405797101449275,
+              "roc_auc": 0.9167857142857143,
+              "mcc": 0.7047249451996541,
+              "confusion_matrix": {
+                "matrix": [[35, 5], [6, 29]],
+                "labels": ["Absence", "Presence"]
+              },
+              "n_test": 75
+            }
+          },
+          "inference": {
+            "status": "EVALUATION_ONLY",
+            "execution_verified": false
+          },
+          "quantum": {
+            "available": false
+          },
+          "explainability": {
+            "status": "UNAVAILABLE"
+          }
+        },
+        "qsvc": {
+          "display_name": "Quantum QSVC (8-qubit)",
+          "type": "quantum",
+          "artifact": {
+            "path": null,
+            "exists": false,
+            "loadable": false,
+            "status": "UNAVAILABLE"
+          },
+          "preprocessing": {
+            "path": "results/artifacts/uci_qsvc_preprocessing.pt",
+            "sequence": "StandardScaler -> Autoencoder(13->8, PyTorch)",
+            "status": "VERIFIED"
+          },
+          "evaluation": {
+            "available": true,
+            "source": "results/uci_metrics.json",
+            "metrics": {
+              "accuracy": 0.8133333333333334,
+              "precision": 0.8,
+              "sensitivity": 0.8,
+              "specificity": 0.825,
+              "f1_score": 0.8,
+              "roc_auc": null,
+              "mcc": 0.625,
+              "confusion_matrix": {
+                "matrix": [[33, 7], [7, 28]],
+                "labels": ["Absence", "Presence"]
+              },
+              "n_test": 75
+            }
+          },
+          "inference": {
+            "status": "EVALUATION_ONLY",
+            "execution_verified": false
+          },
+          "quantum": {
+            "available": true,
+            "qubits": 8,
+            "feature_map": {
+              "name": "ZZFeatureMap",
+              "reps": 1,
+              "entanglement": "full"
+            },
+            "kernel": "QuantumKernelClassifier",
+            "C": 10.0,
+            "scale_factor": 0.05,
+            "circuit_reconstructible": true,
+            "status": "VERIFIED"
+          },
+          "explainability": {
+            "status": "UNAVAILABLE"
+          }
+        }
+      }
+    },
+    "golub": {
+      "display_name": "Hematologic Oncology — Golub Leukemia Genomics",
+      "verified": true,
+      "raw_data_file": {
+        "path": "data/raw/golub/data_set_ALL_AML_train.csv",
+        "exists": true,
+        "status": "VERIFIED"
+      },
+      "sample_count": {
+        "value": 72,
+        "status": "VERIFIED"
+      },
+      "feature_count": {
+        "value": 7129,
+        "status": "VERIFIED"
+      },
+      "class_distribution": {
+        "status": "VERIFIED",
+        "counts": {
+          "ALL": 47,
+          "AML": 25
+        },
+        "ratio": "65.3% ALL / 34.7% AML"
+      },
+      "feature_schema": {
+        "status": "PARTIAL",
+        "source": "data/raw/golub/data_set_ALL_AML_train.csv",
+        "names_count": 7129,
+        "notes": "CSV headers contain probe accession IDs; backend data_loader falls back to Gene_1..Gene_7129 synthetic names"
+      },
+      "models": {
+        "logistic_regression": {
+          "display_name": "Logistic Regression",
+          "type": "classical",
+          "artifact": {
+            "path": null,
+            "exists": false,
+            "loadable": false,
+            "status": "UNAVAILABLE"
+          },
+          "preprocessing": {
+            "path": "results/artifacts/golub_logistic_regression_preprocessing.joblib",
+            "sequence": "SelectKBest(64) -> StandardScaler",
+            "status": "VERIFIED"
+          },
+          "evaluation": {
+            "available": true,
+            "source": "results/golub_metrics.json",
+            "metrics": {
+              "accuracy": 0.8529411764705882,
+              "precision": 1.0,
+              "sensitivity": 0.6428571428571429,
+              "specificity": 1.0,
+              "f1_score": 0.782608695652174,
+              "roc_auc": 0.8928571428571429,
+              "mcc": null,
+              "confusion_matrix": {
+                "matrix": [[20, 0], [5, 9]],
+                "labels": ["ALL", "AML"]
+              },
+              "n_test": 34
+            }
+          },
+          "inference": {
+            "status": "EVALUATION_ONLY",
+            "execution_verified": false
+          },
+          "quantum": {
+            "available": false
+          },
+          "explainability": {
+            "status": "UNAVAILABLE"
+          }
+        },
+        "qsvc": {
+          "display_name": "Quantum QSVC (8-qubit)",
+          "type": "quantum",
+          "artifact": {
+            "path": null,
+            "exists": false,
+            "loadable": false,
+            "status": "UNAVAILABLE"
+          },
+          "preprocessing": {
+            "path": "results/artifacts/golub_qsvc_preprocessing.pt",
+            "sequence": "SelectKBest(64) -> StandardScaler -> Autoencoder(64->8, PyTorch)",
+            "status": "VERIFIED"
+          },
+          "evaluation": {
+            "available": true,
+            "source": "results/golub_metrics.json",
+            "metrics": {
+              "accuracy": 0.8823529411764706,
+              "precision": 1.0,
+              "sensitivity": 0.7142857142857143,
+              "specificity": 1.0,
+              "f1_score": 0.8333333333333333,
+              "roc_auc": null,
+              "mcc": null,
+              "confusion_matrix": {
+                "matrix": [[20, 0], [4, 10]],
+                "labels": ["ALL", "AML"]
+              },
+              "n_test": 34
+            }
+          },
+          "inference": {
+            "status": "EVALUATION_ONLY",
+            "execution_verified": false
+          },
+          "quantum": {
+            "available": true,
+            "qubits": 8,
+            "feature_map": {
+              "name": "ZZFeatureMap",
+              "reps": 1,
+              "entanglement": "full"
+            },
+            "kernel": "QuantumKernelClassifier",
+            "C": 10.0,
+            "scale_factor": 0.05,
+            "circuit_reconstructible": true,
+            "status": "VERIFIED"
+          },
+          "explainability": {
+            "status": "VERIFIED",
+            "type": "QUANTUM_POST_HOC_ATTRIBUTION",
+            "method": "shap.KernelExplainer over shap.kmeans(15) on 8 Autoencoder Latents",
+            "artifact": "results/figures/qxai_shap_summary.png"
+          }
+        }
+      }
+    }
+  }
+}

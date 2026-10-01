@@ -1,0 +1,1197 @@
+{
+  "audit_version": "4.0",
+  "audit_timestamp": "2026-09-19T15:50:47.184942+00:00",
+  "independence": {
+    "uses_result_registry": false,
+    "uses_data_service": false,
+    "uses_inference_engine_for_discovery": false,
+    "uses_raw_filesystem": true
+  },
+  "datasets": {
+    "golub": {
+      "metric_file": "results/golub_metrics.json",
+      "metric_file_sha256": "97195a8e9a3be63bf8942bc26512d26a3613a0835641a3b81092da0ba3a31309",
+      "protocol_present": false,
+      "protocol": null,
+      "sample_count_evidence": {}
+    },
+    "uci": {
+      "metric_file": "results/uci_metrics.json",
+      "metric_file_sha256": "85ea88144f5f8a2e45e0dac144416cb4dedbc86f84e8b67311297cd292a9ec4b",
+      "protocol_present": false,
+      "protocol": null,
+      "sample_count_evidence": {}
+    },
+    "wdbc": {
+      "metric_file": "results/wdbc_metrics.json",
+      "metric_file_sha256": "ad9eba93a6cd6f0d8f6034cbfad92b76cdfb54f9ad63649851c67fbefaa252e2",
+      "protocol_present": false,
+      "protocol": null,
+      "sample_count_evidence": {
+        "n_test": 114
+      }
+    }
+  },
+  "models": [
+    {
+      "dataset_key": "golub",
+      "model_key": "logistic_regression",
+      "model_name": "Logistic Regression",
+      "node_key": "classical_baseline",
+      "source": "metrics_json",
+      "implemented": "VERIFIED_TRUE",
+      "evaluated": "VERIFIED_TRUE",
+      "quantum_configuration": "NOT_APPLICABLE",
+      "quantum_configuration_evidence": null,
+      "circuit_reconstructible": "NOT_APPLICABLE",
+      "circuit_reconstruction_reason": "No quantum configuration is present.",
+      "metadata": {
+        "name": "Logistic Regression",
+        "preprocessing": {
+          "display": "SelectKBest (64) -> StandardScaler",
+          "steps": [
+            {
+              "type": "SelectKBest",
+              "parameters": {
+                "k": 64
+              }
+            },
+            {
+              "type": "StandardScaler"
+            }
+          ]
+        },
+        "model_type": "logistic_regression",
+        "protocol": {
+          "test_size": 34,
+          "split_strategy": "Independent Test Set",
+          "seed": 42
+        },
+        "artifacts": {
+          "weights": null,
+          "preprocessing": "results/artifacts/golub_logistic_regression_preprocessing.joblib",
+          "explainability": null
+        },
+        "capabilities": {
+          "prediction": false,
+          "interactive_inference_supported": false
+        },
+        "metrics": {
+          "accuracy": 0.8529411764705882,
+          "precision": 1.0,
+          "sensitivity": 0.6428571428571429,
+          "specificity": 1.0,
+          "f1": 0.782608695652174,
+          "roc_auc": 0.9714285714285714,
+          "confusion_matrix": {
+            "matrix": [
+              [
+                20,
+                0
+              ],
+              [
+                5,
+                9
+              ]
+            ],
+            "labels": [
+              "ALL",
+              "AML"
+            ]
+          }
+        }
+      },
+      "artifact_evidence": [
+        {
+          "file": "models/logistic_regression.joblib",
+          "model_key_candidate": "logistic_regression",
+          "loadable": true,
+          "n_features_in": 30,
+          "class": "LogisticRegression",
+          "error": null,
+          "explicit_link": false,
+          "dataset_specific_filename": false,
+          "association": "unverified_candidate"
+        }
+      ],
+      "preprocessing_evidence": [
+        {
+          "file": "results/artifacts/golub_logistic_regression_preprocessing.joblib",
+          "size": 116465,
+          "sha256": "b89ff591d71e4447472e5270d74e8d4bc43ef418432906a30272bb7dd2844c98"
+        }
+      ],
+      "trained_state_candidates": [],
+      "trained_artifact_exists": "UNVERIFIED",
+      "preprocessing_artifact_exists": "VERIFIED_TRUE",
+      "runtime_loadable": "UNVERIFIED",
+      "inference_executable": "UNVERIFIED",
+      "trained_quantum_state_available": "NOT_APPLICABLE",
+      "explainability": "UNVERIFIED",
+      "benchmark": "UNVERIFIED",
+      "deployment_status": "UNVERIFIED",
+      "issues": []
+    },
+    {
+      "dataset_key": "golub",
+      "model_key": "qsvc",
+      "model_name": "Quantum QSVC (8-qubit)",
+      "node_key": "hybrid_quantum",
+      "source": "metrics_json",
+      "implemented": "VERIFIED_TRUE",
+      "evaluated": "VERIFIED_TRUE",
+      "quantum_configuration": "VERIFIED_TRUE",
+      "quantum_configuration_evidence": {
+        "qubits": 8,
+        "feature_map": {
+          "name": "ZZFeatureMap",
+          "reps": 1,
+          "entanglement": "full"
+        },
+        "kernel": "QuantumKernelClassifier",
+        "C": 10.0,
+        "scale_factor": 0.05
+      },
+      "circuit_reconstructible": "UNVERIFIED",
+      "circuit_reconstruction_reason": "Quantum configuration is present, but it does not contain enough explicit structure to independently validate circuit construction.",
+      "metadata": {
+        "name": "Quantum QSVC (8-qubit)",
+        "preprocessing": {
+          "display": "SelectKBest (64) -> StandardScaler -> Autoencoder (8)",
+          "steps": [
+            {
+              "type": "SelectKBest",
+              "parameters": {
+                "k": 64
+              }
+            },
+            {
+              "type": "StandardScaler"
+            },
+            {
+              "type": "Autoencoder",
+              "parameters": {
+                "bottleneck_dim": 8
+              }
+            }
+          ]
+        },
+        "quantum_config": {
+          "qubits": 8,
+          "feature_map": {
+            "name": "ZZFeatureMap",
+            "reps": 1,
+            "entanglement": "full"
+          },
+          "kernel": "QuantumKernelClassifier",
+          "C": 10.0,
+          "scale_factor": 0.05
+        },
+        "model_type": "qsvc",
+        "protocol": {
+          "test_size": 34,
+          "split_strategy": "Independent Test Set",
+          "seed": 42
+        },
+        "artifacts": {
+          "weights": null,
+          "preprocessing": "results/artifacts/golub_qsvc_preprocessing.pt",
+          "explainability": "results/figures/qxai_shap_summary.png"
+        },
+        "capabilities": {
+          "prediction": false,
+          "interactive_inference_supported": false
+        },
+        "metrics": {
+          "accuracy": 0.8823529411764706,
+          "precision": 1.0,
+          "sensitivity": 0.7142857142857143,
+          "specificity": 1.0,
+          "f1": 0.8333333333333334,
+          "roc_auc": null,
+          "confusion_matrix": {
+            "matrix": [
+              [
+                20,
+                0
+              ],
+              [
+                4,
+                10
+              ]
+            ],
+            "labels": [
+              "ALL",
+              "AML"
+            ]
+          }
+        }
+      },
+      "artifact_evidence": [],
+      "preprocessing_evidence": [
+        {
+          "file": "results/artifacts/golub_qsvc_preprocessing.pt",
+          "size": 196805,
+          "sha256": "8a444e636f524d42ca5a24eb2aa941d282cfc68909120fbfecd40bfaaaee9d50"
+        }
+      ],
+      "trained_state_candidates": [],
+      "trained_artifact_exists": "VERIFIED_FALSE",
+      "preprocessing_artifact_exists": "VERIFIED_TRUE",
+      "runtime_loadable": "VERIFIED_FALSE",
+      "inference_executable": "VERIFIED_FALSE",
+      "trained_quantum_state_available": "VERIFIED_FALSE",
+      "explainability": "UNVERIFIED",
+      "benchmark": "UNVERIFIED",
+      "deployment_status": "VERIFIED_FALSE",
+      "issues": []
+    },
+    {
+      "dataset_key": "uci",
+      "model_key": "logistic_regression",
+      "model_name": "Logistic Regression",
+      "node_key": "classical_baseline",
+      "source": "metrics_json",
+      "implemented": "VERIFIED_TRUE",
+      "evaluated": "VERIFIED_TRUE",
+      "quantum_configuration": "NOT_APPLICABLE",
+      "quantum_configuration_evidence": null,
+      "circuit_reconstructible": "NOT_APPLICABLE",
+      "circuit_reconstruction_reason": "No quantum configuration is present.",
+      "metadata": {
+        "name": "Logistic Regression",
+        "preprocessing": {
+          "display": "StandardScaler",
+          "steps": [
+            {
+              "type": "StandardScaler"
+            }
+          ]
+        },
+        "model_type": "logistic_regression",
+        "protocol": {
+          "test_size": 75,
+          "split_strategy": "stratified",
+          "seed": 42
+        },
+        "artifacts": {
+          "weights": null,
+          "preprocessing": "results/artifacts/uci_logistic_regression_preprocessing.joblib",
+          "explainability": null
+        },
+        "capabilities": {
+          "prediction": false,
+          "interactive_inference_supported": false
+        },
+        "metrics": {
+          "accuracy": 0.8533333333333334,
+          "precision": 0.8529411764705882,
+          "sensitivity": 0.8285714285714286,
+          "specificity": 0.875,
+          "f1": 0.8405797101449275,
+          "roc_auc": 0.9471428571428572,
+          "confusion_matrix": {
+            "matrix": [
+              [
+                35,
+                5
+              ],
+              [
+                6,
+                29
+              ]
+            ],
+            "labels": [
+              "Absence",
+              "Presence"
+            ]
+          },
+          "mcc": 0.7050839450327451
+        }
+      },
+      "artifact_evidence": [
+        {
+          "file": "models/logistic_regression.joblib",
+          "model_key_candidate": "logistic_regression",
+          "loadable": true,
+          "n_features_in": 30,
+          "class": "LogisticRegression",
+          "error": null,
+          "explicit_link": false,
+          "dataset_specific_filename": false,
+          "association": "unverified_candidate"
+        }
+      ],
+      "preprocessing_evidence": [
+        {
+          "file": "results/artifacts/uci_logistic_regression_preprocessing.joblib",
+          "size": 896,
+          "sha256": "089040b45865eacc59bfc178a718629c02c297079130aff1d3e6bd2319828acc"
+        }
+      ],
+      "trained_state_candidates": [],
+      "trained_artifact_exists": "UNVERIFIED",
+      "preprocessing_artifact_exists": "VERIFIED_TRUE",
+      "runtime_loadable": "UNVERIFIED",
+      "inference_executable": "UNVERIFIED",
+      "trained_quantum_state_available": "NOT_APPLICABLE",
+      "explainability": "UNVERIFIED",
+      "benchmark": "UNVERIFIED",
+      "deployment_status": "UNVERIFIED",
+      "issues": []
+    },
+    {
+      "dataset_key": "uci",
+      "model_key": "qsvc",
+      "model_name": "Quantum QSVC (8-qubit)",
+      "node_key": "hybrid_quantum",
+      "source": "metrics_json",
+      "implemented": "VERIFIED_TRUE",
+      "evaluated": "VERIFIED_TRUE",
+      "quantum_configuration": "VERIFIED_TRUE",
+      "quantum_configuration_evidence": {
+        "qubits": 8,
+        "feature_map": {
+          "name": "ZZFeatureMap",
+          "reps": 1,
+          "entanglement": "full"
+        },
+        "kernel": "QuantumKernelClassifier",
+        "C": 10.0,
+        "scale_factor": 0.05
+      },
+      "circuit_reconstructible": "UNVERIFIED",
+      "circuit_reconstruction_reason": "Quantum configuration is present, but it does not contain enough explicit structure to independently validate circuit construction.",
+      "metadata": {
+        "name": "Quantum QSVC (8-qubit)",
+        "preprocessing": {
+          "display": "StandardScaler -> Autoencoder (8)",
+          "steps": [
+            {
+              "type": "StandardScaler"
+            },
+            {
+              "type": "Autoencoder",
+              "parameters": {
+                "bottleneck_dim": 8
+              }
+            }
+          ]
+        },
+        "quantum_config": {
+          "qubits": 8,
+          "feature_map": {
+            "name": "ZZFeatureMap",
+            "reps": 1,
+            "entanglement": "full"
+          },
+          "kernel": "QuantumKernelClassifier",
+          "C": 10.0,
+          "scale_factor": 0.05
+        },
+        "model_type": "qsvc",
+        "protocol": {
+          "test_size": 75,
+          "split_strategy": "stratified",
+          "seed": 42
+        },
+        "artifacts": {
+          "weights": null,
+          "preprocessing": "results/artifacts/uci_qsvc_preprocessing.pt",
+          "explainability": null
+        },
+        "capabilities": {
+          "prediction": false,
+          "interactive_inference_supported": false
+        },
+        "metrics": {
+          "accuracy": 0.8133333333333334,
+          "precision": 0.8,
+          "sensitivity": 0.8,
+          "specificity": 0.825,
+          "f1": 0.8,
+          "roc_auc": null,
+          "confusion_matrix": {
+            "matrix": [
+              [
+                33,
+                7
+              ],
+              [
+                7,
+                28
+              ]
+            ],
+            "labels": [
+              "Absence",
+              "Presence"
+            ]
+          },
+          "mcc": 0.625
+        }
+      },
+      "artifact_evidence": [],
+      "preprocessing_evidence": [
+        {
+          "file": "results/artifacts/uci_qsvc_preprocessing.pt",
+          "size": 8217,
+          "sha256": "234e1fae82e885b853ee085b4b92ab18a6b22acccf875566eb4470893b91d48d"
+        }
+      ],
+      "trained_state_candidates": [],
+      "trained_artifact_exists": "VERIFIED_FALSE",
+      "preprocessing_artifact_exists": "VERIFIED_TRUE",
+      "runtime_loadable": "VERIFIED_FALSE",
+      "inference_executable": "VERIFIED_FALSE",
+      "trained_quantum_state_available": "VERIFIED_FALSE",
+      "explainability": "UNVERIFIED",
+      "benchmark": "UNVERIFIED",
+      "deployment_status": "VERIFIED_FALSE",
+      "issues": []
+    },
+    {
+      "dataset_key": "wdbc",
+      "model_key": "logistic_regression",
+      "model_name": "Logistic Regression",
+      "node_key": "classical_baseline",
+      "source": "metrics_json",
+      "implemented": "VERIFIED_TRUE",
+      "evaluated": "VERIFIED_TRUE",
+      "quantum_configuration": "NOT_APPLICABLE",
+      "quantum_configuration_evidence": null,
+      "circuit_reconstructible": "NOT_APPLICABLE",
+      "circuit_reconstruction_reason": "No quantum configuration is present.",
+      "metadata": {
+        "name": "Logistic Regression",
+        "preprocessing": {
+          "display": "StandardScaler",
+          "steps": [
+            {
+              "type": "StandardScaler"
+            }
+          ]
+        },
+        "model_type": "logistic_regression",
+        "protocol": {
+          "test_size": 114,
+          "split_strategy": "stratified",
+          "seed": 42
+        },
+        "artifacts": {
+          "weights": null,
+          "preprocessing": "results/artifacts/wdbc_logistic_regression_preprocessing.joblib",
+          "explainability": null
+        },
+        "capabilities": {
+          "prediction": false,
+          "interactive_inference_supported": false
+        },
+        "metrics": {
+          "accuracy": 0.9649122807017544,
+          "precision": 0.975,
+          "sensitivity": 0.9285714285714286,
+          "specificity": 0.9861111111111112,
+          "f1_score": 0.9512195121951219,
+          "mcc": 0.9245181185940877,
+          "roc_auc": 0.996031746031746,
+          "confusion_matrix": {
+            "matrix": [
+              [
+                71,
+                1
+              ],
+              [
+                3,
+                39
+              ]
+            ],
+            "labels": [
+              "Benign",
+              "Malignant"
+            ]
+          },
+          "n_test": 114
+        }
+      },
+      "artifact_evidence": [
+        {
+          "file": "models/logistic_regression.joblib",
+          "model_key_candidate": "logistic_regression",
+          "loadable": true,
+          "n_features_in": 30,
+          "class": "LogisticRegression",
+          "error": null,
+          "explicit_link": false,
+          "dataset_specific_filename": false,
+          "association": "unverified_candidate"
+        }
+      ],
+      "preprocessing_evidence": [
+        {
+          "file": "results/artifacts/wdbc_logistic_regression_preprocessing.joblib",
+          "size": 1320,
+          "sha256": "b276e8bbb199cc60cc95c10d84d8dfa533057b9c19711f5e0aff565f1b5be9a1"
+        }
+      ],
+      "trained_state_candidates": [],
+      "trained_artifact_exists": "UNVERIFIED",
+      "preprocessing_artifact_exists": "VERIFIED_TRUE",
+      "runtime_loadable": "UNVERIFIED",
+      "inference_executable": "UNVERIFIED",
+      "trained_quantum_state_available": "NOT_APPLICABLE",
+      "explainability": "UNVERIFIED",
+      "benchmark": "UNVERIFIED",
+      "deployment_status": "UNVERIFIED",
+      "issues": []
+    },
+    {
+      "dataset_key": "wdbc",
+      "model_key": "vqc",
+      "model_name": "8-Qubit VQC",
+      "node_key": "hybrid_quantum",
+      "source": "metrics_json",
+      "implemented": "VERIFIED_TRUE",
+      "evaluated": "VERIFIED_TRUE",
+      "quantum_configuration": "VERIFIED_TRUE",
+      "quantum_configuration_evidence": {
+        "qubits": 8,
+        "feature_map": {
+          "name": "ZZFeatureMap",
+          "reps": 1,
+          "entanglement": "linear"
+        },
+        "ansatz": {
+          "name": "RealAmplitudes",
+          "reps": 2,
+          "entanglement": "linear"
+        },
+        "backend": "QMLSampler",
+        "tau": 0.65
+      },
+      "circuit_reconstructible": "UNVERIFIED",
+      "circuit_reconstruction_reason": "Quantum configuration contains qubit, feature-map, and ansatz metadata, but executable circuit reconstruction was not independently validated by this audit.",
+      "metadata": {
+        "name": "8-Qubit VQC",
+        "preprocessing": {
+          "display": "StandardScaler -> PCA (8) -> Tanh",
+          "steps": [
+            {
+              "type": "StandardScaler"
+            },
+            {
+              "type": "PCA",
+              "parameters": {
+                "n_components": 8,
+                "random_state": 42
+              }
+            },
+            {
+              "type": "TanhScale",
+              "parameters": {
+                "multiplier": "pi"
+              }
+            }
+          ]
+        },
+        "quantum_config": {
+          "qubits": 8,
+          "feature_map": {
+            "name": "ZZFeatureMap",
+            "reps": 1,
+            "entanglement": "linear"
+          },
+          "ansatz": {
+            "name": "RealAmplitudes",
+            "reps": 2,
+            "entanglement": "linear"
+          },
+          "backend": "QMLSampler",
+          "tau": 0.65
+        },
+        "model_type": "vqc",
+        "protocol": {
+          "test_size": 114,
+          "split_strategy": "stratified",
+          "seed": 42
+        },
+        "artifacts": {
+          "weights": "results/best_model/best_vqc_weights_8q.npy",
+          "preprocessing": "results/artifacts/wdbc_vqc_preprocessing.joblib",
+          "explainability": null
+        },
+        "capabilities": {
+          "prediction": true,
+          "interactive_inference_supported": true
+        },
+        "metrics": {
+          "accuracy": 0.7368421052631579,
+          "precision": 0.6153846153846154,
+          "sensitivity": 0.7619047619047619,
+          "specificity": 0.7222222222222222,
+          "f1_score": 0.6808510638297872,
+          "mcc": 0.4688702384289941,
+          "roc_auc": 0.7800925925925927,
+          "confusion_matrix": {
+            "matrix": [
+              [
+                52,
+                20
+              ],
+              [
+                10,
+                32
+              ]
+            ],
+            "labels": [
+              "Benign",
+              "Malignant"
+            ]
+          },
+          "n_test": 114
+        }
+      },
+      "artifact_evidence": [],
+      "preprocessing_evidence": [
+        {
+          "file": "results/artifacts/wdbc_vqc_preprocessing.joblib",
+          "size": 4353,
+          "sha256": "e7976ec228c3374f982152ecf398a3844aa965cc067dad965c8c392da0cafa33"
+        }
+      ],
+      "trained_state_candidates": [
+        {
+          "file": "results/best_model/best_vqc_weights_8q.npy",
+          "shape": [
+            24
+          ],
+          "size": 24,
+          "dtype": "float64",
+          "sha256": "f679cef0189a7370330cd2f6d869364c6ba2cdb70fe2141af23fb317a8b99b98",
+          "association": "verified"
+        },
+        {
+          "file": "results/vqc_weights_8q_spsa_r1_i150_20260910T054111Z.npy",
+          "shape": [
+            24
+          ],
+          "size": 24,
+          "dtype": "float64",
+          "sha256": "62c3bb1903b83a655b4cf1062e290a1460aa1eb0c36a9ba5ff96451d10d41b0b",
+          "association": "unverified_candidate"
+        },
+        {
+          "file": "results/vqc_weights_8q_spsa_r1_i300_20260910T085206Z.npy",
+          "shape": [
+            24
+          ],
+          "size": 24,
+          "dtype": "float64",
+          "sha256": "bad090d8e7bb973a77a8ee45008ecf04cee19aae2465abfb1184faf49c1353fb",
+          "association": "unverified_candidate"
+        },
+        {
+          "file": "results/vqc_weights_8q_spsa_r1_i300_20260910T085430Z.npy",
+          "shape": [
+            24
+          ],
+          "size": 24,
+          "dtype": "float64",
+          "sha256": "f679cef0189a7370330cd2f6d869364c6ba2cdb70fe2141af23fb317a8b99b98",
+          "association": "unverified_candidate"
+        }
+      ],
+      "trained_artifact_exists": "VERIFIED_TRUE",
+      "preprocessing_artifact_exists": "VERIFIED_TRUE",
+      "runtime_loadable": "UNVERIFIED",
+      "inference_executable": "UNVERIFIED",
+      "trained_quantum_state_available": "VERIFIED_TRUE",
+      "explainability": "UNVERIFIED",
+      "benchmark": "UNVERIFIED",
+      "deployment_status": "UNVERIFIED",
+      "issues": []
+    }
+  ],
+  "artifacts": {
+    "classical": [
+      {
+        "file": "models/classical_scaler.joblib",
+        "model_key_candidate": "classical_scaler",
+        "loadable": true,
+        "n_features_in": 30,
+        "class": "StandardScaler",
+        "error": null
+      },
+      {
+        "file": "models/logistic_regression.joblib",
+        "model_key_candidate": "logistic_regression",
+        "loadable": true,
+        "n_features_in": 30,
+        "class": "LogisticRegression",
+        "error": null
+      },
+      {
+        "file": "models/random_forest.joblib",
+        "model_key_candidate": "random_forest",
+        "loadable": true,
+        "n_features_in": 30,
+        "class": "RandomForestClassifier",
+        "error": null
+      },
+      {
+        "file": "models/svm.joblib",
+        "model_key_candidate": "svm",
+        "loadable": true,
+        "n_features_in": 30,
+        "class": "SVC",
+        "error": null
+      },
+      {
+        "file": "models/xgboost.joblib",
+        "model_key_candidate": "xgboost",
+        "loadable": true,
+        "n_features_in": 30,
+        "class": "XGBClassifier",
+        "error": null
+      }
+    ],
+    "preprocessing": [
+      {
+        "file": "results/artifacts/golub_logistic_regression_preprocessing.joblib",
+        "size": 116465,
+        "sha256": "b89ff591d71e4447472e5270d74e8d4bc43ef418432906a30272bb7dd2844c98"
+      },
+      {
+        "file": "results/artifacts/golub_qsvc_preprocessing.pt",
+        "size": 196805,
+        "sha256": "8a444e636f524d42ca5a24eb2aa941d282cfc68909120fbfecd40bfaaaee9d50"
+      },
+      {
+        "file": "results/artifacts/uci_logistic_regression_preprocessing.joblib",
+        "size": 896,
+        "sha256": "089040b45865eacc59bfc178a718629c02c297079130aff1d3e6bd2319828acc"
+      },
+      {
+        "file": "results/artifacts/uci_qsvc_preprocessing.pt",
+        "size": 8217,
+        "sha256": "234e1fae82e885b853ee085b4b92ab18a6b22acccf875566eb4470893b91d48d"
+      },
+      {
+        "file": "results/artifacts/wdbc_logistic_regression_preprocessing.joblib",
+        "size": 1320,
+        "sha256": "b276e8bbb199cc60cc95c10d84d8dfa533057b9c19711f5e0aff565f1b5be9a1"
+      },
+      {
+        "file": "results/artifacts/wdbc_vqc_preprocessing.joblib",
+        "size": 4353,
+        "sha256": "e7976ec228c3374f982152ecf398a3844aa965cc067dad965c8c392da0cafa33"
+      }
+    ],
+    "numpy": [
+      {
+        "file": "results/best_model/best_vqc_weights_8q.npy",
+        "shape": [
+          24
+        ],
+        "dtype": "float64",
+        "sha256": "f679cef0189a7370330cd2f6d869364c6ba2cdb70fe2141af23fb317a8b99b98"
+      },
+      {
+        "file": "results/vqc_weights_8q_spsa_r1_i150_20260910T054111Z.npy",
+        "shape": [
+          24
+        ],
+        "dtype": "float64",
+        "sha256": "62c3bb1903b83a655b4cf1062e290a1460aa1eb0c36a9ba5ff96451d10d41b0b"
+      },
+      {
+        "file": "results/vqc_weights_8q_spsa_r1_i300_20260910T085206Z.npy",
+        "shape": [
+          24
+        ],
+        "dtype": "float64",
+        "sha256": "bad090d8e7bb973a77a8ee45008ecf04cee19aae2465abfb1184faf49c1353fb"
+      },
+      {
+        "file": "results/vqc_weights_8q_spsa_r1_i300_20260910T085430Z.npy",
+        "shape": [
+          24
+        ],
+        "dtype": "float64",
+        "sha256": "f679cef0189a7370330cd2f6d869364c6ba2cdb70fe2141af23fb317a8b99b98"
+      }
+    ]
+  },
+  "csv_model_evidence": [
+    {
+      "model_key": "logistic_regression",
+      "model_name": "Logistic Regression",
+      "source": "classical_test_results.csv"
+    },
+    {
+      "model_key": "svm",
+      "model_name": "SVM",
+      "source": "classical_test_results.csv"
+    },
+    {
+      "model_key": "random_forest",
+      "model_name": "Random Forest",
+      "source": "classical_test_results.csv"
+    },
+    {
+      "model_key": "xgboost",
+      "model_name": "XGBoost",
+      "source": "classical_test_results.csv"
+    }
+  ],
+  "raw_schema_evidence": [
+    {
+      "path": "data/raw/UCI/cleveland.data",
+      "rows": null,
+      "columns": null,
+      "header": null,
+      "sha256": "9278214845d1cf45cdce6404038b232ce23dedaf801709650712f6d145d1b7b7",
+      "error": "'utf-8' codec can't decode byte 0x8e in position 58079: invalid start byte"
+    },
+    {
+      "path": "data/raw/UCI/hungarian.data",
+      "rows": 2940,
+      "columns": 1,
+      "header": null,
+      "sha256": "da18bbf1e0c0c0ab0d6418e65edac54f76d52a1d155da4e532f441d0943ae732"
+    },
+    {
+      "path": "data/raw/UCI/long-beach-va.data",
+      "rows": 2000,
+      "columns": 1,
+      "header": null,
+      "sha256": "a7e0e8fca70c06de52533bd86174a8b6c41ace3c84d6663cd49c7ba145f8e88c"
+    },
+    {
+      "path": "data/raw/UCI/new.data",
+      "rows": 18492,
+      "columns": 1,
+      "header": null,
+      "sha256": "dd8212d2687d92e47162fd209ad51251f20ea652e6ede92fd7df7c448489bb30"
+    },
+    {
+      "path": "data/raw/UCI/processed.cleveland.data",
+      "rows": 303,
+      "columns": 14,
+      "header": null,
+      "sha256": "13f2c7cc1ebfc284ead179a49d04ef4935ede24cff35452bf19a8eb643c7a8af"
+    },
+    {
+      "path": "data/raw/UCI/processed.hungarian.data",
+      "rows": 294,
+      "columns": 14,
+      "header": null,
+      "sha256": "31134d83efc3266e486acece5e259585d7a52f16afa5567f195e70a993327afe"
+    },
+    {
+      "path": "data/raw/UCI/processed.switzerland.data",
+      "rows": 123,
+      "columns": 14,
+      "header": null,
+      "sha256": "422aa0182e5b95ff4ef2d95512caf3335e114fc1816db477a5a30286b267c2d7"
+    },
+    {
+      "path": "data/raw/UCI/processed.va.data",
+      "rows": 200,
+      "columns": 14,
+      "header": null,
+      "sha256": "1a12cdc1aa204bc5506aa22f04b6c45224b23f36adbd1c62039f65f370e334ea"
+    },
+    {
+      "path": "data/raw/UCI/reprocessed.hungarian.data",
+      "rows": 294,
+      "columns": 1,
+      "header": null,
+      "sha256": "9e9822a8dd5f7bdc1a2cc61601c294e5f3368d2d67b923bc72c5ca2189f4b950"
+    },
+    {
+      "path": "data/raw/UCI/switzerland.data",
+      "rows": 1230,
+      "columns": 1,
+      "header": null,
+      "sha256": "2a711f038ff382d1d974a154afc8299ecfc79a9151e884365639cddbaa82a592"
+    },
+    {
+      "path": "data/raw/golub/actual.csv",
+      "rows": 72,
+      "columns": 2,
+      "header": [
+        "patient",
+        "cancer"
+      ],
+      "sha256": "a287d120d85d8676eac1ba77039667666beddbab8d19b797c7957f9ef7edb741"
+    },
+    {
+      "path": "data/raw/golub/data_set_ALL_AML_independent.csv",
+      "rows": 7129,
+      "columns": 70,
+      "header": [
+        "Gene Description",
+        "Gene Accession Number",
+        "39",
+        "call",
+        "40",
+        "call.1",
+        "42",
+        "call.2",
+        "47",
+        "call.3",
+        "48",
+        "call.4",
+        "49",
+        "call.5",
+        "41",
+        "call.6",
+        "43",
+        "call.7",
+        "44",
+        "call.8",
+        "45",
+        "call.9",
+        "46",
+        "call.10",
+        "70",
+        "call.11",
+        "71",
+        "call.12",
+        "72",
+        "call.13",
+        "68",
+        "call.14",
+        "69",
+        "call.15",
+        "67",
+        "call.16",
+        "55",
+        "call.17",
+        "56",
+        "call.18",
+        "59",
+        "call.19",
+        "52",
+        "call.20",
+        "53",
+        "call.21",
+        "51",
+        "call.22",
+        "50",
+        "call.23",
+        "54",
+        "call.24",
+        "57",
+        "call.25",
+        "58",
+        "call.26",
+        "60",
+        "call.27",
+        "61",
+        "call.28",
+        "65",
+        "call.29",
+        "66",
+        "call.30",
+        "63",
+        "call.31",
+        "64",
+        "call.32",
+        "62",
+        "call.33"
+      ],
+      "sha256": "77df6e5c2d09e910732ca1540483bd2cd62eab3f7d477074e8741f4481d828c9"
+    },
+    {
+      "path": "data/raw/golub/data_set_ALL_AML_train.csv",
+      "rows": 7129,
+      "columns": 78,
+      "header": [
+        "Gene Description",
+        "Gene Accession Number",
+        "1",
+        "call",
+        "2",
+        "call.1",
+        "3",
+        "call.2",
+        "4",
+        "call.3",
+        "5",
+        "call.4",
+        "6",
+        "call.5",
+        "7",
+        "call.6",
+        "8",
+        "call.7",
+        "9",
+        "call.8",
+        "10",
+        "call.9",
+        "11",
+        "call.10",
+        "12",
+        "call.11",
+        "13",
+        "call.12",
+        "14",
+        "call.13",
+        "15",
+        "call.14",
+        "16",
+        "call.15",
+        "17",
+        "call.16",
+        "18",
+        "call.17",
+        "19",
+        "call.18",
+        "20",
+        "call.19",
+        "21",
+        "call.20",
+        "22",
+        "call.21",
+        "23",
+        "call.22",
+        "24",
+        "call.23",
+        "25",
+        "call.24",
+        "26",
+        "call.25",
+        "27",
+        "call.26",
+        "34",
+        "call.27",
+        "35",
+        "call.28",
+        "36",
+        "call.29",
+        "37",
+        "call.30",
+        "38",
+        "call.31",
+        "28",
+        "call.32",
+        "29",
+        "call.33",
+        "30",
+        "call.34",
+        "31",
+        "call.35",
+        "32",
+        "call.36",
+        "33",
+        "call.37"
+      ],
+      "sha256": "c0f3992b750e10271f74feaeab46fe0b545d3dce6d336bfb3d207627df90709e"
+    },
+    {
+      "path": "data/raw/wdbc/WDBC_raw.csv",
+      "rows": 569,
+      "columns": 32,
+      "header": [
+        "id",
+        "diagnosis",
+        "radius_mean",
+        "texture_mean",
+        "perimeter_mean",
+        "area_mean",
+        "smoothness_mean",
+        "compactness_mean",
+        "concavity_mean",
+        "concave_points_mean",
+        "symmetry_mean",
+        "fractal_dimension_mean",
+        "radius_se",
+        "texture_se",
+        "perimeter_se",
+        "area_se",
+        "smoothness_se",
+        "compactness_se",
+        "concavity_se",
+        "concave_points_se",
+        "symmetry_se",
+        "fractal_dimension_se",
+        "radius_worst",
+        "texture_worst",
+        "perimeter_worst",
+        "area_worst",
+        "smoothness_worst",
+        "compactness_worst",
+        "concavity_worst",
+        "concave_points_worst",
+        "symmetry_worst",
+        "fractal_dimension_worst"
+      ],
+      "sha256": "8b57a0c7f3b9786d3c22ff28b5f065c038f25007c05194839182c563f5f6b136"
+    },
+    {
+      "path": "data/raw/wdbc/wdbc.data",
+      "rows": 569,
+      "columns": 32,
+      "header": null,
+      "sha256": "11218503215d46bf9eb4e9bcf7da97b878f0cdae46c75863d00e5009ab91a76c"
+    }
+  ],
+  "issues": [],
+  "figures": [
+    {
+      "file": "results/figures/clinical_radar_comparison.png",
+      "sha256": "7a0ccadab45d3a4b49cd1c543e71285a400e2e0c807e25ce56e639eaf3028dd2",
+      "provenance": "unverified",
+      "reason": "Figure exists physically, but this audit found no machine-readable provenance linking it to a specific dataset/model evaluation."
+    },
+    {
+      "file": "results/figures/golub_clinical_radar.png",
+      "sha256": "5c7cc7f2d3b7c07d14a747f3f710a02b853e754b5870a9b8bcdfe4eb1140edd6",
+      "provenance": "unverified",
+      "reason": "Figure exists physically, but this audit found no machine-readable provenance linking it to a specific dataset/model evaluation."
+    },
+    {
+      "file": "results/figures/golub_qsvc_vs_classical.png",
+      "sha256": "b28e989056a072c0d81fca0c7e9dc28119a163b5d700b7b26044132c44925d90",
+      "provenance": "unverified",
+      "reason": "Figure exists physically, but this audit found no machine-readable provenance linking it to a specific dataset/model evaluation."
+    },
+    {
+      "file": "results/figures/quantum_vs_classical_delta.png",
+      "sha256": "0a5e2d28a01fb5ae40560cf5e7112d71e442280f5f05cc9714a770cee02eb200",
+      "provenance": "unverified",
+      "reason": "Figure exists physically, but this audit found no machine-readable provenance linking it to a specific dataset/model evaluation."
+    },
+    {
+      "file": "results/figures/qxai_shap_summary.png",
+      "sha256": "2132ba51fb4b7a405955f50ddee6efc2f0b9a709a7f420e93e2ca766edc2a161",
+      "provenance": "unverified",
+      "reason": "Figure exists physically, but this audit found no machine-readable provenance linking it to a specific dataset/model evaluation."
+    },
+    {
+      "file": "results/figures/uci_clinical_radar.png",
+      "sha256": "c1672a38a2b838319b127ba65e3a4feb3dbd66cac22a83dfa0305aa0c0614172",
+      "provenance": "unverified",
+      "reason": "Figure exists physically, but this audit found no machine-readable provenance linking it to a specific dataset/model evaluation."
+    },
+    {
+      "file": "results/figures/wdbc_classical_model_comparison.png",
+      "sha256": "84a87bf7a2996b7f1bd74ea6cf2dd3e3a438d5fd63df5ac31f9dbae33996086a",
+      "provenance": "unverified",
+      "reason": "Figure exists physically, but this audit found no machine-readable provenance linking it to a specific dataset/model evaluation."
+    },
+    {
+      "file": "results/figures/wdbc_clinical_radar.png",
+      "sha256": "4b225d393f3915c7a0e665ce25c8dbb53b3c90ae05db20be3b70fcc890e4f20c",
+      "provenance": "unverified",
+      "reason": "Figure exists physically, but this audit found no machine-readable provenance linking it to a specific dataset/model evaluation."
+    },
+    {
+      "file": "results/figures/wdbc_vqc_vs_classical.png",
+      "sha256": "058513406707123ef970014a88a3273a6aa7a1a682f9bd28360bb099a2143dd3",
+      "provenance": "unverified",
+      "reason": "Figure exists physically, but this audit found no machine-readable provenance linking it to a specific dataset/model evaluation."
+    }
+  ]
+}

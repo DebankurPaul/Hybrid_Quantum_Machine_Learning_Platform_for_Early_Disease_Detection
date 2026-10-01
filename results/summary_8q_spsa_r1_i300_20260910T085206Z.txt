@@ -1,0 +1,12 @@
+VQC Result Summary  (20260910T085206Z)
+========================================================
+Config   : 8 qubits | SPSA | 1 restart(s) × 300 iters
+PCA var  : 92.8%
+Time     : 2716s (45.3 min)
+
+VQC (τ=0.50)   acc=0.6667  sens=0.8810  spec=0.5417  auc=0.7999
+VQC (τ=0.55 tuned) acc=0.7018  sens=0.8571  spec=0.6111  auc=0.7999
+
+Logistic Regression    acc=0.9825  sens=0.9762  spec=0.9861  auc=0.9977
+SVM (RBF kernel)       acc=0.9561  sens=0.9048  spec=0.9861  auc=0.9950
+Random Forest          acc=0.9474  sens=0.9048  spec=0.9722  auc=0.9926

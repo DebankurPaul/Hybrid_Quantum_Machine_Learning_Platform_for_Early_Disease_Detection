@@ -1,0 +1,66 @@
+{
+    "dataset": "Thyroid",
+    "benchmark_artifacts": {
+        "radar": "results/figures/thyroid_clinical_radar.png",
+        "delta": "results/figures/quantum_vs_classical_delta.png"
+    },
+    "evaluation_protocol": "Stratified Test Set",
+    "models": {
+        "classical_baseline": {
+            "name": "Logistic Regression",
+            "metrics": {
+                "accuracy": 0.90625,
+                "precision": 0.8214285714285714,
+                "sensitivity": 0.8518518518518519,
+                "specificity": 0.927536231884058,
+                "f1": 0.8363636363636363,
+                "roc_auc": 0.9667203435319377,
+                "confusion_matrix": {
+                    "matrix": [
+                        [
+                            64,
+                            5
+                        ],
+                        [
+                            4,
+                            23
+                        ]
+                    ],
+                    "labels": [
+                        "No Recurrence",
+                        "Recurrence"
+                    ]
+                },
+                "mcc": 0.7709508948985155
+            }
+        },
+        "hybrid_quantum": {
+            "name": "Quantum QSVC (4-qubit)",
+            "metrics": {
+                "accuracy": 0.8333333333333334,
+                "precision": 0.6666666666666666,
+                "sensitivity": 0.8148148148148148,
+                "specificity": 0.8405797101449275,
+                "f1": 0.7333333333333333,
+                "roc_auc": null,
+                "confusion_matrix": {
+                    "matrix": [
+                        [
+                            58,
+                            11
+                        ],
+                        [
+                            5,
+                            22
+                        ]
+                    ],
+                    "labels": [
+                        "No Recurrence",
+                        "Recurrence"
+                    ]
+                },
+                "mcc": 0.6204145749558326
+            }
+        }
+    }
+}

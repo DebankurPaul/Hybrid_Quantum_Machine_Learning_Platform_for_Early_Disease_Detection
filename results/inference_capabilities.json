@@ -1,0 +1,79 @@
+{
+  "wdbc": {
+    "logistic_regression": {
+      "artifacts": {
+        "model": {
+          "path": "models/logistic_regression.joblib",
+          "sha256": "2daa4cbe7f0c3fddd7cf20b9b8be3c04b5790affa152b000b7d6b6f60626efe2"
+        },
+        "preprocessing": {
+          "path": "results/artifacts/wdbc_logistic_regression_preprocessing.joblib",
+          "sha256": "b276e8bbb199cc60cc95c10d84d8dfa533057b9c19711f5e0aff565f1b5be9a1"
+        }
+      },
+      "execution_mode": "Serialized Classical Model Runtime",
+      "status": "VERIFIED",
+      "verified_at_utc": "2026-09-19T05:19:45.298197+00:00"
+    },
+    "random_forest": {
+      "artifacts": {
+        "model": {
+          "path": "models/random_forest.joblib",
+          "sha256": "20079e8f1c6d6daee53b56e4d0b1bf2a9cb2599c39ceb808d71225433b15ee71"
+        },
+        "preprocessing": {
+          "path": "models/classical_scaler.joblib",
+          "sha256": "1345737aafa814693cac73da1c6dfba27ea23abe85839b2cf36a1f4386c67322"
+        }
+      },
+      "execution_mode": "Serialized Classical Model Runtime",
+      "status": "VERIFIED",
+      "verified_at_utc": "2026-09-19T05:19:53.733798+00:00"
+    },
+    "svm": {
+      "artifacts": {
+        "model": {
+          "path": "models/svm.joblib",
+          "sha256": "2f0ba9708f0dc941e98ce956dfe25aaf26e8a8fa5e815e1d1112dbc795e30084"
+        },
+        "preprocessing": {
+          "path": "models/classical_scaler.joblib",
+          "sha256": "1345737aafa814693cac73da1c6dfba27ea23abe85839b2cf36a1f4386c67322"
+        }
+      },
+      "execution_mode": "Serialized Classical Model Runtime",
+      "status": "VERIFIED",
+      "verified_at_utc": "2026-09-19T05:19:53.481175+00:00"
+    },
+    "vqc": {
+      "artifacts": {
+        "preprocessing": {
+          "path": "results/artifacts/wdbc_vqc_preprocessing.joblib",
+          "sha256": "e7976ec228c3374f982152ecf398a3844aa965cc067dad965c8c392da0cafa33"
+        },
+        "weights": {
+          "path": "results/best_model/best_vqc_weights_8q.npy",
+          "sha256": "f679cef0189a7370330cd2f6d869364c6ba2cdb70fe2141af23fb317a8b99b98"
+        }
+      },
+      "execution_mode": "Qiskit VQC Runtime",
+      "status": "VERIFIED",
+      "verified_at_utc": "2026-09-19T05:19:53.467316+00:00"
+    },
+    "xgboost": {
+      "artifacts": {
+        "model": {
+          "path": "models/xgboost.joblib",
+          "sha256": "3348ffad17d8000e7fd7595bd73257929f56219a7fedd35471188269390b66ba"
+        },
+        "preprocessing": {
+          "path": "models/classical_scaler.joblib",
+          "sha256": "1345737aafa814693cac73da1c6dfba27ea23abe85839b2cf36a1f4386c67322"
+        }
+      },
+      "execution_mode": "Serialized Classical Model Runtime",
+      "status": "VERIFIED",
+      "verified_at_utc": "2026-09-19T05:19:55.109609+00:00"
+    }
+  }
+}

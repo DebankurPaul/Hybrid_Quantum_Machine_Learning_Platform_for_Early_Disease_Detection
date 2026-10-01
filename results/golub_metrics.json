@@ -1,0 +1,152 @@
+{
+    "dataset": "Golub Leukemia",
+    "benchmark_artifacts": {
+        "radar": "results/figures/golub_clinical_radar.png",
+        "delta": "results/figures/quantum_vs_classical_delta.png"
+    },
+    "evaluation_protocol": "Independent Test Set",
+    "test_is_independent_cohort": true,
+    "train_samples": 38,
+    "test_samples": 34,
+    "original_features": 7129,
+    "selected_features": 64,
+    "autoencoder_bottleneck": 8,
+    "validation": {
+        "train_test_duplicate_vectors": 0,
+        "feature_selection_train_only": true,
+        "scaler_train_only": true,
+        "autoencoder_train_only": true,
+        "independent_test_cohort_preserved": true
+    },
+    "models": {
+        "classical_baseline": {
+            "name": "Logistic Regression",
+            "preprocessing": {
+                "display": "SelectKBest (64) -> StandardScaler",
+                "steps": [
+                    {
+                        "type": "SelectKBest",
+                        "parameters": {
+                            "k": 64
+                        }
+                    },
+                    {
+                        "type": "StandardScaler"
+                    }
+                ]
+            },
+            "model_type": "logistic_regression",
+            "protocol": {
+                "test_size": 34,
+                "split_strategy": "Independent Test Set",
+                "seed": 42
+            },
+            "artifacts": {
+                "weights": null,
+                "preprocessing": "results/artifacts/golub_logistic_regression_preprocessing.joblib",
+                "explainability": null
+            },
+            "capabilities": {
+                "prediction": false,
+                "interactive_inference_supported": false
+            },
+            "metrics": {
+                "accuracy": 0.8529411764705882,
+                "precision": 1.0,
+                "sensitivity": 0.6428571428571429,
+                "specificity": 1.0,
+                "f1": 0.782608695652174,
+                "roc_auc": 0.9714285714285714,
+                "confusion_matrix": {
+                    "matrix": [
+                        [
+                            20,
+                            0
+                        ],
+                        [
+                            5,
+                            9
+                        ]
+                    ],
+                    "labels": [
+                        "ALL",
+                        "AML"
+                    ]
+                }
+            }
+        },
+        "hybrid_quantum": {
+            "name": "Quantum QSVC (8-qubit)",
+            "preprocessing": {
+                "display": "SelectKBest (64) -> StandardScaler -> Autoencoder (8)",
+                "steps": [
+                    {
+                        "type": "SelectKBest",
+                        "parameters": {
+                            "k": 64
+                        }
+                    },
+                    {
+                        "type": "StandardScaler"
+                    },
+                    {
+                        "type": "Autoencoder",
+                        "parameters": {
+                            "bottleneck_dim": 8
+                        }
+                    }
+                ]
+            },
+            "quantum_config": {
+                "qubits": 8,
+                "feature_map": {
+                    "name": "ZZFeatureMap",
+                    "reps": 1,
+                    "entanglement": "full"
+                },
+                "kernel": "QuantumKernelClassifier",
+                "C": 10.0,
+                "scale_factor": 0.05
+            },
+            "model_type": "qsvc",
+            "protocol": {
+                "test_size": 34,
+                "split_strategy": "Independent Test Set",
+                "seed": 42
+            },
+            "artifacts": {
+                "weights": null,
+                "preprocessing": "results/artifacts/golub_qsvc_preprocessing.pt",
+                "explainability": "results/figures/qxai_shap_summary.png"
+            },
+            "capabilities": {
+                "prediction": false,
+                "interactive_inference_supported": false
+            },
+            "metrics": {
+                "accuracy": 0.8823529411764706,
+                "precision": 1.0,
+                "sensitivity": 0.7142857142857143,
+                "specificity": 1.0,
+                "f1": 0.8333333333333334,
+                "roc_auc": null,
+                "confusion_matrix": {
+                    "matrix": [
+                        [
+                            20,
+                            0
+                        ],
+                        [
+                            4,
+                            10
+                        ]
+                    ],
+                    "labels": [
+                        "ALL",
+                        "AML"
+                    ]
+                }
+            }
+        }
+    }
+}
